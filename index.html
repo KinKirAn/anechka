@@ -139,6 +139,63 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 @keyframes spin{to{transform:rotate(360deg)}}
 .heart{position:fixed;z-index:200;pointer-events:none;font-size:24px;animation:fly 2.4s ease-out forwards}
 @keyframes fly{to{transform:translate(var(--dx),-80vh) rotate(var(--r));opacity:0}}
+/* story v2 */
+.scene{height:150px;border-radius:22px 22px 0 0;overflow:hidden;position:relative;background:linear-gradient(180deg,#3b2c5c 0%,#b8607a 55%,#f4b860 100%);animation:dusk 30s linear forwards}
+@keyframes dusk{to{filter:saturate(1.25) brightness(.85)}}
+.scene .sun{position:absolute;left:50%;top:40px;width:70px;height:70px;margin-left:-35px;border-radius:50%;background:radial-gradient(circle,#fff3c4,#ffc46b 60%,rgba(255,196,107,0) 72%);animation:sunset 26s ease-in forwards}
+@keyframes sunset{to{transform:translateY(70px)}}
+.scene svg{position:absolute;left:0;bottom:0;width:100%}
+.scene .car{position:absolute;bottom:14px;font-size:30px;animation:drive 9s linear infinite;transform:scaleX(-1)}
+@keyframes drive{from{left:-50px}to{left:110%}}
+.scene .cloud{position:absolute;font-size:26px;opacity:.85;animation:drift 22s linear infinite}
+@keyframes drift{from{left:-40px}to{left:110%}}
+.story2{padding:22px 18px 26px;min-height:46vh}
+.sline{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;opacity:0;transform:translateY(14px);filter:blur(6px);transition:all .9s cubic-bezier(.2,.8,.2,1)}
+.sline.on{opacity:1;transform:none;filter:none}
+.sline .em{font-size:34px;line-height:1;flex:none;transform:scale(0) rotate(-30deg)}
+.sline.on .em{animation:pop .7s cubic-bezier(.3,1.6,.5,1) forwards}
+@keyframes pop{to{transform:scale(1) rotate(0)}}
+.sline .tx{font-family:var(--serif);font-size:22px;line-height:1.35}
+.sline.last .tx{color:var(--gold);font-size:25px}
+/* games */
+.game{padding:22px 16px}
+.game h3{font-size:28px;text-align:center}
+.game .sub{color:var(--muted);text-align:center;font-size:14px;line-height:1.5;margin:8px 0 18px}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;perspective:800px}
+.mc{aspect-ratio:3/4;position:relative;transform-style:preserve-3d;transition:transform .5s;cursor:pointer}
+.mc.flip,.mc.ok{transform:rotateY(180deg)}
+.mc div{position:absolute;inset:0;border-radius:12px;display:grid;place-items:center;backface-visibility:hidden}
+.mc .b{background:linear-gradient(135deg,#5a3f72,#3a2a50);border:1px solid rgba(255,216,138,.3);font-size:20px;color:rgba(255,216,138,.6)}
+.mc .f{background:var(--cream);transform:rotateY(180deg);font-size:34px}
+.mc.ok .f{background:#ffe7b0;box-shadow:0 0 0 2px var(--gold)}
+.stat{text-align:center;color:var(--muted);font-size:13px;margin-top:12px}
+.ord{display:flex;flex-direction:column;gap:8px}
+.oi{padding:13px 14px;border-radius:14px;background:rgba(255,246,234,.07);border:1px solid rgba(255,246,234,.12);text-align:left;color:var(--cream);font-size:16px;display:flex;align-items:center;gap:10px;transition:all .3s}
+.oi .n{width:26px;height:26px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:13px;font-weight:700;background:rgba(255,246,234,.1)}
+.oi.ok{background:rgba(255,216,138,.18);border-color:var(--gold)}
+.oi.ok .n{background:var(--gold);color:#2a1626}
+.oi.bad{animation:shake .4s;border-color:#e48a7c}
+/* slides */
+.slides{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:3/4;background:#000}
+.slides .sl{position:absolute;inset:0;opacity:0;transition:opacity 1s}
+.slides .sl.on{opacity:1}
+.slides .sl img{width:100%;height:100%;object-fit:cover}
+.slides .sl.on img{animation:kb 7s ease-out forwards}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.slides .cap{position:absolute;left:0;right:0;bottom:0;padding:60px 18px 20px;background:linear-gradient(0deg,rgba(15,10,25,.85),transparent);font-family:var(--serif);font-size:22px;line-height:1.3}
+.slides .sl.on .cap{animation:fade 1.2s .4s both}
+.sdots{position:absolute;top:12px;left:12px;right:12px;display:flex;gap:4px}
+.sdots i{flex:1;height:3px;border-radius:3px;background:rgba(255,255,255,.3);overflow:hidden}
+.sdots i b{display:block;height:100%;width:0;background:#fff}
+.sdots i.done b{width:100%}
+.sdots i.cur b{animation:bar 6s linear forwards}
+@keyframes bar{to{width:100%}}
+.letterbox{padding:30px 22px;background:linear-gradient(180deg,#fff6ea,#f6e3c8);color:var(--ink);border-radius:22px;position:relative;overflow:hidden}
+.letterbox p{font-family:var(--serif);font-size:22px;line-height:1.4;margin:0 0 14px;opacity:0;transform:translateY(10px);transition:all 1s}
+.letterbox p.on{opacity:1;transform:none}
+.letterbox p:first-child{font-size:28px;font-weight:600}
+.letterbox .fh{position:absolute;font-size:18px;opacity:.35;animation:rise 7s linear infinite}
+@keyframes rise{from{transform:translateY(0)}to{transform:translateY(-500px)}}
 .soon{padding:60px 26px;text-align:center}
 .soon h3{font-size:30px;margin-bottom:12px}
 .soon p{color:var(--muted);line-height:1.5}
@@ -380,13 +437,14 @@ function openDay(day){
   if (day.status==='soon'){ $('dayTitle').textContent = 'Скоро…'; $('dots').innerHTML=''; $('navbar').innerHTML = `<button class="btn ghost" onclick="backHome()">На тропу</button>`;
     $('stage').innerHTML = `<div class="soon"><h3>Задание готовится ✨</h3><p>Загляни чуть позже — оно появится сегодня.</p></div>`; show('day'); return; }
   $('dayTitle').textContent = day.title || '';
-  D = { day, i: 0, steps: [...(day.steps||[])], solved: day.status==='done', reward: day.reward };
-  D.steps.push({kind:'reward'});
+  D = { day, i: 0, solved: day.status==='done', reward: day.reward };
+  buildSteps();
   show('day'); renderStep();
 }
 function backHome(){ show('home'); drawTrail(); }
 $('dayBack').onclick = () => { load(); };
 
+function buildSteps(){ D.steps = [...(D.day.steps||[]), {kind:'reward'}, ...((D.solved && D.reward?.after) || [])]; }
 function dots(){ $('dots').innerHTML = D.steps.map((_,i)=>`<i class="${i<=D.i?'on':''}"></i>`).join(''); }
 function nav(html){ $('navbar').innerHTML = html; }
 function next(){ D.i++; renderStep(); window.scrollTo({top:0,behavior:'smooth'}); }
@@ -404,6 +462,10 @@ async function renderStep(){
   if (st.kind==='photo') { stage.innerHTML=''; const c=document.createElement('div'); c.className='card'; c.appendChild(await imgEl(st.photo)); stage.appendChild(c);
     if(st.text) stage.insertAdjacentHTML('beforeend',`<p class="hinttext">${st.text}</p>`); nav(back+`<button class="btn" onclick="next()">Дальше</button>`); return; }
   if (st.kind==='reward') return rewardStep(back);
+  if (st.kind==='memory') return memoryStep(st, back);
+  if (st.kind==='order') return orderStep(st, back);
+  if (st.kind==='slides') return slidesStep(st, back);
+  if (st.kind==='letter') return letterStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -447,14 +509,90 @@ async function fogStep(st, back){
 
 function storyStep(st, back){
   const stage = $('stage');
-  stage.innerHTML = `<div class="card story" id="story">${st.lines.map(l=>`<p>${l}</p>`).join('')}<div class="tapnote" id="tapnote">нажми, чтобы продолжить</div></div>`;
-  const ps = [...stage.querySelectorAll('.story p')]; let k = 0;
+  const lines = st.lines.map(l => typeof l==='string' ? {e:'',t:l} : l);
+  const scene = st.scene==='drive' ? `<div class="scene"><div class="sun"></div>
+     <span class="cloud" style="top:14px;animation-delay:-4s">☁️</span><span class="cloud" style="top:40px;animation-duration:30s;animation-delay:-15s">☁️</span>
+     <svg viewBox="0 0 400 90" preserveAspectRatio="none"><path d="M0 50 L60 20 L110 45 L170 8 L230 42 L300 15 L360 40 L400 25 L400 90 L0 90Z" fill="#4a2f55"/>
+     <path d="M0 70 L80 48 L150 66 L230 44 L310 64 L400 50 L400 90 L0 90Z" fill="#2c2340"/><rect y="78" width="400" height="12" fill="#1b1730"/>
+     <path d="M0 84 H400" stroke="#ffd88a" stroke-width="1.5" stroke-dasharray="10 10" opacity=".6"/></svg>
+     <span class="car">🚗</span></div>` : '';
+  stage.innerHTML = `<div class="card" id="story">${scene}<div class="story2">${lines.map((l,i)=>`<div class="sline ${i===lines.length-1?'last':''}"><span class="em">${l.e||'✨'}</span><span class="tx">${l.t}</span></div>`).join('')}
+    <div class="tapnote" id="tapnote">нажми, чтобы читать дальше</div></div></div>`;
+  const ps = [...stage.querySelectorAll('.sline')]; let k = 0;
   nav(back + `<button class="btn" id="storyNext" style="opacity:.4" disabled>Дальше</button>`);
-  const reveal = () => { if(k<ps.length){ ps[k++].classList.add('on'); }
-    if(k>=ps.length){ $('tapnote').textContent=''; const b=$('storyNext'); b.disabled=false; b.style.opacity=1; } };
-  $('story').onclick = reveal; reveal();
-  const auto = setInterval(()=>{ if(k>=ps.length || !document.getElementById('story')) return clearInterval(auto); reveal(); }, 2600);
+  const reveal = () => { if(k<ps.length){ ps[k].classList.add('on'); if(k>2) ps[k].scrollIntoView({behavior:'smooth',block:'center'}); k++; }
+    if(k>=ps.length){ $('tapnote').textContent=''; const b=$('storyNext'); b.disabled=false; b.style.opacity=1; if(!st._h){st._h=1; setTimeout(hearts,600);} } };
+  $('story').onclick = reveal; setTimeout(reveal, 500);
+  const auto = setInterval(()=>{ if(k>=ps.length || !document.getElementById('story')) return clearInterval(auto); reveal(); }, 3800);
   $('storyNext').onclick = () => { clearInterval(auto); next(); };
+}
+
+function shuffle(a){ a=[...a]; for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]];} return a; }
+function enableNext(id){ const b=$(id); if(b){ b.disabled=false; b.style.opacity=1; } }
+
+function memoryStep(st, back){
+  const cards = shuffle([...st.emojis, ...st.emojis]);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||'Найди пары'}</h3><div class="sub">${st.text||''}</div>
+    <div class="mem">${cards.map((e,i)=>`<div class="mc" data-i="${i}"><div class="b">✦</div><div class="f">${e}</div></div>`).join('')}</div>
+    <div class="stat" id="memStat">Ходов: 0</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.solved) enableNext('gNext');
+  let open=[], moves=0, found=0, busy=false;
+  document.querySelectorAll('.mc').forEach(c => c.onclick = () => {
+    if (busy || c.classList.contains('flip') || c.classList.contains('ok')) return;
+    c.classList.add('flip'); open.push(c);
+    if (open.length===2){ moves++; $('memStat').textContent = 'Ходов: '+moves; busy=true;
+      const [a,b] = open;
+      if (cards[a.dataset.i]===cards[b.dataset.i]) { setTimeout(()=>{ a.classList.add('ok'); b.classList.add('ok'); open=[]; busy=false; found++;
+          if (found===st.emojis.length){ $('memStat').textContent = `Все пары найдены за ${moves} ходов! 🎉`; hearts(); enableNext('gNext'); } }, 350); }
+      else setTimeout(()=>{ a.classList.remove('flip'); b.classList.remove('flip'); open=[]; busy=false; }, 900);
+    }
+  });
+  $('gNext').onclick = next;
+}
+
+function orderStep(st, back){
+  const items = st.items, mix = shuffle(items.map((t,i)=>i));
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||'По порядку'}</h3><div class="sub">${st.text||''}</div>
+    <div class="ord">${mix.map(i=>`<button class="oi" data-i="${i}"><span class="n"></span><span>${items[i]}</span></button>`).join('')}</div>
+    <div class="stat" id="ordStat"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.solved) enableNext('gNext');
+  let k = 0;
+  document.querySelectorAll('.oi').forEach(b => b.onclick = () => {
+    if (b.classList.contains('ok')) return;
+    if (+b.dataset.i === k) { b.classList.add('ok'); b.querySelector('.n').textContent = ++k;
+      if (k===items.length){ $('ordStat').textContent = 'Всё верно! Именно так и было 💛'; hearts(); enableNext('gNext'); } }
+    else { b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); $('ordStat').textContent = 'Хм, это было чуть позже 🙂'; }
+  });
+  $('gNext').onclick = next;
+}
+
+async function slidesStep(st, back){
+  const stage = $('stage');
+  stage.innerHTML = `<div class="game" style="padding:6px 0 0"><h3 style="text-align:center;font-size:30px">${st.title||''}</h3><div class="sub">${st.intro||''}</div></div><div class="spinner"></div>`;
+  const imgs = await Promise.all(st.items.map(it=>media(it.photo)));
+  stage.querySelector('.spinner').remove();
+  stage.insertAdjacentHTML('beforeend', `<div class="slides" id="slides"><div class="sdots">${st.items.map(()=>'<i><b></b></i>').join('')}</div>
+    ${st.items.map((it,i)=>`<div class="sl"><img src="${imgs[i]}" alt=""><div class="cap">${it.cap||''}</div></div>`).join('')}</div>
+    <p class="hinttext">нажми справа — дальше, слева — назад</p>`);
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  const sl=[...stage.querySelectorAll('.sl')], dt=[...stage.querySelectorAll('.sdots i')]; let cur=-1, timer;
+  const go = n => { if(n<0) n=0; if(n>=sl.length){ enableNext('gNext'); n=sl.length-1; }
+    cur=n; sl.forEach((s,i)=>s.classList.toggle('on',i===n)); dt.forEach((d,i)=>{ d.className = i<n?'done':i===n?'cur':''; });
+    if (n===sl.length-1) setTimeout(()=>enableNext('gNext'), 2500);
+    clearTimeout(timer); timer=setTimeout(()=>{ if(document.getElementById('slides') && cur<sl.length-1) go(cur+1); }, 6000); };
+  $('slides').onclick = e => { const r=e.currentTarget.getBoundingClientRect(); go(cur + (e.clientX-r.left > r.width/3 ? 1 : -1)); };
+  go(0);
+  $('gNext').onclick = () => { clearTimeout(timer); next(); };
+}
+
+function letterStep(st, back){
+  const fh = Array.from({length:12},(_,i)=>`<span class="fh" style="left:${(i*37)%95}%;top:${100+(i*53)%60}%;animation-delay:${-i*0.6}s">${['💛','❤️','✨'][i%3]}</span>`).join('');
+  $('stage').innerHTML = `<div class="letterbox" id="letter">${fh}${st.lines.map(l=>`<p>${l}</p>`).join('')}</div>`;
+  const ps=[...$('letter').querySelectorAll('p')]; ps.forEach((p,i)=>setTimeout(()=>p.classList.add('on'), 600+i*1700));
+  setTimeout(hearts, 600+ps.length*1700);
+  nav(finalNav());
 }
 
 async function questionStep(st, back){
@@ -492,7 +630,7 @@ async function questionStep(st, back){
     $('ansBtn').disabled = true; $('qmsg').textContent = '';
     const r = await api('answer', { day: D.day.day_no, answer: a }).catch(()=>({}));
     $('ansBtn').disabled = false;
-    if (r.correct) { D.solved = true; D.reward = r.reward; hearts(); setTimeout(next, 600); return; }
+    if (r.correct) { D.solved = true; D.reward = r.reward; buildSteps(); hearts(); setTimeout(next, 600); return; }
     wrong++;
     const box = stage.querySelector('.ans'); box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake');
     const msgs = ['Не совсем… попробуй ещё 💛','Почти! Подумай ещё чуть-чуть','Возьми подсказку — она поможет 💡'];
@@ -508,8 +646,10 @@ async function rewardStep(back){
   if (!D.solved || !r) { stage.innerHTML = `<div class="soon"><p>Сначала ответь на вопрос 💛</p></div>`; nav(back); return; }
   stage.innerHTML = `<div class="reward"><div style="font-size:40px">💛</div><h3>${r.title||'Ступенька пройдена!'}</h3><div id="rwImg"></div>${r.letter?`<div class="letter">${r.letter}</div>`:''}<p>${r.text||''}</p></div>`;
   if (r.photo) $('rwImg').appendChild(await imgEl(r.photo));
-  nav(`<button class="btn ghost" onclick="D.i=0;renderStep()">Пройти ещё раз</button><button class="btn" onclick="load()">На тропу</button>`);
+  const more = D.i < D.steps.length-1;
+  nav(more ? back + `<button class="btn" onclick="next()">Дальше</button>` : finalNav());
 }
+function finalNav(){ return `<button class="btn ghost" onclick="D.i=0;renderStep()">Ещё раз</button><button class="btn" onclick="load()">На тропу</button>`; }
 window.renderStep = renderStep;
 
 function hearts(){
@@ -521,11 +661,10 @@ function hearts(){
 // ---- album ----
 $('btnAlbum').onclick = async () => {
   show('album'); const grid = $('grid'); grid.innerHTML = '<div class="spinner"></div>';
-  const items = [];
-  S.data.days.filter(d=>d.status==='done').forEach(d=>{
-    (d.steps||[]).forEach(s=>{ if(s.photo) items.push({ref:s.photo, cap:`День ${d.day_no} · ${fmtDate(d.date)}`}); });
-    if (d.reward?.photo) items.push({ref:d.reward.photo, cap:`День ${d.day_no} · ${fmtDate(d.date)}`});
-  });
+  const items = [], seen = new Set();
+  const walk = (o, d) => { if (Array.isArray(o)) o.forEach(x=>walk(x,d)); else if (o && typeof o==='object') for (const [k,v] of Object.entries(o)) {
+      if (k==='photo' && typeof v==='string') { const key=v.split('#')[0]; if(!seen.has(key)){ seen.add(key); items.push({ref:v, cap:`День ${d.day_no} · ${fmtDate(d.date)}`}); } } else walk(v,d); } };
+  S.data.days.filter(d=>d.status==='done').forEach(d=>{ walk(d.steps,d); walk(d.reward,d); });
   if (!items.length) { grid.innerHTML = '<div class="empty" style="grid-column:1/-1">Здесь будут собираться фото с пройденных дней 📷</div>'; return; }
   grid.innerHTML = '';
   for (const it of items) { const f=document.createElement('figure'); const im = await imgEl(it.ref); im.onclick=()=>{ $('lbImg').src=im.src; $('lightbox').classList.add('on'); };
