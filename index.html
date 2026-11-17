@@ -144,7 +144,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 @keyframes dusk{to{filter:saturate(1.25) brightness(.85)}}
 .scene .sun{position:absolute;left:50%;top:40px;width:70px;height:70px;margin-left:-35px;border-radius:50%;background:radial-gradient(circle,#fff3c4,#ffc46b 60%,rgba(255,196,107,0) 72%);animation:sunset 26s ease-in forwards}
 @keyframes sunset{to{transform:translateY(70px)}}
-.scene svg{position:absolute;left:0;bottom:0;width:100%}
+.scene > svg{position:absolute;left:0;bottom:0;width:100%}
 .scene .car{position:absolute;bottom:14px;font-size:30px;animation:drive 9s linear infinite;transform:scaleX(-1)}
 @keyframes drive{from{left:-50px}to{left:110%}}
 .scene .cloud{position:absolute;font-size:26px;opacity:.85;animation:drift 22s linear infinite}
