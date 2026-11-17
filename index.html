@@ -8,7 +8,7 @@
 <title>Тропа к твоему дню</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --night:#1b1730; --dusk:#3b2c4f; --plum:#6b3f5f; --rose:#e48a7c; --amber:#f4b860; --gold:#ffd88a;
@@ -186,6 +186,140 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .fire{width:96px;height:96px;border-radius:50%;font-size:48px;background:radial-gradient(circle,#ffcf6b,#f0743a);box-shadow:0 10px 30px -6px rgba(240,116,58,.8)}
 .fire.puff{animation:puff .25s}
 @keyframes puff{50%{transform:scale(.88)}}
+/* ===== THEME: SKY (day 3) ===== */
+#day.theme-sky{--ink2:#22314f;background:linear-gradient(180deg,#bfe0fb 0%,#e6f2fd 45%,#fff6ea 100%);color:var(--ink2);transition:background 1.2s,color 1.2s}
+#day.theme-sky .dayhead{background:rgba(214,234,252,.92)}
+#day.theme-sky .dayhead small{color:#6b7fa3}
+#day.theme-sky .dayhead h3{font-family:'Caveat',cursive;font-size:30px;font-weight:700}
+#day.theme-sky .iconbtn{background:rgba(34,49,79,.08);color:var(--ink2)}
+#day.theme-sky .dots i{background:rgba(34,49,79,.15)}#day.theme-sky .dots i.on{background:#3a6fd8}
+#day.theme-sky .card{background:rgba(255,255,255,.78);border:1px solid rgba(34,49,79,.06);box-shadow:0 14px 34px -18px rgba(34,80,140,.45);border-radius:26px}
+#day.theme-sky h3,#day.theme-sky .game h3{font-family:'Caveat',cursive;font-weight:700;font-size:36px}
+#day.theme-sky .sub,#day.theme-sky .stat,#day.theme-sky .hinttext,#day.theme-sky .tapnote,#day.theme-sky .q .note{color:#6b7fa3}
+#day.theme-sky .sline .tx{font-family:'Caveat',cursive;font-size:29px;line-height:1.2}
+#day.theme-sky .sline.last .tx{color:#3a6fd8;font-size:32px}
+#day.theme-sky .navbar{background:linear-gradient(0deg,#fff6ea 65%,rgba(255,246,234,0))}
+#day.theme-sky .btn{background:linear-gradient(135deg,#6db5f0,#3a6fd8);color:#fff;box-shadow:0 8px 24px -8px rgba(58,111,216,.6)}
+#day.theme-sky .btn.ghost{background:rgba(255,255,255,.7);color:var(--ink2);border:1px solid rgba(34,49,79,.15);box-shadow:none}
+#day.theme-sky .oi{color:var(--ink2);background:rgba(255,255,255,.8);border-color:rgba(34,49,79,.12)}
+#day.theme-sky .oi.ok{background:#e1efff;border-color:#3a6fd8}#day.theme-sky .oi.ok .n{background:#3a6fd8;color:#fff}
+#day.theme-sky .ans input,#day.theme-sky .ta{background:#fff;color:var(--ink2);border:1px solid rgba(34,49,79,.2)}
+#day.theme-sky .q h3{font-size:38px}
+#day.theme-sky .msg{color:#c0392b}
+#day.theme-sky .hint{background:#eaf3ff;border-left-color:#3a6fd8}
+#day.theme-sky .slot{border-color:rgba(34,49,79,.25);color:#3a6fd8}
+#day.theme-sky .tile{box-shadow:0 4px 0 #c5d6ea;background:#fff}
+#day.theme-sky .reward h3{color:#3a6fd8;font-size:44px}
+#day.theme-sky .reward p{font-family:'Caveat',cursive;font-size:30px;line-height:1.2}
+#day.theme-sky .cq{font-family:'Caveat',cursive;font-size:30px;line-height:1.2}
+#day.theme-sky .alt{color:#6b7fa3}#day.theme-sky .alt b{color:#3a6fd8}
+#day.theme-sky .spinner{border-color:rgba(34,49,79,.12);border-top-color:#3a6fd8}
+/* night mood */
+#day.theme-sky.night{background:radial-gradient(ellipse at 50% 0%,#24346a 0%,#0e1430 60%,#070a1a 100%);color:#e9eefc}
+#day.theme-sky.night::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(1px 1px at 20% 30%,#fff,transparent),radial-gradient(1px 1px at 70% 20%,#fff,transparent),radial-gradient(1.5px 1.5px at 40% 70%,#fff,transparent),radial-gradient(1px 1px at 85% 60%,#fff,transparent),radial-gradient(1px 1px at 10% 85%,#fff,transparent),radial-gradient(1.2px 1.2px at 55% 45%,#fff,transparent);opacity:.6}
+#day.theme-sky.night .dayhead{background:rgba(14,20,48,.9)}
+#day.theme-sky.night .iconbtn{background:rgba(255,255,255,.1);color:#e9eefc}
+#day.theme-sky.night .card{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1);box-shadow:none}
+#day.theme-sky.night .navbar{background:linear-gradient(0deg,#0b1024 65%,rgba(11,16,36,0))}
+#day.theme-sky.night .btn{background:linear-gradient(135deg,#ffd88a,#f4b860);color:#2a1626}
+#day.theme-sky.night .btn.ghost{background:rgba(255,255,255,.08);color:#e9eefc;border-color:rgba(255,255,255,.2)}
+#day.theme-sky.night .sline.last .tx{color:#ffd88a}
+#day.theme-sky.night .ta{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.2)}
+#day.theme-sky.night .dots i.on{background:#ffd88a}
+/* sunday + night scenes */
+.scene.sunday{background:linear-gradient(180deg,#8ec5f2 0%,#cfe7fb 60%,#fff2d6 100%);animation:none}
+.scene .rays{position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,#fff6c9 0%,rgba(255,236,160,.5) 35%,rgba(255,236,160,0) 70%);animation:breathe 4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scale(1.15)}}
+.scene .bird{position:absolute;font-size:20px;animation:drift 12s linear infinite}
+.scene.nightsc{background:linear-gradient(180deg,#0e1430 0%,#1d2a5a 60%,#2a3a72 100%);animation:none}
+.scene .star{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{50%{opacity:.2}}
+.scene .moon{position:absolute;right:40px;top:18px;width:44px;height:44px;border-radius:50%;background:#fff3c4;box-shadow:0 0 30px 6px rgba(255,243,196,.45),inset -10px -4px 0 #e9d9a0}
+.scene .water{position:absolute;left:0;right:0;bottom:0;height:48px;background:linear-gradient(180deg,#152048,#0b1230)}
+.scene .water i{position:absolute;width:26px;height:2px;border-radius:2px;background:#ffe9a8;opacity:.6;animation:shimmer 2s ease-in-out infinite}
+@keyframes shimmer{50%{opacity:.1;transform:scaleX(.5)}}
+/* ticket */
+.ticket{background:#fff;color:#22314f;border-radius:22px;box-shadow:0 20px 40px -20px rgba(34,80,140,.55);overflow:hidden;position:relative}
+.tk-main{padding:18px 18px 16px}
+.tk-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:2px;color:#3a6fd8}
+.tk-route{display:flex;align-items:center;justify-content:space-between;margin:16px 0}
+.tk-route small,.tk-grid small{display:block;font-size:11px;color:#8a97b3;text-transform:uppercase;letter-spacing:1px}
+.tk-route b{font-family:'Caveat',cursive;font-size:30px}
+.tk-plane{color:#9fb3d6;font-size:14px;white-space:nowrap}
+.tk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tk-grid b{font-size:15px}
+.tk-perf{height:0;border-top:3px dashed #d8e2f2;margin:0 14px;position:relative}
+.tk-perf::before,.tk-perf::after{content:"";position:absolute;top:-14px;width:26px;height:26px;border-radius:50%;background:#dcecfb}
+.tk-perf::before{left:-28px}.tk-perf::after{right:-28px}
+.tk-stub{display:flex;gap:14px;align-items:center;padding:16px 18px;background:#f4f8fe;font-size:14px;color:#6b7fa3;transition:transform .8s cubic-bezier(.5,0,.7,.4),opacity .8s;transform-origin:0 0}
+.tk-stub.torn{transform:translateY(160px) rotate(14deg);opacity:0}
+.tk-hold{position:relative;width:56px;height:56px;flex:none;display:grid;place-items:center;font-size:24px;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer}
+.tk-hold svg{position:absolute;inset:0;transform:rotate(-90deg)}
+.ring-bg{fill:#fff;stroke:#d8e2f2;stroke-width:4}.ring{fill:none;stroke:#3a6fd8;stroke-width:4;stroke-linecap:round}
+.verse{margin:22px 8px 0;text-align:center;opacity:0;transform:translateY(10px);transition:all 1s}
+.verse.on{opacity:1;transform:none}
+.verse p{font-family:'Caveat',cursive;font-size:30px;line-height:1.2;margin:0 0 8px}
+.verse small{color:#6b7fa3;letter-spacing:1px}
+/* popclouds */
+.cloudfield{position:relative;height:330px;border-radius:20px;background:linear-gradient(180deg,#9ccbf3,#e3f1fd);overflow:hidden}
+.pc{position:absolute;width:30%;height:22%;background:none;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.pc .cl{position:absolute;inset:0;display:grid;place-items:center;font-size:60px;transition:transform .35s,opacity .35s}
+.pc .in{position:absolute;inset:0;display:grid;place-items:center;font-size:30px;font-weight:700;color:#22314f;opacity:0;transform:scale(.3);transition:all .4s .1s}
+.pc.popped .cl{transform:scale(1.6);opacity:0}.pc.popped .in{opacity:1;transform:scale(1)}
+.tray{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.tray i{width:46px;height:54px;border-radius:12px;border:2px dashed rgba(34,49,79,.25);display:grid;place-items:center;font-style:normal;font-family:'Caveat',cursive;font-size:34px;font-weight:700;color:#3a6fd8}
+.tray i.on{border-style:solid;border-color:#3a6fd8;background:#fff;animation:pop .5s}
+/* findspot */
+.spot{position:relative;border-radius:18px;overflow:hidden;cursor:crosshair}
+.spot img{display:block;width:100%}
+.spot .mark{position:absolute;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px #3a6fd8,0 0 30px #fff;opacity:0;transform:scale(2);transition:all .5s}
+.spot .mark.on{opacity:1;transform:scale(1)}
+.spot .miss{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;border:2px solid rgba(255,255,255,.9);animation:ripple .7s forwards}
+@keyframes ripple{to{transform:scale(1.8);opacity:0}}
+/* checklist */
+.chk{display:flex;flex-direction:column;gap:8px}
+.ck{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:rgba(255,255,255,.85);border:1px solid rgba(34,49,79,.1);color:#22314f;font-size:16px;text-align:left}
+.ck .box{width:24px;height:24px;border-radius:7px;border:2px solid #9fb3d6;flex:none;display:grid;place-items:center;transition:all .25s}
+.ck.on .box{background:#3a6fd8;border-color:#3a6fd8}
+.ck.on .box::after{content:"✓";color:#fff;font-weight:700;font-size:15px}
+.ck.on span:last-child{text-decoration:line-through;text-decoration-color:rgba(58,111,216,.5);opacity:.75}
+.game{position:relative}
+.stamp{position:absolute;right:16px;bottom:16px;border:3px solid #d9393e;color:#d9393e;font-weight:800;letter-spacing:2px;padding:6px 10px;border-radius:8px;text-align:center;font-size:13px;line-height:1.2;transform:rotate(-14deg) scale(2.5);opacity:0;transition:all .35s cubic-bezier(.3,1.6,.5,1);background:rgba(255,255,255,.85)}
+.stamp.on{opacity:1;transform:rotate(-14deg) scale(1)}
+/* polaroid / develop */
+.polaroid{background:#fffdf8;padding:12px 12px 0;border-radius:4px;box-shadow:0 18px 40px -16px rgba(0,0,0,.55);color:#22314f}
+.polaroid img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;background:#222}
+.pcap{font-family:'Caveat',cursive;font-size:26px;line-height:1.15;text-align:center;padding:12px 6px 16px;min-height:58px;opacity:0;transition:opacity 1s}
+.pcap.on{opacity:1}
+.dev{width:84%;margin:6px auto 0;transform:rotate(-2deg);cursor:pointer}
+.dev img{transition:filter .4s}
+.dev.shk{animation:shk .3s}
+@keyframes shk{25%{transform:rotate(-5deg) translateX(-6px)}75%{transform:rotate(2deg) translateX(6px)}}
+.devbar{width:60%;height:5px;border-radius:5px;margin:16px auto 0;background:rgba(34,49,79,.12);overflow:hidden}
+.devbar i{display:block;height:100%;width:0;background:#3a6fd8;transition:width .3s}
+.pstack{position:relative;height:440px;margin-top:8px;cursor:pointer}
+.pst{position:absolute;left:50%;top:0;width:72%;margin-left:-36%;transform:rotate(var(--r));transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .6s}
+.pst.flyR{transform:translateX(130%) rotate(25deg);opacity:0}
+.pst.flyL{transform:translateX(-130%) rotate(-25deg);opacity:0}
+.pst.fan{transform:translateX(var(--fx)) rotate(var(--fr)) scale(.78);opacity:1}
+.ta{width:100%;border-radius:14px;padding:12px 14px;font:inherit;font-size:16px;resize:vertical;outline:none}
+.envfly{position:fixed;left:50%;top:60%;font-size:44px;z-index:200;pointer-events:none;animation:env 1.2s ease-in forwards}
+@keyframes env{to{transform:translate(120px,-70vh) rotate(25deg) scale(.6);opacity:0}}
+/* constellation */
+.starcard{background:rgba(10,14,36,.6)!important}
+.stars{width:100%;display:block}
+.stars .tw{animation:tw 2.6s ease-in-out infinite}
+.st{cursor:pointer}
+.st .sdot{transition:all .3s;filter:drop-shadow(0 0 4px #fff)}
+.st.nx .sdot{animation:nx 1s ease-in-out infinite;fill:#ffd88a}
+@keyframes nx{50%{r:9}}
+.st.lit .sdot{fill:#ffd88a;filter:drop-shadow(0 0 8px #ffd88a)}
+.st.bad .sdot{fill:#e48a7c}
+.letterlines p{font-family:'Caveat',cursive;font-size:28px;line-height:1.2;margin:0 0 10px;text-align:center;opacity:0;transform:translateY(8px);transition:all 1s}
+.letterlines p.on{opacity:1;transform:none}
+.letterlines p:first-child{font-size:34px;color:#ffd88a}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -373,7 +507,8 @@ function renderAdmin(){
       <button class="btn small ghost" id="simReset">Сегодня</button><button class="btn small ghost" id="resetTest">Сбросить мой тест</button></div>
     <div class="row">Не заполнены: ${notReady.length? 'дни '+notReady.join(', ') : 'всё готово ✅'}</div>
     <details><summary>Прогресс Анечки</summary><table>${ap}</table></details>
-    <details><summary>Её попытки ответов</summary><table>${lg}</table></details></div>`;
+    <details><summary>Её попытки ответов</summary><table>${lg}</table></details>
+    <details open><summary>💌 Её письма тебе</summary><table>${(d.anna?.notes||[]).map(x=>`<tr><td>День ${x.day_no}</td><td><b>${x.q}</b><br>${x.answer.replace(/</g,'&lt;')}</td></tr>`).join('') || '<tr><td>Пока нет</td></tr>'}</table></details></div>`;
   $('sim').onchange = e => { S.simDate = e.target.value; sessionStorage.setItem('simDate', S.simDate); load(); };
   $('simReset').onclick = () => { S.simDate=''; sessionStorage.removeItem('simDate'); load(); };
   $('resetTest').onclick = async () => { await api('reset_test'); load(); };
@@ -466,12 +601,13 @@ function openDay(day){
   if (day.status==='soon'){ $('dayTitle').textContent = 'Скоро…'; $('dots').innerHTML=''; $('navbar').innerHTML = `<button class="btn ghost" onclick="backHome()">На тропу</button>`;
     $('stage').innerHTML = `<div class="soon"><h3>Задание готовится ✨</h3><p>Загляни чуть позже — оно появится сегодня.</p></div>`; show('day'); return; }
   $('dayTitle').textContent = day.title || '';
-  D = { day, i: 0, solved: day.status==='done', reward: day.reward };
+  $('day').classList.toggle('theme-sky', day.theme==='sky'); $('day').classList.remove('night');
+  D = { day, i: 0, solved: day.status==='done', replay: day.status==='done', reward: day.reward };
   buildSteps();
   show('day'); renderStep();
 }
 function backHome(){ show('home'); drawTrail(); }
-$('dayBack').onclick = () => { load(); };
+$('dayBack').onclick = () => { $('day').classList.remove('theme-sky','night'); load(); };
 
 function buildSteps(){ D.steps = [...(D.day.steps||[]), {kind:'reward'}, ...((D.solved && D.reward?.after) || [])]; }
 function dots(){ $('dots').innerHTML = D.steps.map((_,i)=>`<i class="${i<=D.i?'on':''}"></i>`).join(''); }
@@ -483,6 +619,7 @@ window.next = next; window.prev = prev; window.backHome = backHome; window.close
 async function renderStep(){
   dots();
   const st = D.steps[D.i], stage = $('stage');
+  $('day').classList.toggle('night', st.mood==='night');
   stage.innerHTML = '<div class="spinner"></div>';
   const back = D.i>0 ? `<button class="btn ghost" onclick="prev()">Назад</button>` : `<button class="btn ghost" onclick="load()">На тропу</button>`;
   if (st.kind==='fog') return fogStep(st, back);
@@ -499,6 +636,14 @@ async function renderStep(){
   if (st.kind==='puzzle') return puzzleStep(st, back);
   if (st.kind==='choice') return choiceStep(st, back);
   if (st.kind==='lift') return liftStep(st, back);
+  if (st.kind==='ticket') return ticketStep(st, back);
+  if (st.kind==='popclouds') return popcloudsStep(st, back);
+  if (st.kind==='findspot') return findspotStep(st, back);
+  if (st.kind==='checklist') return checklistStep(st, back);
+  if (st.kind==='develop') return developStep(st, back);
+  if (st.kind==='polaroids') return polaroidsStep(st, back);
+  if (st.kind==='questions') return questionsStep(st, back);
+  if (st.kind==='constellation') return constellationStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -537,7 +682,7 @@ async function fogStep(st, back){
   window.addEventListener('pointerup', ()=>{ if(drawing && !finished) check(); drawing=false; last=null;});
   host.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
   $('fogNext').onclick = next;
-  if (D.solved) { /* replay: allow skip */ setTimeout(()=>{ const b=$('fogNext'); if(b){b.disabled=false;b.style.opacity=1;} }, 1500); }
+  if (D.replay) { /* replay: allow skip */ setTimeout(()=>{ const b=$('fogNext'); if(b){b.disabled=false;b.style.opacity=1;} }, 1500); }
 }
 
 function storyStep(st, back){
@@ -553,6 +698,13 @@ function storyStep(st, back){
      <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" class="rbow">${RB.map((c,i)=>`<path d="M ${200-(170-i*9)} 150 A ${170-i*9} ${170-i*9} 0 0 1 ${200+(170-i*9)} 150" fill="none" stroke="${c[1]}" stroke-width="9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:drawarc 2.4s ${7+i*0.15}s ease forwards" opacity=".85"/>`).join('')}
      <path d="M0 125 Q100 115 200 125 T400 122 V150 H0Z" fill="#2f7d6d" opacity=".9"/><path d="M0 135 Q100 128 200 136 T400 133 V150 H0Z" fill="#23604f"/></svg>
      ${Array.from({length:22},(_,i)=>`<i class="drop" style="left:${(i*47)%100}%;animation-delay:${-(i*0.23)}s"></i>`).join('')}</div>`
+   : st.scene==='sunday' ? `<div class="scene sunday"><div class="rays"></div>
+     <span class="bird" style="top:22px;animation-duration:11s">🕊️</span><span class="bird" style="top:44px;animation-duration:15s;animation-delay:-6s;font-size:16px">🕊️</span>
+     <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice"><g transform="translate(40,52)" fill="#fff"><rect x="10" y="40" width="54" height="52" rx="2"/><path d="M5 42 L37 14 L69 42Z" fill="#f2e6d6"/><rect x="29" y="-6" width="16" height="30" fill="#fff"/><path d="M37 -24 V-6 M30 -17 H44" stroke="#c99a3d" stroke-width="3"/><path d="M28 92 V68 a9 9 0 0 1 18 0 V92Z" fill="#8a6a4a"/><circle cx="37" cy="54" r="6" fill="#9cc6ef"/></g>
+     <path d="M0 120 Q120 108 220 120 T400 112 V150 H0Z" fill="#8fc9a2"/><path d="M120 150 Q200 120 400 126 V150Z" fill="#d8c7a8"/></svg>
+     <span class="car" style="bottom:6px;animation-duration:12s">🚗</span></div>`
+   : st.scene==='night' ? `<div class="scene nightsc">${Array.from({length:28},(_,i)=>`<i class="star" style="left:${(i*37)%100}%;top:${(i*23)%60}%;animation-delay:${-(i%6)*0.5}s"></i>`).join('')}
+     <div class="moon"></div><div class="water">${Array.from({length:9},(_,i)=>`<i style="left:${8+i*10}%;top:${20+(i*17)%60}%;animation-delay:${-i*0.3}s"></i>`).join('')}</div></div>`
    : st.scene==='sky' ? `<div class="scene sky"><span class="cloud" style="top:10px;animation-duration:16s">☁️</span><span class="cloud" style="top:60px;animation-duration:22s;animation-delay:-8s">☁️</span><span class="cloud" style="top:100px;animation-duration:18s;animation-delay:-3s">☁️</span>
      <span class="balloonfly"><svg viewBox="0 0 60 80" width="1em" height="1.33em" style="display:block"><path d="M30 2C14 2 4 14 4 28c0 13 10 22 16 30h20c6-8 16-17 16-30C56 14 46 2 30 2z" fill="#e9edf2"/><path d="M5 34c3 10 11 17 15 24h20c4-7 12-14 15-24z" fill="#d9393e"/><path d="M30 2c-7 0-11 12-11 26s5 23 7 30M30 2c7 0 11 12 11 26s-5 23-7 30" fill="none" stroke="#b9c2cc" stroke-width="1"/><path d="M27 40c-2-3 2-5 3-2 1-3 5-1 3 2l-3 3z" fill="#222"/><path d="M21 58l3 10M39 58l-3 10" stroke="#6b4a2b" stroke-width="1.2"/><rect x="23" y="67" width="14" height="10" rx="2" fill="#8a5a2b"/></svg></span>
      <svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 25 Q100 15 200 24 T400 20 V40 H0Z" fill="#3e8f7e"/></svg></div>` : '';
@@ -576,7 +728,7 @@ function memoryStep(st, back){
     <div class="mem">${cards.map((e,i)=>`<div class="mc" data-i="${i}"><div class="b">✦</div><div class="f">${e}</div></div>`).join('')}</div>
     <div class="stat" id="memStat">Ходов: 0</div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
-  if (D.solved) enableNext('gNext');
+  if (D.replay) enableNext('gNext');
   let open=[], moves=0, found=0, busy=false;
   document.querySelectorAll('.mc').forEach(c => c.onclick = () => {
     if (busy || c.classList.contains('flip') || c.classList.contains('ok')) return;
@@ -597,7 +749,7 @@ function orderStep(st, back){
     <div class="ord">${mix.map(i=>`<button class="oi" data-i="${i}"><span class="n"></span><span>${items[i]}</span></button>`).join('')}</div>
     <div class="stat" id="ordStat"></div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
-  if (D.solved) enableNext('gNext');
+  if (D.replay) enableNext('gNext');
   let k = 0;
   document.querySelectorAll('.oi').forEach(b => b.onclick = () => {
     if (b.classList.contains('ok')) return;
@@ -636,7 +788,7 @@ function rainbowStep(st, back){
     <div class="rbtns">${mix.map(i=>`<button class="rb" data-i="${i}" style="background:${RB[i][1]}"><span>${RB[i][0]}</span></button>`).join('')}</div>
     <div class="stat" id="rbStat"></div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
-  if (D.solved) enableNext('gNext');
+  if (D.replay) enableNext('gNext');
   let k=0, wrong=0;
   document.querySelectorAll('.rb').forEach(b => b.onclick = () => {
     if (b.classList.contains('used')) return;
@@ -654,7 +806,7 @@ async function puzzleStep(st, back){
   $('stage').innerHTML = `<div class="card game"><h3>${st.title||'Собери фото'}</h3><div class="sub">${st.text||''}</div>
     <div class="pz" id="pz" style="grid-template-columns:repeat(${n},1fr)"></div><div class="stat" id="pzStat">Ходов: 0</div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
-  if (D.solved && st.skip!==false) setTimeout(()=>enableNext('gNext'), 100);
+  if (D.replay && st.skip!==false) setTimeout(()=>enableNext('gNext'), 100);
   const pz = $('pz'); let sel=null, moves=0;
   const draw = () => { pz.innerHTML = order.map((t,pos)=>{ const x=t%n, y=Math.floor(t/n);
       return `<div class="pt${sel===pos?' sel':''}" data-p="${pos}" style="background-image:url(${url});background-size:${n*100}% ${n*100}%;background-position:${x*100/(n-1)}% ${y*100/(n-1)}%"></div>`; }).join('');
@@ -671,7 +823,7 @@ async function puzzleStep(st, back){
 function choiceStep(st, back){
   let qi = 0;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
-  if (D.solved) enableNext('gNext');
+  if (D.replay) enableNext('gNext');
   const draw = () => {
     const it = st.items[qi];
     $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">Вопрос ${qi+1} из ${st.items.length}</div>
@@ -697,7 +849,7 @@ function liftStep(st, back){
     <div class="alt"><b id="alt">0</b> м</div>
     <div style="text-align:center"><button class="fire" id="fire">🔥</button></div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
-  if (D.solved) setTimeout(()=>enableNext('gNext'), 100);
+  if (D.replay) setTimeout(()=>enableNext('gNext'), 100);
   let h=0, v=0, done=false;
   const sky=$('sky'), bal=$('bal');
   const loop = setInterval(()=>{ if(!document.getElementById('sky')) return clearInterval(loop);
@@ -709,6 +861,154 @@ function liftStep(st, back){
   }, 60);
   $('fire').onclick = () => { if(done) return; v = Math.min(v + 1.1, 3); $('fire').classList.remove('puff'); void $('fire').offsetWidth; $('fire').classList.add('puff'); };
   $('gNext').onclick = () => { clearInterval(loop); next(); };
+}
+
+function ticketStep(st, back){
+  $('stage').innerHTML = `<div class="ticket" id="ticket">
+    <div class="tk-main">
+      <div class="tk-top"><span>BOARDING PASS</span><span>✈ ${st.flight||''}</span></div>
+      <div class="tk-route"><div><small>Откуда</small><b>${st.from||''}</b></div><div class="tk-plane">· · · 🎈 · · ·</div><div style="text-align:right"><small>Куда</small><b>${st.to||'???'}</b></div></div>
+      <div class="tk-grid">
+        <div><small>Пассажир</small><b>${st.passenger||''}</b></div><div><small>Дата</small><b>${st.date||''}</b></div>
+        <div><small>Посадка</small><b>${st.boarding||''}</b></div><div><small>Место</small><b>${st.seat||''}</b></div>
+      </div>
+    </div>
+    <div class="tk-perf"></div>
+    <div class="tk-stub" id="stub"><div class="tk-hold" id="hold"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19" class="ring-bg"/><circle cx="22" cy="22" r="19" class="ring" id="ring"/></svg><span>✂️</span></div>
+      <div>Нажми и держи ножницы,<br>чтобы оторвать корешок</div></div>
+  </div>
+  <div class="verse" id="verse"><p>${st.verse||''}</p><small>${st.ref||''}</small></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let t0=null, raf=null, done=false;
+  const ring=$('ring'), L=2*Math.PI*19; ring.style.strokeDasharray=L; ring.style.strokeDashoffset=L;
+  const tick = () => { if(done||t0===null) return; const p=Math.min(1,(performance.now()-t0)/1100); ring.style.strokeDashoffset = L*(1-p);
+    if (p>=1){ done=true; $('stub').classList.add('torn'); setTimeout(()=>{ $('verse').classList.add('on'); hearts(); enableNext('gNext'); }, 700); return; }
+    raf=requestAnimationFrame(tick); };
+  const start = e => { e.preventDefault(); if(done) return; t0=performance.now(); tick(); };
+  const stop = () => { if(done) return; t0=null; cancelAnimationFrame(raf); ring.style.strokeDashoffset=L; };
+  const h=$('hold'); h.addEventListener('pointerdown',start); h.addEventListener('pointerup',stop); h.addEventListener('pointerleave',stop); h.addEventListener('pointercancel',stop);
+  h.addEventListener('contextmenu', e=>e.preventDefault());
+  $('gNext').onclick = next;
+}
+
+function popcloudsStep(st, back){
+  const items = shuffle(st.items);
+  const letters = st.letters||[];
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="cloudfield" id="cf">${items.map((it,i)=>{ const c=i%3, r=Math.floor(i/3);
+      return `<button class="pc" data-v="${it}" style="left:${8+c*30+((r*13)%9)}%;top:${4+r*24}%;animation-delay:${-(i*0.7)}s"><span class="cl">☁️</span><span class="in">${it||'💨'}</span></button>`; }).join('')}</div>
+    <div class="tray">${letters.map(()=>'<i></i>').join('')}</div>
+    <div class="stat" id="pcStat">Осталось облаков: ${items.length}</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let left = items.length; const found=[];
+  const slots=[...document.querySelectorAll('.tray i')];
+  document.querySelectorAll('.pc').forEach(b => b.onclick = () => {
+    if (b.classList.contains('popped')) return; b.classList.add('popped'); left--;
+    const v=b.dataset.v;
+    if (letters.includes(v) && !found.includes(v)){ found.push(v); slots[found.length-1].textContent=v; slots[found.length-1].classList.add('on'); }
+    $('pcStat').textContent = left ? `Осталось облаков: ${left}` : `Найдены буквы: ${found.join(' · ')}. Что из них складывается? 🤔`;
+    if (!left){ hearts(); enableNext('gNext'); }
+  });
+  $('gNext').onclick = next;
+}
+
+async function findspotStep(st, back){
+  const url = await media(st.photo);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="spot" id="spot"><img src="${url}" alt=""><div class="mark" id="mark"></div></div><div class="stat" id="fsStat"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let miss=0, found=false; const box=$('spot');
+  box.onclick = e => { if(found) return; const r=box.getBoundingClientRect(); const x=(e.clientX-r.left)/r.width*100, y=(e.clientY-r.top)/r.height*100;
+    const dx=x-st.x, dy=(y-st.y)*r.height/r.width;
+    if (Math.hypot(dx,dy) <= st.r){ found=true; const m=$('mark'); m.style.left=st.x+'%'; m.style.top=st.y+'%'; m.classList.add('on');
+      $('fsStat').textContent = st.done||'Нашла! 🎉'; hearts(); enableNext('gNext'); }
+    else { miss++; const p=document.createElement('div'); p.className='miss'; p.style.left=x+'%'; p.style.top=y+'%'; box.appendChild(p); setTimeout(()=>p.remove(),700);
+      $('fsStat').textContent = miss>=3 ? 'Подсказка: посмотри на красную часть шара 👀' : 'Не здесь… ищи ещё 🙂'; }
+  };
+  $('gNext').onclick = next;
+}
+
+function checklistStep(st, back){
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="chk">${st.items.map((t,i)=>`<button class="ck" data-i="${i}"><span class="box"></span><span>${t}</span></button>`).join('')}</div>
+    <div class="stamp" id="stamp">ГОТОВО<br>К ВЗЛЁТУ</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let n=0;
+  document.querySelectorAll('.ck').forEach(b => b.onclick = () => { if(b.classList.contains('on')) return; b.classList.add('on'); n++;
+    if (n===st.items.length){ setTimeout(()=>{ $('stamp').classList.add('on'); hearts(); enableNext('gNext'); }, 300); } });
+  $('gNext').onclick = next;
+}
+
+async function developStep(st, back){
+  const url = await media(st.photo);
+  $('stage').innerHTML = `<div class="game" style="padding-top:6px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="polaroid dev" id="pol"><img id="devimg" src="${url}" alt=""><div class="pcap" id="pcap">&nbsp;</div></div>
+    <div class="devbar"><i id="devbar"></i></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  let p = 0; if (D.replay) setTimeout(()=>enableNext("gNext"),50);
+  const apply = () => { const img=$('devimg'); img.style.filter = `blur(${(1-p)*14}px) grayscale(${1-p}) brightness(${1+(1-p)*1.2}) sepia(${(1-p)*.6})`; $('devbar').style.width=(p*100)+'%';
+    if (p>=1){ $('pcap').textContent = st.caption||''; $('pcap').classList.add('on'); enableNext('gNext'); } };
+  apply();
+  $('pol').onclick = () => { if(p>=1) return; p=Math.min(1,p+0.1); const el=$('pol'); el.classList.remove('shk'); void el.offsetWidth; el.classList.add('shk'); apply(); if(p>=1) hearts(); };
+  $('gNext').onclick = next;
+}
+
+async function polaroidsStep(st, back){
+  const urls = await Promise.all(st.items.map(it=>media(it.photo)));
+  $('stage').innerHTML = `<div class="game" style="padding-top:6px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="pstack" id="pstack">${st.items.map((it,i)=>`<div class="polaroid pst" style="--r:${[-6,5,-2,7,-4][i%5]}deg;z-index:${st.items.length-i}"><img src="${urls[i]}" alt=""><div class="pcap on">${it.cap||''}</div></div>`).join('')}</div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const cards=[...document.querySelectorAll('.pst')]; let k=0;
+  $('pstack').onclick = () => {
+    if (k < cards.length){ const c=cards[k]; c.classList.add(k%2?'flyL':'flyR'); k++;
+      if (k===cards.length) setTimeout(()=>{ cards.forEach((c,i)=>{ c.classList.remove('flyL','flyR'); c.classList.add('fan'); c.style.setProperty('--fx',(i-(cards.length-1)/2)*70+'px'); c.style.setProperty('--fr',(i-(cards.length-1)/2)*9+'deg'); c.style.zIndex=i; }); enableNext('gNext'); }, 650); }
+  };
+  $('gNext').onclick = next;
+}
+
+function questionsStep(st, back){
+  let qi=0;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) setTimeout(()=>enableNext('gNext'),50);
+  const draw = () => {
+    if (qi>=st.items.length){ $('stage').innerHTML = `<div class="card game" style="text-align:center"><div style="font-size:48px">💌</div><h3>Спасибо, Малыш</h3><div class="sub">Твои ответы уже у меня. Я обязательно их прочитаю 💛</div></div>`; enableNext('gNext'); hearts(); return; }
+    $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${qi===0?(st.text||''):''}Вопрос ${qi+1} из ${st.items.length}</div>
+      <div class="cq">${st.items[qi]}</div><textarea class="ta" id="ta" rows="4" placeholder="Напиши здесь…"></textarea>
+      <div style="text-align:center;margin-top:12px"><button class="btn" id="send">Отправить 💌</button></div><div class="stat" id="qs"></div></div>`;
+    $('gNext').onclick = next;
+    $('send').onclick = async () => { const a=$('ta').value.trim(); if(!a){ $('qs').textContent='Напиши хоть пару слов 🙂'; return; }
+      $('send').disabled=true; const r = await api('note',{day:D.day.day_no, q:st.items[qi], answer:a}).catch(()=>({}));
+      if (!r.ok){ $('send').disabled=false; $('qs').textContent='Не отправилось, попробуй ещё раз'; return; }
+      const env=document.createElement('div'); env.className='envfly'; env.textContent='💌'; document.body.appendChild(env); setTimeout(()=>env.remove(),1200);
+      qi++; setTimeout(draw, 500); };
+  };
+  draw();
+}
+
+function constellationStep(st, back){
+  const pts = [[170,250],[110,190],[85,130],[110,85],[170,115],[230,85],[255,130],[230,190],[170,250]];
+  const order = pts.slice(0,-1);
+  $('stage').innerHTML = `<div class="card game starcard"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <svg viewBox="0 0 340 300" class="stars" id="stars">
+      ${Array.from({length:40},(_,i)=>`<circle cx="${(i*83)%340}" cy="${(i*47)%300}" r="${(i%3)*0.5+0.5}" fill="#fff" opacity=".5" class="tw" style="animation-delay:${-(i%7)*0.4}s"/>`).join('')}
+      <path id="cline" d="" fill="none" stroke="#ffd88a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="cfill" d="${'M'+order.map(p=>p.join(' ')).join(' L')+' Z'}" fill="#ffd88a" opacity="0" style="transition:opacity 1.5s"/>
+      ${order.map((p,i)=>`<g class="st" data-i="${i}"><circle cx="${p[0]}" cy="${p[1]}" r="18" fill="transparent"/><circle cx="${p[0]}" cy="${p[1]}" r="${i===0?7:5}" fill="#fff" class="sdot"/></g>`).join('')}
+    </svg><div class="letterlines" id="ll">${st.lines.map(l=>`<p>${l}</p>`).join('')}</div></div>`;
+  nav(back);
+  let k=0; const path=[]; document.querySelector('.st[data-i="0"]').classList.add('nx');
+  const finish = () => { $('cfill').style.opacity=.25; hearts(); const ps=[...$('ll').querySelectorAll('p')]; ps.forEach((p,i)=>setTimeout(()=>{ p.classList.add('on'); if(i===ps.length-1) nav(finalNav()); }, 900+i*1600)); };
+  document.querySelectorAll('.st').forEach(g => g.onclick = () => { const i=+g.dataset.i; if (i!==k) { g.classList.remove('bad'); void g.getBBox(); g.classList.add('bad'); return; }
+    g.classList.add('lit'); g.classList.remove('nx'); path.push(order[i]); k++; const nx=document.querySelector(`.st[data-i="${k}"]`); if(nx) nx.classList.add('nx');
+    const pts2 = k===order.length ? [...path, order[0]] : path;
+    $('cline').setAttribute('d', 'M'+pts2.map(p=>p.join(' ')).join(' L'));
+    if (k===order.length) finish(); });
+  if (D.replay) { /* allow instant replay */ }
 }
 
 function letterStep(st, back){
