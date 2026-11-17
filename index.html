@@ -157,6 +157,35 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 @keyframes pop{to{transform:scale(1) rotate(0)}}
 .sline .tx{font-family:var(--serif);font-size:22px;line-height:1.35}
 .sline.last .tx{color:var(--gold);font-size:25px}
+/* scenes */
+.scene.rain{background:linear-gradient(180deg,#6f7c95 0%,#a9b4c4 50%,#f1d8a6 100%);animation:clear 9s ease forwards}
+@keyframes clear{to{background-position:0 0;filter:brightness(1.12) saturate(1.2)}}
+.scene .rbow{position:absolute;left:0;bottom:0;width:100%;height:100%}
+@keyframes drawarc{to{stroke-dashoffset:0}}
+.scene .drop{position:absolute;top:-10px;width:2px;height:12px;background:rgba(255,255,255,.7);border-radius:2px;animation:fall .9s linear infinite, stoprain 1s 6s forwards}
+@keyframes fall{to{transform:translateY(170px)}}
+@keyframes stoprain{to{opacity:0}}
+.scene.sky{background:linear-gradient(180deg,#7fb2e5 0%,#bcd8f0 60%,#f6e3c0 100%);animation:none}
+.balloonfly{position:absolute;left:50%;font-size:44px;margin-left:-22px;bottom:-50px;animation:fly2 12s ease-out forwards}
+@keyframes fly2{0%{bottom:-50px}60%{transform:translateX(30px)}100%{bottom:70px;transform:translateX(-10px)}}
+.rbtns{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.rb{height:56px;border-radius:14px;color:#fff;font-size:11px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.5);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;transition:all .3s}
+.rb.used{opacity:.15;transform:scale(.9)}
+.rb.bad{animation:shake .4s}
+.pz{display:grid;gap:3px;border-radius:14px;overflow:hidden;aspect-ratio:3/4;transition:gap .6s}
+.pz.done{gap:0}
+.pt{cursor:pointer;transition:transform .2s, box-shadow .2s}
+.pt.sel{transform:scale(.92);box-shadow:0 0 0 3px var(--gold);border-radius:6px}
+.cq{font-family:var(--serif);font-size:24px;line-height:1.3;text-align:center;margin:0 0 16px}
+.cnote{margin-top:14px;text-align:center;font-size:15px;line-height:1.5;color:var(--gold);min-height:20px;animation:fade .5s}
+.skybox{position:relative;height:340px;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#4f86c6,#9cc4ea 60%,#f3d9a8)}
+.skybox .ground{position:absolute;left:0;right:0;bottom:0;height:8%;background:#3e8f7e}
+.skybox .goal{position:absolute;top:8px;left:0;right:0;text-align:center;font-size:13px;font-weight:700;color:#fff;border-bottom:2px dashed rgba(255,255,255,.7);padding-bottom:6px;margin:0 14px}
+.bal{position:absolute;left:50%;bottom:8%;font-size:56px;margin-left:-28px;transition:bottom .08s linear}
+.alt{text-align:center;margin:12px 0;color:var(--muted)}.alt b{font-family:var(--serif);font-size:40px;color:var(--gold)}
+.fire{width:96px;height:96px;border-radius:50%;font-size:48px;background:radial-gradient(circle,#ffcf6b,#f0743a);box-shadow:0 10px 30px -6px rgba(240,116,58,.8)}
+.fire.puff{animation:puff .25s}
+@keyframes puff{50%{transform:scale(.88)}}
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -466,6 +495,10 @@ async function renderStep(){
   if (st.kind==='order') return orderStep(st, back);
   if (st.kind==='slides') return slidesStep(st, back);
   if (st.kind==='letter') return letterStep(st, back);
+  if (st.kind==='rainbow') return rainbowStep(st, back);
+  if (st.kind==='puzzle') return puzzleStep(st, back);
+  if (st.kind==='choice') return choiceStep(st, back);
+  if (st.kind==='lift') return liftStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -515,7 +548,14 @@ function storyStep(st, back){
      <svg viewBox="0 0 400 90" preserveAspectRatio="none"><path d="M0 50 L60 20 L110 45 L170 8 L230 42 L300 15 L360 40 L400 25 L400 90 L0 90Z" fill="#4a2f55"/>
      <path d="M0 70 L80 48 L150 66 L230 44 L310 64 L400 50 L400 90 L0 90Z" fill="#2c2340"/><rect y="78" width="400" height="12" fill="#1b1730"/>
      <path d="M0 84 H400" stroke="#ffd88a" stroke-width="1.5" stroke-dasharray="10 10" opacity=".6"/></svg>
-     <span class="car">🚗</span></div>` : '';
+     <span class="car">🚗</span></div>`
+   : st.scene==='rain' ? `<div class="scene rain"><span class="cloud" style="top:6px;font-size:40px;animation-duration:26s">☁️</span><span class="cloud" style="top:30px;font-size:34px;animation-duration:20s;animation-delay:-9s">☁️</span>
+     <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" class="rbow">${RB.map((c,i)=>`<path d="M ${200-(170-i*9)} 150 A ${170-i*9} ${170-i*9} 0 0 1 ${200+(170-i*9)} 150" fill="none" stroke="${c[1]}" stroke-width="9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:drawarc 2.4s ${7+i*0.15}s ease forwards" opacity=".85"/>`).join('')}
+     <path d="M0 125 Q100 115 200 125 T400 122 V150 H0Z" fill="#2f7d6d" opacity=".9"/><path d="M0 135 Q100 128 200 136 T400 133 V150 H0Z" fill="#23604f"/></svg>
+     ${Array.from({length:22},(_,i)=>`<i class="drop" style="left:${(i*47)%100}%;animation-delay:${-(i*0.23)}s"></i>`).join('')}</div>`
+   : st.scene==='sky' ? `<div class="scene sky"><span class="cloud" style="top:10px;animation-duration:16s">☁️</span><span class="cloud" style="top:60px;animation-duration:22s;animation-delay:-8s">☁️</span><span class="cloud" style="top:100px;animation-duration:18s;animation-delay:-3s">☁️</span>
+     <span class="balloonfly"><svg viewBox="0 0 60 80" width="1em" height="1.33em" style="display:block"><path d="M30 2C14 2 4 14 4 28c0 13 10 22 16 30h20c6-8 16-17 16-30C56 14 46 2 30 2z" fill="#e9edf2"/><path d="M5 34c3 10 11 17 15 24h20c4-7 12-14 15-24z" fill="#d9393e"/><path d="M30 2c-7 0-11 12-11 26s5 23 7 30M30 2c7 0 11 12 11 26s-5 23-7 30" fill="none" stroke="#b9c2cc" stroke-width="1"/><path d="M27 40c-2-3 2-5 3-2 1-3 5-1 3 2l-3 3z" fill="#222"/><path d="M21 58l3 10M39 58l-3 10" stroke="#6b4a2b" stroke-width="1.2"/><rect x="23" y="67" width="14" height="10" rx="2" fill="#8a5a2b"/></svg></span>
+     <svg viewBox="0 0 400 40" preserveAspectRatio="none"><path d="M0 25 Q100 15 200 24 T400 20 V40 H0Z" fill="#3e8f7e"/></svg></div>` : '';
   stage.innerHTML = `<div class="card" id="story">${scene}<div class="story2">${lines.map((l,i)=>`<div class="sline ${i===lines.length-1?'last':''}"><span class="em">${l.e||'✨'}</span><span class="tx">${l.t}</span></div>`).join('')}
     <div class="tapnote" id="tapnote">нажми, чтобы читать дальше</div></div></div>`;
   const ps = [...stage.querySelectorAll('.sline')]; let k = 0;
@@ -585,6 +625,90 @@ async function slidesStep(st, back){
   $('slides').onclick = e => { const r=e.currentTarget.getBoundingClientRect(); go(cur + (e.clientX-r.left > r.width/3 ? 1 : -1)); };
   go(0);
   $('gNext').onclick = () => { clearTimeout(timer); next(); };
+}
+
+const RB = [['Красный','#e53935'],['Оранжевый','#fb8c00'],['Жёлтый','#fdd835'],['Зелёный','#43a047'],['Голубой','#4fc3f7'],['Синий','#3949ab'],['Фиолетовый','#8e24aa']];
+function rainbowStep(st, back){
+  const mix = shuffle(RB.map((c,i)=>i));
+  const arcs = RB.map((c,i)=>{ const r = 150 - i*12; return `<path id="arc${i}" d="M ${170-r} 170 A ${r} ${r} 0 0 1 ${170+r} 170" fill="none" stroke="${c[1]}" stroke-width="12" stroke-linecap="butt" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="transition:stroke-dashoffset 1s ease"/>`; }).join('');
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||'Собери радугу'}</h3><div class="sub">${st.text||''}</div>
+    <svg viewBox="0 0 340 180" style="width:100%;display:block">${arcs}<text x="170" y="165" text-anchor="middle" font-size="28">☁️</text></svg>
+    <div class="rbtns">${mix.map(i=>`<button class="rb" data-i="${i}" style="background:${RB[i][1]}"><span>${RB[i][0]}</span></button>`).join('')}</div>
+    <div class="stat" id="rbStat"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.solved) enableNext('gNext');
+  let k=0, wrong=0;
+  document.querySelectorAll('.rb').forEach(b => b.onclick = () => {
+    if (b.classList.contains('used')) return;
+    if (+b.dataset.i === k){ b.classList.add('used'); document.getElementById('arc'+k).style.strokeDashoffset = 0; k++;
+      if (k===RB.length){ $('rbStat').textContent = 'Какая красота! Прямо как в тот день 🌈'; hearts(); enableNext('gNext'); } }
+    else { wrong++; b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad');
+      $('rbStat').textContent = wrong>=2 && st.hint ? st.hint : 'Не тот цвет — попробуй другой 🙂'; }
+  });
+  $('gNext').onclick = next;
+}
+
+async function puzzleStep(st, back){
+  const n = st.size||3, url = await media(st.photo);
+  const order = (()=>{ let o; do { o = shuffle([...Array(n*n).keys()]); } while (o.every((v,i)=>v===i)); return o; })();
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||'Собери фото'}</h3><div class="sub">${st.text||''}</div>
+    <div class="pz" id="pz" style="grid-template-columns:repeat(${n},1fr)"></div><div class="stat" id="pzStat">Ходов: 0</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.solved && st.skip!==false) setTimeout(()=>enableNext('gNext'), 100);
+  const pz = $('pz'); let sel=null, moves=0;
+  const draw = () => { pz.innerHTML = order.map((t,pos)=>{ const x=t%n, y=Math.floor(t/n);
+      return `<div class="pt${sel===pos?' sel':''}" data-p="${pos}" style="background-image:url(${url});background-size:${n*100}% ${n*100}%;background-position:${x*100/(n-1)}% ${y*100/(n-1)}%"></div>`; }).join('');
+    pz.querySelectorAll('.pt').forEach(el => el.onclick = () => { const p=+el.dataset.p;
+      if (sel===null){ sel=p; draw(); return; }
+      if (sel!==p){ [order[sel],order[p]]=[order[p],order[sel]]; moves++; $('pzStat').textContent='Ходов: '+moves; }
+      sel=null; draw();
+      if (order.every((v,i)=>v===i)){ pz.classList.add('done'); $('pzStat').textContent = `Собрано за ${moves} ходов! 🎉`; hearts(); enableNext('gNext'); pz.querySelectorAll('.pt').forEach(x=>x.onclick=null); }
+    }); };
+  draw();
+  $('gNext').onclick = next;
+}
+
+function choiceStep(st, back){
+  let qi = 0;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.solved) enableNext('gNext');
+  const draw = () => {
+    const it = st.items[qi];
+    $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">Вопрос ${qi+1} из ${st.items.length}</div>
+      <div class="cq">${it.q}</div><div class="ord">${it.options.map((o,i)=>`<button class="oi" data-i="${i}"><span class="n">${'АБВГД'[i]}</span><span>${o}</span></button>`).join('')}</div>
+      <div class="cnote" id="cnote"></div></div>`;
+    $('gNext').onclick = next;
+    document.querySelectorAll('.oi').forEach(b => b.onclick = () => {
+      if (+b.dataset.i === it.a){ b.classList.add('ok'); document.querySelectorAll('.oi').forEach(x=>x.onclick=null);
+        $('cnote').innerHTML = (it.note||'Верно!') + (qi < st.items.length-1 ? `<div style="margin-top:12px"><button class="btn small" id="cq_next">Следующий вопрос →</button></div>` : '');
+        if (qi < st.items.length-1) $('cq_next').onclick = () => { qi++; draw(); };
+        else { hearts(); enableNext('gNext'); }
+      } else { b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); }
+    });
+  };
+  draw();
+}
+
+function liftStep(st, back){
+  const target = st.target||100;
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="skybox" id="sky"><span class="cloud" style="top:20%;animation-duration:14s">☁️</span><span class="cloud" style="top:45%;animation-duration:19s;animation-delay:-7s">☁️</span>
+      <div class="goal">🏁 ${target} м</div><div class="bal" id="bal"><svg viewBox="0 0 60 80" width="1em" height="1.33em" style="display:block"><path d="M30 2C14 2 4 14 4 28c0 13 10 22 16 30h20c6-8 16-17 16-30C56 14 46 2 30 2z" fill="#e9edf2"/><path d="M5 34c3 10 11 17 15 24h20c4-7 12-14 15-24z" fill="#d9393e"/><path d="M30 2c-7 0-11 12-11 26s5 23 7 30M30 2c7 0 11 12 11 26s-5 23-7 30" fill="none" stroke="#b9c2cc" stroke-width="1"/><path d="M27 40c-2-3 2-5 3-2 1-3 5-1 3 2l-3 3z" fill="#222"/><path d="M21 58l3 10M39 58l-3 10" stroke="#6b4a2b" stroke-width="1.2"/><rect x="23" y="67" width="14" height="10" rx="2" fill="#8a5a2b"/></svg></div><div class="ground"></div></div>
+    <div class="alt"><b id="alt">0</b> м</div>
+    <div style="text-align:center"><button class="fire" id="fire">🔥</button></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.solved) setTimeout(()=>enableNext('gNext'), 100);
+  let h=0, v=0, done=false;
+  const sky=$('sky'), bal=$('bal');
+  const loop = setInterval(()=>{ if(!document.getElementById('sky')) return clearInterval(loop);
+    if (done) return;
+    v = Math.max(v - 0.12, -1.2); h = Math.max(0, h + v*0.25);
+    if (h >= target){ h = target; done = true; $('alt').textContent = target; bal.style.bottom = '78%';
+      $('fire').disabled = true; $('fire').textContent = '🎉'; hearts(); enableNext('gNext'); clearInterval(loop); return; }
+    $('alt').textContent = Math.round(h); bal.style.bottom = (8 + h/target*70) + '%';
+  }, 60);
+  $('fire').onclick = () => { if(done) return; v = Math.min(v + 1.1, 3); $('fire').classList.remove('puff'); void $('fire').offsetWidth; $('fire').classList.add('puff'); };
+  $('gNext').onclick = () => { clearInterval(loop); next(); };
 }
 
 function letterStep(st, back){
