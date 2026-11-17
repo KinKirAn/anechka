@@ -8,7 +8,7 @@
 <title>Тропа к твоему дню</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;700&family=Neucha&family=Marck+Script&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;700&family=Neucha&family=Marck+Script&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=PT+Mono&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --night:#1b1730; --dusk:#3b2c4f; --plum:#6b3f5f; --rose:#e48a7c; --amber:#f4b860; --gold:#ffd88a;
@@ -403,6 +403,113 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .signtx{font-family:'Marck Script',cursive;font-size:34px;fill:#2b2b2b}
 .sheet2.signed .sign{opacity:1}.sheet2.signed .drawme2{animation:drawarc 1.4s .4s ease forwards}
 
+/* ===== THEME: GALA (day 5) ===== */
+#day.theme-gala{--gold:#d4af37;--gold2:#f3dd8a;background:radial-gradient(ellipse at 50% -10%,#2a2418 0%,#0d0c0a 55%,#070707 100%);color:#f4eee0}
+#day.theme-gala .dayhead{background:rgba(10,9,8,.94);border-bottom:1px solid rgba(212,175,55,.35)}
+#day.theme-gala .dayhead small{color:var(--gold);letter-spacing:3px}
+#day.theme-gala .dayhead h3,#day.theme-gala h3,#day.theme-gala .game h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:.5px}
+#day.theme-gala .game h3{font-size:32px;text-align:center}
+#day.theme-gala .iconbtn{background:transparent;border:1px solid rgba(212,175,55,.5);color:var(--gold)}
+#day.theme-gala .dots i{background:rgba(212,175,55,.2);width:5px;height:5px}#day.theme-gala .dots i.on{background:var(--gold)}
+#day.theme-gala .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid rgba(212,175,55,.3);border-radius:4px}
+#day.theme-gala .sub,#day.theme-gala .stat,#day.theme-gala .hinttext,#day.theme-gala .tapnote,#day.theme-gala .q .note{color:#a89f8a}
+#day.theme-gala .sline .tx{font-family:'Playfair Display',Georgia,serif;font-size:21px;font-style:italic}
+#day.theme-gala .sline.last .tx{color:var(--gold2)}
+#day.theme-gala .navbar{background:linear-gradient(0deg,#070707 65%,rgba(7,7,7,0))}
+#day.theme-gala .btn{background:linear-gradient(135deg,#f3dd8a,#d4af37 50%,#a88424);color:#1a1408;border-radius:2px;letter-spacing:2px;text-transform:uppercase;font-size:13px;box-shadow:0 6px 20px -8px rgba(212,175,55,.6)}
+#day.theme-gala .btn.ghost{background:transparent;color:var(--gold);border:1px solid rgba(212,175,55,.6);box-shadow:none}
+#day.theme-gala .btn.small{font-size:11px}
+#day.theme-gala .oi{border-radius:2px;border-color:rgba(212,175,55,.25);background:rgba(255,255,255,.03)}
+#day.theme-gala .oi.ok{background:rgba(212,175,55,.15);border-color:var(--gold)}#day.theme-gala .oi.ok .n{background:var(--gold);color:#1a1408}
+#day.theme-gala .cq{font-family:'Playfair Display',Georgia,serif}
+#day.theme-gala .cnote{color:var(--gold2)}
+#day.theme-gala .ans input{border-radius:2px;border-color:rgba(212,175,55,.4);background:rgba(0,0,0,.4)}
+#day.theme-gala .q h3{font-size:24px;line-height:1.3}
+#day.theme-gala .hint{background:rgba(212,175,55,.08);border-left-color:var(--gold)}
+#day.theme-gala .tile{border-radius:2px;background:#f4eee0;box-shadow:0 3px 0 #a88424;font-family:'Playfair Display',serif}
+#day.theme-gala .slot{border-radius:2px;border-color:rgba(212,175,55,.5);color:var(--gold2)}
+#day.theme-gala .reward h3{color:var(--gold2);font-family:'Playfair Display',serif}
+#day.theme-gala .reward p{font-family:'Playfair Display',serif;font-style:italic;font-size:20px}
+#day.theme-gala .reward img{border-radius:2px;outline:1px solid rgba(212,175,55,.5);outline-offset:6px}
+#day.theme-gala .spinner{border-color:rgba(212,175,55,.15);border-top-color:var(--gold)}
+/* city scene */
+.scene.city{background:linear-gradient(180deg,#0b0f24 0%,#1b1840 55%,#3a2440 100%);animation:none}
+.scene.city .bld{position:absolute;bottom:0;background:#07070c}
+.scene.city .bld i{position:absolute;width:3px;height:4px;background:#ffd88a;opacity:.8;animation:tw 3s ease-in-out infinite}
+.scene.city .tower{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:90px;height:140px}
+.scene.city .beacon{position:absolute;left:50%;top:6px;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 12px 4px rgba(255,77,77,.7);animation:tw 1.2s ease-in-out infinite}
+.scene.city .ring{position:absolute;left:50%;top:44px;width:40px;height:10px;margin-left:-20px;border-radius:50%;border:2px solid #ffd88a;box-shadow:0 0 14px rgba(255,216,138,.6);animation:spinring 6s linear infinite}
+@keyframes spinring{to{transform:rotateY(360deg)}}
+/* menu */
+.menucard{background:#f6f1e6;color:#1d1a14;padding:26px 20px 22px;border-radius:2px;outline:1px solid var(--gold,#d4af37);outline-offset:-10px;box-shadow:0 20px 50px -20px rgba(0,0,0,.8)}
+.mc-h{text-align:center}.mc-h small{color:#a88424;letter-spacing:4px}
+.mc-h h3{font-family:'Playfair Display',serif;font-size:40px;font-weight:600;font-style:italic;margin:4px 0}
+.mc-sub{font-family:'Playfair Display',serif;font-size:17px;color:#6b5f45}
+.mc-text{text-align:center;color:#8a7d60;font-size:13px;margin:10px 0 14px}
+.mlist{display:flex;flex-direction:column}
+.mi{display:flex;gap:12px;align-items:center;background:none;text-align:left;padding:10px 4px;border-bottom:1px dotted rgba(0,0,0,.2);color:#1d1a14}
+.mi .mbox{width:20px;height:20px;border:1.5px solid #a88424;flex:none;transition:all .2s;display:grid;place-items:center}
+.mi.on .mbox{background:#a88424}.mi.on .mbox::after{content:"✓";color:#fff;font-size:13px}
+.mi .mt b{display:block;font-family:'Playfair Display',serif;font-size:17px;font-weight:600}
+.mi .mt small{color:#8a7d60;font-size:12px;font-style:italic}
+.mi.bad{animation:shake .4s;background:rgba(200,55,45,.08)}
+.menucard .stat{color:#8a5a20}
+.menucard .btn{background:#1d1a14;color:#f3dd8a;border-radius:2px;letter-spacing:2px;text-transform:uppercase;font-size:13px;box-shadow:none}
+.served{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.plate{border-radius:50%;overflow:hidden;aspect-ratio:1;border:6px solid #fff;box-shadow:0 10px 20px -8px rgba(0,0,0,.5);transform:scale(0) rotate(-30deg);animation:serve .7s cubic-bezier(.3,1.4,.5,1) forwards}
+.plate img{width:100%;height:100%;object-fit:cover}
+@keyframes serve{to{transform:none}}
+/* elevator */
+.lift{border:1px solid rgba(212,175,55,.5);padding:12px;border-radius:4px;background:#14110c}
+.lift-ind{text-align:center;font-family:'Courier New',monospace;font-size:30px;color:#ff9a3d;text-shadow:0 0 10px rgba(255,154,61,.6);background:#000;padding:6px;margin-bottom:10px;letter-spacing:2px}
+.lift-ind i{font-style:normal;font-size:22px}
+.shaft{position:relative;height:330px;overflow:hidden;background:#000}
+.shaft .inside{position:absolute;inset:0;background-size:cover;background-position:center}
+.shaft .city{position:absolute;left:0;right:0;top:-1000px;height:1400px;background:linear-gradient(180deg,#0b0f24,#1b1840 70%,#3a2440);transition:transform .1s linear;z-index:1}
+.shaft .city i{position:absolute;width:3px;height:3px;background:#ffd88a;border-radius:50%;animation:tw 2s infinite}
+.door{position:absolute;top:0;bottom:0;width:50%;z-index:2;background:linear-gradient(90deg,#b9b3a3,#e9e3d3 50%,#b9b3a3);transition:transform 1.4s cubic-bezier(.6,0,.3,1);box-shadow:inset 0 0 0 1px rgba(0,0,0,.3)}
+.door.l{left:0;border-right:1px solid #8a8473}.door.r{right:0;border-left:1px solid #8a8473}
+.door.l.open{transform:translateX(-100%)}.door.r.open{transform:translateX(100%)}
+.lift-panel{text-align:center;margin-top:12px}
+.liftbtn{width:76px;height:76px;border-radius:50%;background:radial-gradient(circle,#2a2418,#0d0c0a);border:2px solid var(--gold,#d4af37);color:#d4af37;font-size:28px;touch-action:none;user-select:none;-webkit-user-select:none;transition:all .15s}
+.liftbtn.on{box-shadow:0 0 24px 4px rgba(255,154,61,.6);color:#ff9a3d;border-color:#ff9a3d;transform:scale(.94)}
+/* spin */
+.spinview{position:relative;border-radius:2px;overflow:hidden;aspect-ratio:4/3;outline:1px solid rgba(212,175,55,.5);outline-offset:4px;margin:4px 6px 0}
+.spinview img{width:100%;height:100%;object-fit:cover;transition:opacity .25s}
+.spcap{position:absolute;left:0;right:0;bottom:0;padding:40px 14px 12px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);font-family:'Playfair Display',serif;font-style:italic;font-size:18px}
+.spinwrap{position:relative;height:300px;display:grid;place-items:center;margin-top:10px}
+.pointer{position:absolute;top:0;left:50%;transform:translateX(-50%);color:#d4af37;font-size:18px;z-index:3}
+.table{position:relative;width:270px;height:270px;border-radius:50%;background:radial-gradient(circle,#f6f1e6 0 38%,#e8e0cc 39% 40%,#1a1610 41% 100%);border:2px solid rgba(212,175,55,.6);touch-action:none;cursor:grab;box-shadow:0 0 40px rgba(212,175,55,.15)}
+.seat{position:absolute;left:50%;top:50%;width:62px;height:62px;margin:-31px 0 0 -31px;border-radius:50%;overflow:hidden;border:2px solid #d4af37;pointer-events:none}
+.seat img{width:100%;height:100%;object-fit:cover}
+.tcenter{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;pointer-events:none}
+/* hands */
+.handzone{position:relative;height:150px;border-top:1px solid rgba(212,175,55,.3);border-bottom:1px solid rgba(212,175,55,.3);margin:10px 0;touch-action:none;overflow:hidden}
+.hand{position:absolute;top:50%;margin-top:-36px;font-size:64px;line-height:1;user-select:none;-webkit-user-select:none}
+.hand.me{left:8%}.hand.you{right:8%;cursor:grab;transition:transform .15s}
+.handzone.joined .hand{animation:pulseh 1s ease-in-out 2}
+@keyframes pulseh{50%{transform:scale(1.15)}}
+.handzone.joined .hand.you{animation:none}
+.handphotos{display:grid;grid-template-columns:1fr 1fr;gap:8px;opacity:0;transform:translateY(16px);transition:all .9s}
+.handphotos.on{opacity:1;transform:none}
+.handphotos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px;outline:1px solid rgba(212,175,55,.5);outline-offset:3px}
+/* receipt */
+.printer{position:relative;padding-top:18px;overflow:hidden}
+.printer .slot{height:16px;border-radius:8px;background:#000;border:1px solid rgba(212,175,55,.5);margin:0 10px}
+.rcpt{position:relative;margin:-8px 26px 0;background:#fbfaf6;color:#1d1d1d;font-family:'PT Mono','Courier New',monospace;font-size:14px;padding:18px 16px 26px;transform:translateY(-100%);transition:transform 3.6s steps(28,end);box-shadow:0 10px 30px -10px rgba(0,0,0,.8)}
+.rcpt.print{transform:none}
+.r-c{text-align:center}.r-s{font-size:11px;color:#666;margin-top:4px}
+.r-hr{border-top:1px dashed #888;margin:12px 0}
+.r-row{display:flex;gap:6px;align-items:baseline;margin:7px 0}
+.r-row i{flex:1;border-bottom:1px dotted #999;transform:translateY(-3px)}
+.r-row span:last-child{font-weight:700;white-space:nowrap}
+.r-total{display:flex;justify-content:space-between;font-weight:700;font-size:16px;gap:10px}
+.r-total span:last-child{color:#b3261e}
+.r-stamp{margin:16px auto 6px;width:max-content;border:3px double #b3261e;color:#b3261e;padding:6px 12px;font-weight:700;letter-spacing:2px;transform:rotate(-8deg) scale(2.4);opacity:0;transition:all .35s cubic-bezier(.3,1.6,.5,1)}
+.rcpt.stamped .r-stamp{opacity:.9;transform:rotate(-8deg) scale(1)}
+.r-note{font-family:'Playfair Display',serif;font-style:italic;font-size:17px;line-height:1.35;text-align:center;margin:14px 4px 10px;color:#3b3020}
+.r-zig{position:absolute;left:0;right:0;bottom:-8px;height:10px;background:linear-gradient(-45deg,transparent 6px,#fbfaf6 0) 0 0/12px 10px,linear-gradient(45deg,transparent 6px,#fbfaf6 0) 0 0/12px 10px}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -733,6 +840,11 @@ async function renderStep(){
   if (st.kind==='compare') return compareStep(st, back);
   if (st.kind==='words') return wordsStep(st, back);
   if (st.kind==='sketchletter') return sketchletterStep(st, back);
+  if (st.kind==='menu') return menuStep(st, back);
+  if (st.kind==='elevator') return elevatorStep(st, back);
+  if (st.kind==='spin') return spinStep(st, back);
+  if (st.kind==='hands') return handsStep(st, back);
+  if (st.kind==='receipt') return receiptStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -787,6 +899,7 @@ function storyStep(st, back){
      <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" class="rbow">${RB.map((c,i)=>`<path d="M ${200-(170-i*9)} 150 A ${170-i*9} ${170-i*9} 0 0 1 ${200+(170-i*9)} 150" fill="none" stroke="${c[1]}" stroke-width="9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:drawarc 2.4s ${7+i*0.15}s ease forwards" opacity=".85"/>`).join('')}
      <path d="M0 125 Q100 115 200 125 T400 122 V150 H0Z" fill="#2f7d6d" opacity=".9"/><path d="M0 135 Q100 128 200 136 T400 133 V150 H0Z" fill="#23604f"/></svg>
      ${Array.from({length:22},(_,i)=>`<i class="drop" style="left:${(i*47)%100}%;animation-delay:${-(i*0.23)}s"></i>`).join('')}</div>`
+   : st.scene==='city' ? `<div class="scene city"><i class="star" style="left:0%;top:0%;animation-delay:0.0s"></i><i class="star" style="left:41%;top:19%;animation-delay:-0.5s"></i><i class="star" style="left:82%;top:38%;animation-delay:-1.0s"></i><i class="star" style="left:23%;top:7%;animation-delay:-1.5s"></i><i class="star" style="left:64%;top:26%;animation-delay:-2.0s"></i><i class="star" style="left:5%;top:45%;animation-delay:0.0s"></i><i class="star" style="left:46%;top:14%;animation-delay:-0.5s"></i><i class="star" style="left:87%;top:33%;animation-delay:-1.0s"></i><i class="star" style="left:28%;top:2%;animation-delay:-1.5s"></i><i class="star" style="left:69%;top:21%;animation-delay:-2.0s"></i><i class="star" style="left:10%;top:40%;animation-delay:0.0s"></i><i class="star" style="left:51%;top:9%;animation-delay:-0.5s"></i><i class="star" style="left:92%;top:28%;animation-delay:-1.0s"></i><i class="star" style="left:33%;top:47%;animation-delay:-1.5s"></i><i class="star" style="left:74%;top:16%;animation-delay:-2.0s"></i><i class="star" style="left:15%;top:35%;animation-delay:0.0s"></i><i class="star" style="left:56%;top:4%;animation-delay:-0.5s"></i><i class="star" style="left:97%;top:23%;animation-delay:-1.0s"></i><div class="bld" style="left:0%;width:14%;height:48px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:17px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:34px;animation-delay:-1.2s"></i></div><div class="bld" style="left:12%;width:10%;height:70px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:55px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:12px;animation-delay:-1.2s"></i></div><div class="bld" style="left:21%;width:13%;height:40px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:8px;animation-delay:-0.6s"></i><i style="left:15%;top:25px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:12px;animation-delay:-1.2s"></i></div><div class="bld" style="left:64%;width:12%;height:62px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:55px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:20px;animation-delay:-1.2s"></i></div><div class="bld" style="left:75%;width:10%;height:36px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:12px;animation-delay:-0.6s"></i><i style="left:15%;top:29px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:20px;animation-delay:-1.2s"></i></div><div class="bld" style="left:84%;width:16%;height:58px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:7px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:24px;animation-delay:-1.2s"></i></div><div class="tower"><svg viewBox="0 0 90 140" width="90" height="140"><path d="M45 4 V40 M38 50 L45 40 52 50 M30 140 L42 56 H48 L60 140 M36 100 H54 M33 120 H57" stroke="#07070c" stroke-width="5" fill="none"/><ellipse cx="45" cy="52" rx="16" ry="6" fill="#07070c"/></svg><div class="beacon"></div><div class="ring"></div></div></div>`
    : st.scene==='broadway' ? `<div class="scene broadway"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice"><path class="ln" pathLength="1" style="animation-delay:0s" d="M0 28 H400 M0 52 H400 M0 76 H400 M0 100 H400"/><path class="ln" pathLength="1" style="animation-delay:0.6s" d="M30 150 V40 M30 40 q0 -12 14 -12 M44 28 v6"/><path class="ln" pathLength="1" style="animation-delay:0.8s" d="M370 150 V40 M370 40 q0 -12 -14 -12 M356 28 v6"/><circle class="glow" cx="44" cy="38" r="6" style="animation-delay:2.2s"/><circle class="glow" cx="356" cy="38" r="6" style="animation-delay:2.4s"/><path class="ln" pathLength="1" style="animation-delay:1.0s" d="M150 150 L190 60 L230 150 M190 60 V40 M170 112 H212"/><path class="ln" pathLength="1" style="animation-delay:1.4s" d="M168 62 h46 v62 h-46 z"/><path class="ln" pathLength="1" style="animation-delay:1.9s" d="M182 80 c0-10 18-10 18 0 c0 12-9 20-9 24 M184 78 c2 -6 14 -6 16 0 M186 88 h4 M194 88 h4"/><path class="ln" pathLength="1" style="animation-delay:1.6s" d="M262 150 v-30 a14 14 0 0 1 28 0 v30 M268 108 a8 8 0 1 0 16 0 a8 8 0 1 0 -16 0"/><path class="ln" pathLength="1" style="animation-delay:1.2s" d="M90 150 v-40 h22 v40 M86 110 h30"/><path class="rs" style="animation-delay:2.6s" d="M70 20 l4 9 10 1 -8 6 3 10 -9 -6 -9 6 3 -10 -8 -6 10 -1z"/><path class="rs" style="animation-delay:2.8s" d="M320 58 l3.5 8 9 1 -7 5.5 2.5 9 -8 -5 -8 5 2.5 -9 -7 -5.5 9 -1z"/><path class="rs" style="animation-delay:3s" d="M240 14 l3 7 8 .8 -6 4.8 2 7.6 -7 -4.2 -7 4.2 2 -7.6 -6 -4.8 8 -.8z"/></svg></div>`
    : st.scene==='sunday' ? `<div class="scene sunday"><div class="rays"></div>
      <span class="bird" style="top:22px;animation-duration:11s">🕊️</span><span class="bird" style="top:44px;animation-duration:15s;animation-delay:-6s;font-size:16px">🕊️</span>
@@ -1194,6 +1307,109 @@ function sketchletterStep(st, back){
     const t=st.lines[li]; ps[li].textContent = t.slice(0, ++ci);
     if (ci>=t.length){ li++; ci=0; setTimeout(type, 450); } else setTimeout(type, 38); };
   setTimeout(type, 400);
+}
+
+async function menuStep(st, back){
+  $('stage').innerHTML = `<div class="menucard"><div class="mc-h"><small>— ✦ —</small><h3>${st.title||'Меню'}</h3><div class="mc-sub">${st.sub||''}</div></div>
+    <div class="mc-text">${st.text||''}</div>
+    <div class="mlist">${st.items.map((it,i)=>`<button class="mi" data-i="${i}"><span class="mbox"></span><span class="mt"><b>${it.t}</b><small>${it.d||''}</small></span></button>`).join('')}</div>
+    <div style="text-align:center;margin-top:16px"><button class="btn" id="serve">Подать 🛎</button></div>
+    <div class="stat" id="mStat"></div><div class="served" id="served"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let tries=0;
+  document.querySelectorAll('.mi').forEach(b => b.onclick = () => b.classList.toggle('on'));
+  $('serve').onclick = async () => {
+    const sel=[...document.querySelectorAll('.mi')].map(b=>b.classList.contains('on'));
+    const wrong=st.items.map((it,i)=>sel[i]!==!!it.ok);
+    if (wrong.some(Boolean)){ tries++;
+      document.querySelectorAll('.mi').forEach((b,i)=>{ if(wrong[i] && sel[i]){ b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); } });
+      const missing = st.items.filter((it,i)=>it.ok && !sel[i]).length, extra = st.items.filter((it,i)=>!it.ok && sel[i]).length;
+      $('mStat').textContent = (extra? `Что-то лишнее (${extra}). `:'') + (missing? `Не хватает блюд: ${missing}.`:'') + (tries>=2?' Подсказка: стейков было два 🥩':'');
+      return; }
+    $('serve').disabled=true; $('mStat').textContent = st.done||'Верно!'; hearts();
+    const urls = await Promise.all((st.photos||[]).map(p=>media(p)));
+    $('served').innerHTML = urls.map((u,i)=>`<div class="plate" style="animation-delay:${i*0.35}s"><img src="${u}" alt=""></div>`).join('');
+    enableNext('gNext');
+  };
+  $('gNext').onclick = next;
+}
+
+async function elevatorStep(st, back){
+  const url = st.photo ? await media(st.photo) : '';
+  const target = st.target||110;
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="lift"><div class="lift-ind"><span id="lfH">0</span> м <i id="lfArr">▲</i></div>
+      <div class="shaft" id="shaft"><div class="inside" style="background-image:url(${url})"></div>
+        <div class="city" id="city"></div>
+        <div class="door l" id="dl"></div><div class="door r" id="dr"></div></div>
+      <div class="lift-panel"><button class="liftbtn" id="lbtn">▲</button></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let h=0, hold=false, done=false, last=0;
+  const city=$('city');
+  city.innerHTML = Array.from({length:60},(_,i)=>`<i style="left:${(i*37)%100}%;top:${(i*71)%400}%;animation-delay:${-(i%5)*.4}s"></i>`).join('');
+  const loop = t => { if(!document.getElementById('shaft')) return; const dt = last? (t-last)/1000 : 0; last=t;
+    if (hold && !done){ h = Math.min(target, h + dt*24); $('lfH').textContent=Math.round(h); city.style.transform=`translateY(${h*3}px)`;
+      if (h>=target){ done=true; $('lfArr').textContent='🔔'; setTimeout(()=>{ city.style.transition='opacity .6s'; city.style.opacity=0; $('dl').classList.add('open'); $('dr').classList.add('open'); hearts(); enableNext('gNext'); }, 400); } }
+    requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+  const b=$('lbtn');
+  const on=e=>{ e.preventDefault(); hold=true; b.classList.add('on'); }, off=()=>{ hold=false; b.classList.remove('on'); };
+  b.addEventListener('pointerdown',on); b.addEventListener('pointerup',off); b.addEventListener('pointerleave',off); b.addEventListener('pointercancel',off);
+  b.addEventListener('contextmenu',e=>e.preventDefault());
+  $('gNext').onclick = next;
+}
+
+async function spinStep(st, back){
+  const urls = await Promise.all(st.items.map(it=>media(it.photo)));
+  const n=st.items.length;
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="spinview"><img id="spImg" src="${urls[0]}" alt=""><div class="spcap" id="spCap">${st.items[0].cap||''}</div></div>
+    <div class="spinwrap"><div class="pointer">▼</div><div class="table" id="tbl">${st.items.map((it,i)=>{ const a=i*360/n; return `<div class="seat" style="transform:rotate(${a}deg) translateY(-118px) rotate(${-a}deg)"><img src="${urls[i]}" alt=""></div>`; }).join('')}<div class="tcenter">🍽</div></div></div>
+    <div class="stat" id="spStat">Повернуть: 0 / 360°</div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const tbl=$('tbl'); let rot=0, total=0, drag=false, lastA=0, cur=0;
+  const ang = e => { const r=tbl.getBoundingClientRect(); return Math.atan2(e.clientY-(r.top+r.height/2), e.clientX-(r.left+r.width/2))*180/Math.PI; };
+  const upd = () => { tbl.style.transform=`rotate(${rot}deg)`; [...tbl.querySelectorAll('.seat')].forEach((s,i)=>{ const a=i*360/n; s.style.transform=`rotate(${a}deg) translateY(-118px) rotate(${-a-rot}deg)`; });
+    const idx = ((Math.round(-rot/(360/n)) % n) + n) % n;
+    if (idx!==cur){ cur=idx; const im=$('spImg'); im.style.opacity=0; setTimeout(()=>{ im.src=urls[idx]; $('spCap').textContent=st.items[idx].cap||''; im.style.opacity=1; },180); }
+    const deg=Math.min(360,Math.round(total)); $('spStat').textContent = deg<360 ? `Повернуть: ${deg} / 360°` : 'Полный круг — как в тот вечер 🤍';
+    if (deg>=360) enableNext('gNext'); };
+  tbl.addEventListener('pointerdown', e=>{ drag=true; lastA=ang(e); tbl.setPointerCapture(e.pointerId); });
+  tbl.addEventListener('pointermove', e=>{ if(!drag) return; let a=ang(e), d=a-lastA; if(d>180) d-=360; if(d<-180) d+=360; rot+=d; total+=Math.abs(d); lastA=a; upd(); });
+  tbl.addEventListener('pointerup', ()=>drag=false);
+  tbl.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
+  $('gNext').onclick = next;
+}
+
+async function handsStep(st, back){
+  const urls = await Promise.all((st.photos||[]).map(p=>media(p)));
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="handzone" id="hz"><div class="hand me">🫱</div><div class="hand you" id="you">🫲</div><div class="glowring" id="gr"></div></div>
+    <div class="handphotos" id="hp">${urls.map(u=>`<img src="${u}" alt="">`).join('')}</div><div class="stat" id="hStat"></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const you=$('you'), hz=$('hz'); let drag=false, sx=0, done=false;
+  you.addEventListener('pointerdown', e=>{ if(done) return; drag=true; sx=e.clientX - (parseFloat(you.dataset.x)||0); you.setPointerCapture(e.pointerId); });
+  you.addEventListener('pointermove', e=>{ if(!drag) return; const x=Math.min(0, e.clientX-sx); you.dataset.x=x; you.style.transform=`translateX(${x}px)`;
+    const w=hz.clientWidth; if (-x > w*0.42){ drag=false; done=true; you.style.transform=`translateX(${-w*0.47}px)`; hz.classList.add('joined');
+      setTimeout(()=>{ $('hp').classList.add('on'); $('hStat').textContent = st.done||'🤍'; hearts(); enableNext('gNext'); }, 500); } });
+  you.addEventListener('pointerup', ()=>{ drag=false; if(!done){ you.style.transform=''; you.dataset.x=0; } });
+  hz.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
+  $('gNext').onclick = next;
+}
+
+function receiptStep(st, back){
+  $('stage').innerHTML = `<div class="printer"><div class="slot"></div><div class="rcpt" id="rc">
+      <div class="r-c"><b>${st.place||''}</b></div><div class="r-c r-s">стол №1 · вид на весь город</div><div class="r-hr"></div>
+      ${st.rows.map(r=>`<div class="r-row"><span>${r[0]}</span><i></i><span>${r[1]}</span></div>`).join('')}
+      <div class="r-hr"></div><div class="r-total"><span>ИТОГО</span><span>${st.total||''}</span></div><div class="r-hr"></div>
+      <div class="r-stamp">${st.stamp||''}</div><div class="r-note">${st.note||''}</div><div class="r-c r-s">СПАСИБО, ЧТО ТЫ СО МНОЙ</div><div class="r-zig"></div></div></div>`;
+  nav(back);
+  setTimeout(()=>$('rc').classList.add('print'), 300);
+  setTimeout(()=>{ if(document.getElementById('rc')){ $('rc').classList.add('stamped'); hearts(); nav(finalNav()); } }, 4300);
 }
 
 function letterStep(st, back){
