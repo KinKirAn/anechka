@@ -708,6 +708,115 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .llwrap.sealed .seal{transform:scale(1)}
 .llwrap.fly{transform:translate(40px,-70vh) rotate(18deg) scale(.5);opacity:0}
 
+/* ===== THEME: AIRPORT (day 8) ===== */
+#day.theme-airport{--yl:#ffcc00;--nv:#12233f;background:linear-gradient(180deg,#0f1d36,#0b1528);color:#eef2f8}
+#day.theme-airport .dayhead{background:var(--yl);color:#111;border-bottom:0}
+#day.theme-airport .dayhead small{color:#3a3000;font-weight:700}
+#day.theme-airport .dayhead h3,#day.theme-airport h3,#day.theme-airport .game h3{font-family:'Manrope',sans-serif;font-weight:800;letter-spacing:-.3px}
+#day.theme-airport .game h3{font-size:28px;text-align:center}
+#day.theme-airport .iconbtn{background:#111;color:var(--yl);border-radius:8px}
+#day.theme-airport .dots i{background:#2a3b5c;border-radius:2px;width:14px;height:4px}#day.theme-airport .dots i.on{background:var(--yl)}
+#day.theme-airport .card{background:#16294a;border:1px solid #24406e;border-radius:14px}
+#day.theme-airport .sub,#day.theme-airport .stat,#day.theme-airport .hinttext,#day.theme-airport .tapnote,#day.theme-airport .q .note{color:#8fa3c4}
+#day.theme-airport .sline .tx{font-family:'Manrope',sans-serif;font-size:18px;line-height:1.5}
+#day.theme-airport .sline.last .tx{color:var(--yl);font-weight:700}
+#day.theme-airport .navbar{background:linear-gradient(0deg,#0b1528 65%,rgba(11,21,40,0))}
+#day.theme-airport .btn{background:var(--yl);color:#111;border-radius:10px;box-shadow:none;font-weight:800}
+#day.theme-airport .btn.ghost{background:transparent;color:#eef2f8;border:1.5px solid #3a5482}
+#day.theme-airport .q h3{font-size:26px;line-height:1.25}
+#day.theme-airport .ans input{border-radius:10px;border-color:#3a5482;background:#0b1528}
+#day.theme-airport .hint{background:rgba(255,204,0,.08);border-left-color:var(--yl)}
+#day.theme-airport .tile{border-radius:6px;background:#111;color:var(--yl);box-shadow:0 3px 0 #000;font-family:'PT Mono',monospace}
+#day.theme-airport .slot{border-radius:6px;border-color:#3a5482;color:var(--yl);font-family:'PT Mono',monospace}
+#day.theme-airport .reward h3{color:var(--yl)}
+#day.theme-airport .reward img{border-radius:14px}
+#day.theme-airport .spinner{border-color:#24406e;border-top-color:var(--yl)}
+/* airport scene */
+.scene.airportsc{background:linear-gradient(180deg,#1b3566 0%,#e88f6a 70%,#f6c27a 100%);animation:none}
+.scene .runway{position:absolute;left:0;right:0;bottom:0;height:34px;background:#2b2f3a}
+.scene .runway::after{content:"";position:absolute;left:0;right:0;top:15px;height:4px;background:repeating-linear-gradient(90deg,#fff 0 24px,transparent 24px 48px);animation:runway 1s linear infinite}
+@keyframes runway{to{background-position:-48px 0}}
+.scene .jet{position:absolute;font-size:46px;left:-60px;bottom:30px;animation:takeoff 7s ease-in infinite}
+@keyframes takeoff{0%{left:-60px;bottom:30px;transform:rotate(0)}45%{left:45%;bottom:34px;transform:rotate(-8deg)}100%{left:115%;bottom:140px;transform:rotate(-20deg)}}
+.scene .moon2{position:absolute;right:30px;top:16px;width:32px;height:32px;border-radius:50%;box-shadow:-8px 4px 0 0 #fff3c4}
+/* wedding rings */
+.wed{position:relative;overflow:hidden;background:linear-gradient(180deg,#fffaf0,#f6ead2)!important;color:#3a2a10!important;border:0!important}
+.wed h3{color:#8a6a1e}.wed .sub{color:#8a7a5a!important}
+.candles{display:flex;justify-content:space-between;padding:0 10px;margin-bottom:6px}
+.candles i{width:10px;height:44px;background:#fff;border-radius:3px;position:relative;box-shadow:0 0 0 1px #e5d3a8}
+.candles i::before{content:"";position:absolute;left:50%;top:-16px;width:10px;height:16px;margin-left:-5px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff6a0,#ffb400 60%,#ff6a00);animation:flame 1.2s ease-in-out infinite alternate;filter:drop-shadow(0 0 6px #ffcc55)}
+@keyframes flame{to{transform:scaleY(1.15) rotate(3deg)}}
+.ringzone{position:relative;height:140px;margin:14px 0;touch-action:none}
+.ring{position:absolute;top:30px;width:80px;height:80px;border-radius:50%;border:10px solid #d4a72c;box-shadow:inset 0 0 0 2px #f5d77a,0 0 0 2px #a8811a,0 6px 14px rgba(0,0,0,.25)}
+.r1{left:18%}.r2{right:18%;cursor:grab;transition:transform .15s}
+.r1::after{content:"";position:absolute;top:-14px;left:50%;width:14px;height:14px;margin-left:-7px;background:#e8f6ff;transform:rotate(45deg);box-shadow:0 0 10px #fff}
+.rglow{position:absolute;left:50%;top:70px;width:10px;height:10px;margin:-5px;border-radius:50%;background:#ffe9a8;opacity:0;transition:all 1s}
+.ringzone.joined .rglow{opacity:.8;width:220px;height:220px;margin:-110px;filter:blur(30px)}
+.wedlines p{font-family:'Playfair Display',serif;font-style:italic;font-size:19px;line-height:1.45;text-align:center;opacity:0;transform:translateY(8px);transition:all 1s;margin:0 0 10px}
+.wedlines p.on{opacity:1;transform:none}
+/* flapboard */
+.board{background:#0a0a0a;border-radius:10px;padding:12px;font-family:'PT Mono',monospace;color:#ffcc00;box-shadow:0 20px 40px -20px #000}
+.bh{display:flex;justify-content:space-between;font-size:12px;letter-spacing:1px;color:#fff;margin-bottom:8px}
+.brow{display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:6px;font-size:14px;padding:6px 0;border-top:1px solid #222}
+.brow.head{color:#777;font-size:10px}
+.blink{animation:tw 1s steps(1) infinite;color:#3ecf6e}
+.bmsg{display:flex;justify-content:center;gap:4px;margin:16px 0 10px;flex-wrap:wrap}
+.bmsg .sp{width:14px}
+.flp{width:34px;height:46px;background:linear-gradient(180deg,#1d1d1d 0 49%,#000 49% 51%,#161616 51%);border-radius:4px;color:#ffcc00;font-family:'PT Mono',monospace;font-size:24px;font-weight:700;display:grid;place-items:center}
+.flp.spin b{animation:flip .06s linear infinite}
+@keyframes flip{50%{transform:scaleY(.2)}}
+.flp.ok{color:#fff;box-shadow:0 0 0 1px #ffcc00}
+.bfoot{text-align:center;font-size:12px;color:#aaa;padding-top:6px;border-top:1px solid #222}
+/* photo strip */
+.booth{position:relative}
+.flash{position:fixed;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:150}
+.flash.go{animation:flash .5s}
+@keyframes flash{0%{opacity:.95}100%{opacity:0}}
+.pstrip{width:62%;margin:0 auto;background:#fff;padding:10px 10px 4px;box-shadow:0 20px 40px -16px #000;transform:rotate(-2deg)}
+.pstrip .fr{position:relative;margin-bottom:8px;aspect-ratio:4/3;background:#222;overflow:hidden}
+.pstrip .fr img{width:100%;height:100%;object-fit:cover;opacity:0;filter:brightness(3);transition:opacity .4s,filter 1.2s}
+.pstrip .fr span{position:absolute;left:0;right:0;bottom:0;padding:3px 6px;font-size:11px;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.6),transparent);opacity:0;transition:opacity .6s .6s}
+.pstrip .fr.on img{opacity:1;filter:none}.pstrip .fr.on span{opacity:1}
+.stamp2{text-align:center;font-family:'PT Mono',monospace;font-size:9px;color:#888;padding:2px 0 4px}
+.shutter{width:70px;height:70px;border-radius:50%;background:#fff;font-size:30px;box-shadow:0 0 0 6px rgba(255,255,255,.25)}
+/* flight map */
+.mapbox{position:relative;height:340px;border-radius:16px;overflow:hidden;background:radial-gradient(circle at 30% 20%,#1f3d6e,#0d1a33);touch-action:none;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px),radial-gradient(circle at 30% 20%,#1f3d6e,#0d1a33);background-size:14px 14px,auto}
+.mapbox svg{position:absolute;inset:0;width:100%;height:100%}
+.mapbox .city{position:absolute;font-weight:800;font-size:14px;background:rgba(0,0,0,.4);padding:3px 8px;border-radius:6px}
+.mapbox .c1{left:6%;top:6%}.mapbox .c2{right:8%;bottom:8%}
+.mapbox .plane{position:absolute;font-size:36px;pointer-events:none;filter:drop-shadow(0 4px 6px rgba(0,0,0,.5))}
+.mapbox .pct{position:absolute;left:12px;bottom:12px;font-family:'PT Mono',monospace;color:#ffcc00}
+.mapbox.landed{box-shadow:inset 0 0 0 3px #ff6b81}
+/* watch */
+.watch{position:relative;width:190px;margin:10px auto 0}
+.watch .band{height:70px;margin:0 30px;background:repeating-linear-gradient(0deg,#f07a2a 0 4px,#e86a1c 4px 8px);border-radius:8px}
+.watch .case{position:relative;height:230px;border-radius:52px;background:linear-gradient(135deg,#d9d9d9,#8f8f8f);padding:14px;box-shadow:0 20px 40px -14px #000}
+.watch .wscreen{position:relative;width:100%;height:100%;border-radius:40px;background:#000;overflow:hidden}
+.watch .wscreen img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s}
+.watch .wtm,.watch .wdt{position:absolute;left:0;right:0;text-align:center;color:#fff;opacity:0;transition:opacity 1s .4s;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+.watch .wtm{top:30px;font-size:46px;font-weight:800;letter-spacing:-1px}
+.watch .wdt{top:14px;font-size:12px;font-weight:700}
+.watch.on .wscreen img,.watch.on .wtm,.watch.on .wdt{opacity:1}
+.watch .crown{position:absolute;right:-10px;top:58px;width:16px;height:40px;border-radius:5px;background:linear-gradient(90deg,#aaa,#eee);box-shadow:0 0 0 2px #ffcc00;animation:pulse2 1.4s infinite}
+.watch.on .crown{animation:none;box-shadow:none}
+@keyframes pulse2{50%{box-shadow:0 0 0 6px rgba(255,204,0,.3)}}
+.watch .btnside{position:absolute;right:-6px;top:120px;width:8px;height:44px;border-radius:3px;background:#f07a2a}
+.realw{margin-top:18px;opacity:0;transform:translateY(16px);transition:all 1s}
+.realw.on{opacity:1;transform:none}
+.realw img{width:100%;border-radius:14px}
+.realw p{text-align:center;font-size:16px;line-height:1.5;margin:10px 4px}
+/* telegram */
+.tgram{background:#f2ead7;color:#222;padding:18px 16px 20px;border-radius:2px;font-family:'PT Mono',monospace;box-shadow:0 20px 40px -18px #000;background-image:repeating-linear-gradient(0deg,transparent 0 33px,rgba(0,0,0,.05) 33px 34px)}
+.tg-h{display:flex;flex-direction:column;align-items:center;border-bottom:2px solid #222;padding-bottom:8px;margin-bottom:12px}
+.tg-h b{font-size:22px;letter-spacing:6px}.tg-h small{font-size:10px;letter-spacing:1px;color:#555}
+.tg-body div{background:#fff;display:inline-block;padding:3px 6px;margin:0 0 8px;font-size:15px;line-height:1.4;box-shadow:0 1px 0 rgba(0,0,0,.15)}
+.tg-sign{text-align:right;font-weight:700;margin-top:10px;opacity:0;transition:opacity 1s}
+.tg-sign.on{opacity:1}
+/* write button + modal letter */
+.writebtn{position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:31;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#ffb3c1,#e4687f);color:#fff;font-size:26px;box-shadow:0 10px 24px -6px rgba(228,104,127,.7);animation:bob 3s ease-in-out infinite}
+@media(min-width:480px){.writebtn{right:calc(50% - 224px)}}
+.sheet .llwrap{min-height:380px}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -784,6 +893,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
     <div id="adminPanel"></div>
   </div>
   <div class="trailwrap"><svg id="trail"></svg></div>
+  <button class="writebtn" id="btnWrite" title="Написать Кириллу">✉️</button>
   <div class="bar">
     <button class="btn" id="btnToday">Задание дня</button>
     <button class="btn ghost" id="btnAlbum">Альбом</button>
@@ -896,7 +1006,7 @@ function renderAdmin(){
     <div class="row">Не заполнены: ${notReady.length? 'дни '+notReady.join(', ') : 'всё готово ✅'}</div>
     <details><summary>Прогресс Анечки</summary><table>${ap}</table></details>
     <details><summary>Её попытки ответов</summary><table>${lg}</table></details>
-    <details open><summary>💌 Её письма тебе</summary><table>${(d.anna?.notes||[]).map(x=>`<tr><td>День ${x.day_no}</td><td><b>${x.q}</b><br>${x.answer.replace(/</g,'&lt;')}</td></tr>`).join('') || '<tr><td>Пока нет</td></tr>'}</table></details></div>`;
+    <details open><summary>💌 Её письма тебе</summary><table>${(d.anna?.notes||[]).map(x=>`<tr><td>${x.day_no?('День '+x.day_no):'✉️'}<br><small>${new Date(x.at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</small></td><td><b>${x.q}</b><br>${x.answer.replace(/</g,'&lt;')}</td></tr>`).join('') || '<tr><td>Пока нет</td></tr>'}</table></details></div>`;
   $('sim').onchange = e => { S.simDate = e.target.value; sessionStorage.setItem('simDate', S.simDate); load(); };
   $('simReset').onclick = () => { S.simDate=''; sessionStorage.removeItem('simDate'); load(); };
   $('resetTest').onclick = async () => { await api('reset_test'); load(); };
@@ -970,12 +1080,14 @@ function help(){
     <li>Следующий день откроется в свою дату, когда пройден предыдущий. Не успела сегодня — задание подождёт тебя.</li>
     <li>Любой пройденный день можно открыть снова: перечитать, пересмотреть фото, пройти ещё раз.</li>
     <li>Все фото собираются в <b>Альбом</b>.</li>
+    <li>Конвертик ✉️ в углу — чтобы написать мне письмо в любой момент.</li>
     <li>Если трудно — внутри заданий есть подсказки.</li>
   </ul>
   <p>А в конце тропы тебя ждёт сюрприз 🏔</p>
   <div style="text-align:center;margin-top:18px"><button class="btn" onclick="closeModal()">Начнём!</button></div>`);
 }
 $('btnHelp').onclick = help;
+$('btnWrite').onclick = writeLetter;
 function openModal(html){ $('sheet').innerHTML = html; $('modal').classList.add('on'); }
 function closeModal(){ $('modal').classList.remove('on'); }
 $('modal').onclick = e => { if(e.target.id==='modal') closeModal(); };
@@ -1054,6 +1166,12 @@ async function renderStep(){
   if (st.kind==='piano') return pianoStep(st, back);
   if (st.kind==='sheetletter') return sheetletterStep(st, back);
   if (st.kind==='loveletter') return loveletterStep(st, back);
+  if (st.kind==='rings') return ringsStep(st, back);
+  if (st.kind==='flapboard') return flapboardStep(st, back);
+  if (st.kind==='strip') return stripStep(st, back);
+  if (st.kind==='flight') return flightStep(st, back);
+  if (st.kind==='watch') return watchStep(st, back);
+  if (st.kind==='telegram') return telegramStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -1108,6 +1226,7 @@ function storyStep(st, back){
      <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" class="rbow">${RB.map((c,i)=>`<path d="M ${200-(170-i*9)} 150 A ${170-i*9} ${170-i*9} 0 0 1 ${200+(170-i*9)} 150" fill="none" stroke="${c[1]}" stroke-width="9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:drawarc 2.4s ${7+i*0.15}s ease forwards" opacity=".85"/>`).join('')}
      <path d="M0 125 Q100 115 200 125 T400 122 V150 H0Z" fill="#2f7d6d" opacity=".9"/><path d="M0 135 Q100 128 200 136 T400 133 V150 H0Z" fill="#23604f"/></svg>
      ${Array.from({length:22},(_,i)=>`<i class="drop" style="left:${(i*47)%100}%;animation-delay:${-(i*0.23)}s"></i>`).join('')}</div>`
+   : st.scene==='airport' ? `<div class="scene airportsc"><div class="moon2"></div><span class="jet">✈️</span><div class="runway"></div></div>`
    : st.scene==='cafe' ? `<div class="scene cafe"><div class="sofa" style="left:6%"></div><div class="sofa" style="right:6%"></div><div class="arch"></div><div class="steam" style="margin-left:-8px"></div><div class="steam" style="margin-left:6px;animation-delay:-1.2s"></div><span class="cup">☕</span><div class="garland">🌸🌷🌿🌸💮🌸🌿🌷🌸🌿🌸💮🌷🌸🌿🌸</div></div>`
    : st.scene==='police' ? `<div class="scene policesc"><div class="ruler"></div><div class="lightbar"><i class="r"></i><i class="b"></i></div><div class="badge">FOOD POLICE</div></div>`
    : st.scene==='city' ? `<div class="scene city"><i class="star" style="left:0%;top:0%;animation-delay:0.0s"></i><i class="star" style="left:41%;top:19%;animation-delay:-0.5s"></i><i class="star" style="left:82%;top:38%;animation-delay:-1.0s"></i><i class="star" style="left:23%;top:7%;animation-delay:-1.5s"></i><i class="star" style="left:64%;top:26%;animation-delay:-2.0s"></i><i class="star" style="left:5%;top:45%;animation-delay:0.0s"></i><i class="star" style="left:46%;top:14%;animation-delay:-0.5s"></i><i class="star" style="left:87%;top:33%;animation-delay:-1.0s"></i><i class="star" style="left:28%;top:2%;animation-delay:-1.5s"></i><i class="star" style="left:69%;top:21%;animation-delay:-2.0s"></i><i class="star" style="left:10%;top:40%;animation-delay:0.0s"></i><i class="star" style="left:51%;top:9%;animation-delay:-0.5s"></i><i class="star" style="left:92%;top:28%;animation-delay:-1.0s"></i><i class="star" style="left:33%;top:47%;animation-delay:-1.5s"></i><i class="star" style="left:74%;top:16%;animation-delay:-2.0s"></i><i class="star" style="left:15%;top:35%;animation-delay:0.0s"></i><i class="star" style="left:56%;top:4%;animation-delay:-0.5s"></i><i class="star" style="left:97%;top:23%;animation-delay:-1.0s"></i><div class="bld" style="left:0%;width:14%;height:48px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:17px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:34px;animation-delay:-1.2s"></i></div><div class="bld" style="left:12%;width:10%;height:70px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:55px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:12px;animation-delay:-1.2s"></i></div><div class="bld" style="left:21%;width:13%;height:40px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:8px;animation-delay:-0.6s"></i><i style="left:15%;top:25px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:12px;animation-delay:-1.2s"></i></div><div class="bld" style="left:64%;width:12%;height:62px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:55px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:20px;animation-delay:-1.2s"></i></div><div class="bld" style="left:75%;width:10%;height:36px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:12px;animation-delay:-0.6s"></i><i style="left:15%;top:29px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:20px;animation-delay:-1.2s"></i></div><div class="bld" style="left:84%;width:16%;height:58px"><i style="left:8%;top:4px;animation-delay:0.0s"></i><i style="left:37%;top:21px;animation-delay:-0.3s"></i><i style="left:66%;top:38px;animation-delay:-0.6s"></i><i style="left:15%;top:7px;animation-delay:-0.8999999999999999s"></i><i style="left:44%;top:24px;animation-delay:-1.2s"></i></div><div class="tower"><svg viewBox="0 0 90 140" width="90" height="140"><path d="M45 4 V40 M38 50 L45 40 52 50 M30 140 L42 56 H48 L60 140 M36 100 H54 M33 120 H57" stroke="#07070c" stroke-width="5" fill="none"/><ellipse cx="45" cy="52" rx="16" ry="6" fill="#07070c"/></svg><div class="beacon"></div><div class="ring"></div></div></div>`
@@ -1813,6 +1932,118 @@ function loveletterStep(st, back){
   };
   $('gNext').onclick = next;
 }
+
+function ringsStep(st, back){
+  $('stage').innerHTML = `<div class="card game wed"><div class="candles"><i></i><i></i></div><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="ringzone" id="rz"><div class="ring r1" id="r1"></div><div class="ring r2" id="r2"></div><div class="rglow" id="rg"></div></div>
+    <div class="wedlines" id="wl">${(st.lines||[]).map(l=>`<p>${l}</p>`).join('')}</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const r2=$('r2'), rz=$('rz'); let drag=false, sx=0, done=false;
+  r2.addEventListener('pointerdown', e=>{ if(done) return; drag=true; sx=e.clientX-(parseFloat(r2.dataset.x)||0); r2.setPointerCapture(e.pointerId); });
+  r2.addEventListener('pointermove', e=>{ if(!drag) return; const x=Math.min(0,e.clientX-sx); r2.dataset.x=x; r2.style.transform=`translateX(${x}px)`;
+    if (-x > rz.clientWidth*0.26){ drag=false; done=true; r2.style.transform=`translateX(${-rz.clientWidth*0.29}px)`; rz.classList.add('joined');
+      setTimeout(()=>{ const ps=[...$('wl').querySelectorAll('p')]; ps.forEach((p,i)=>setTimeout(()=>p.classList.add('on'),i*1500)); setTimeout(()=>{ hearts(); enableNext('gNext'); }, ps.length*1500); }, 600); } });
+  r2.addEventListener('pointerup', ()=>{ drag=false; if(!done){ r2.style.transform=''; r2.dataset.x=0; } });
+  rz.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
+  $('gNext').onclick = next;
+}
+
+function flapboardStep(st, back){
+  const AB='АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЭЮЯ';
+  const word=[...st.word];
+  $('stage').innerHTML = `<div class="board"><div class="bh"><span>ВЫЛЕТ · DEPARTURES</span><span id="bclock"></span></div>
+    <div class="brow head"><span>РЕЙС</span><span>НАПРАВЛЕНИЕ</span><span>СТАТУС</span></div>
+    <div class="brow"><span>${st.flight||''}</span><span>${st.dest||''}</span><span class="blink">ПОСАДКА</span></div>
+    <div class="bmsg">${word.map((c,i)=>c===' '?'<i class="sp"></i>':`<button class="flp" data-i="${i}"><b>${AB[(i*7)%AB.length]}</b></button>`).join('')}</div>
+    <div class="bfoot" id="bf">послание от пассажира: ???</div></div>
+    <p class="hinttext">${st.text||''}</p>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const tk=()=>{ const el=$('bclock'); if(!el) return; el.textContent=new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'}); }; tk();
+  let left = word.filter(c=>c!==' ').length;
+  document.querySelectorAll('.board .flp').forEach(f => f.onclick = () => { if (f.classList.contains('ok')) return;
+    const target=word[+f.dataset.i]; let n=0; f.classList.add('spin');
+    const iv=setInterval(()=>{ n++; f.querySelector('b').textContent = n<10 ? AB[Math.floor(Math.random()*AB.length)] : target;
+      if (n>=10){ clearInterval(iv); f.classList.remove('spin'); f.classList.add('ok'); left--;
+        if (!left){ $('bf').textContent='послание от пассажира: КИРИЛЛ 💛'; hearts(); enableNext('gNext'); } } }, 60); });
+  $('gNext').onclick = next;
+}
+
+async function stripStep(st, back){
+  const urls = await Promise.all(st.photos.map(p=>media(p)));
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="booth"><div class="flash" id="fl"></div><div class="pstrip" id="ps">${urls.map((u,i)=>`<div class="fr"><img src="${u}" alt=""><span>${(st.caps||[])[i]||''}</span></div>`).join('')}<div class="stamp2">TASHKENT · INTERNATIONAL</div></div>
+    <div style="text-align:center;margin-top:14px"><button class="shutter" id="sh">📸</button></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const frs=[...document.querySelectorAll('.pstrip .fr')]; let k=0;
+  $('sh').onclick = () => { if (k>=frs.length) return; const f=$('fl'); f.classList.remove('go'); void f.offsetWidth; f.classList.add('go');
+    frs[k].classList.add('on'); k++; if (k===frs.length){ $('sh').style.visibility='hidden'; hearts(); enableNext('gNext'); } };
+  $('gNext').onclick = next;
+}
+
+function flightStep(st, back){
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="mapbox" id="mb"><svg viewBox="0 0 340 300" preserveAspectRatio="none"><path id="route" d="M70 50 Q 300 80 250 250" fill="none" stroke="#f5c518" stroke-width="3" stroke-dasharray="8 8"/>
+      <circle cx="70" cy="50" r="8" fill="#fff"/><circle cx="250" cy="250" r="10" fill="#ff6b81"/></svg>
+      <span class="city c1">${st.from||''}</span><span class="city c2">${st.to||''} ❤️</span><div class="plane" id="pl">✈️</div><div class="pct" id="pc">0%</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const path=$('route'), L=path.getTotalLength(), mb=$('mb'), pl=$('pl'); let t=0, drag=false, done=false;
+  const place = () => { const p=path.getPointAtLength(t*L), p2=path.getPointAtLength(Math.min(L,t*L+1)); const sx=mb.clientWidth/340, sy=mb.clientHeight/300;
+    const ang=Math.atan2((p2.y-p.y)*sy,(p2.x-p.x)*sx)*180/Math.PI+45; pl.style.left=(p.x*sx)+'px'; pl.style.top=(p.y*sy)+'px'; pl.style.transform=`translate(-50%,-50%) rotate(${ang}deg)`; $('pc').textContent=Math.round(t*100)+'%'; };
+  place();
+  const near = e => { const r=mb.getBoundingClientRect(), sx=mb.clientWidth/340, sy=mb.clientHeight/300; const x=(e.clientX-r.left)/sx, y=(e.clientY-r.top)/sy;
+    let best=t, bd=1e9; for(let s=Math.max(0,t-0.15); s<=Math.min(1,t+0.15); s+=0.005){ const p=path.getPointAtLength(s*L); const d=(p.x-x)**2+(p.y-y)**2; if(d<bd){bd=d;best=s;} } return best; };
+  mb.addEventListener('pointerdown', e=>{ drag=true; mb.setPointerCapture(e.pointerId); });
+  mb.addEventListener('pointermove', e=>{ if(!drag||done) return; const n=near(e); if(n>t) t=n; place();
+    if (t>=0.98){ t=1; place(); done=true; mb.classList.add('landed'); $('pc').textContent='Приземлилась дома 🏡'; hearts(); enableNext('gNext'); } });
+  mb.addEventListener('pointerup', ()=>drag=false);
+  mb.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
+  $('gNext').onclick = next;
+}
+
+async function watchStep(st, back){
+  const [face, real] = await Promise.all((st.photos||[]).map(p=>media(p)));
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="watch" id="w"><div class="band t"></div><div class="case"><div class="wscreen" id="scr"><img src="${face}" alt=""><div class="wtm" id="wt"></div><div class="wdt" id="wd"></div></div><button class="crown" id="cr"></button><span class="btnside"></span></div><div class="band b"></div></div>
+    <div class="realw" id="rw"><img src="${real}" alt=""><p>${st.cap||''}</p></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const upd=()=>{ if(!document.getElementById('wt')) return; const d=new Date(); $('wt').textContent=d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'}); $('wd').textContent=d.toLocaleDateString('ru-RU',{weekday:'short',day:'numeric'}).toUpperCase(); };
+  upd(); const iv=setInterval(()=>{ if(!document.getElementById('wt')) return clearInterval(iv); upd(); }, 10000);
+  $('cr').onclick = () => { if ($('w').classList.contains('on')) return; $('w').classList.add('on'); setTimeout(()=>{ $('rw').classList.add('on'); hearts(); enableNext('gNext'); }, 1600); };
+  $('gNext').onclick = next;
+}
+
+function telegramStep(st, back){
+  $('stage').innerHTML = `<div class="tgram" id="tg"><div class="tg-h"><b>ТЕЛЕГРАММА</b><small>СРОЧНАЯ · ТАШКЕНТ → СЕРДЦЕ</small></div><div class="tg-body" id="tb"></div><div class="tg-sign" id="ts">${st.sign||''}</div></div>`;
+  nav(back);
+  const lines=st.lines||[], tb=$('tb'); let li=0, ci=0, cur=null;
+  const type = () => { if(!document.getElementById('tb')) return;
+    if (li>=lines.length){ $('ts').classList.add('on'); hearts(); nav(finalNav()); return; }
+    if (!cur){ cur=document.createElement('div'); tb.appendChild(cur); }
+    cur.textContent = lines[li].slice(0, ++ci);
+    if (ci>=lines[li].length){ li++; ci=0; cur=null; setTimeout(type, 380); } else setTimeout(type, 45); };
+  setTimeout(type, 500);
+}
+
+function writeLetter(){
+  openModal(`<h2>Письмо Кириллу 💌</h2><p style="margin-top:0">Напиши мне в любой момент — я прочитаю каждое слово.</p>
+    <div class="llwrap" id="mlw"><div class="llpaper"><div class="llto">Мой любимый Кирилл,</div><textarea id="mlt" class="llta" rows="8" placeholder="Пиши здесь…"></textarea><div class="llfrom">Твоя Анечка ♡</div></div>
+      <div class="llenv"><div class="flap"></div><div class="seal">♥</div></div></div>
+    <div style="display:flex;gap:10px;margin-top:14px"><button class="btn ghost" style="flex:1" onclick="closeModal()">Позже</button><button class="btn" style="flex:1.4" id="msend">Отправить 💌</button></div><div class="stat" id="mst" style="text-align:center;margin-top:8px"></div>`);
+  try { const d=localStorage.getItem('lldraft_0'); if(d) $('mlt').value=d; } catch(e){}
+  $('mlt').oninput = () => { try { localStorage.setItem('lldraft_0',$('mlt').value); } catch(e){} };
+  $('msend').onclick = async () => { const t=$('mlt').value.trim(); if(t.length<3){ $('mst').textContent='Напиши хотя бы пару слов 🙂'; return; }
+    $('msend').disabled=true; const r=await api('note',{day:0,q:'Письмо просто так',answer:t}).catch(()=>({}));
+    if(!r.ok){ $('msend').disabled=false; $('mst').textContent='Не отправилось — попробуй ещё раз'; return; }
+    try { localStorage.removeItem('lldraft_0'); } catch(e){}
+    const w=$('mlw'); w.classList.add('fold'); setTimeout(()=>w.classList.add('sealed'),900); setTimeout(()=>w.classList.add('fly'),1900);
+    setTimeout(()=>{ $('mst').textContent='Письмо доставлено Кириллу 💛'; hearts(); setTimeout(closeModal,1500); },2600); };
+}
+window.writeLetter = writeLetter;
 
 function letterStep(st, back){
   const fh = Array.from({length:12},(_,i)=>`<span class="fh" style="left:${(i*37)%95}%;top:${100+(i*53)%60}%;animation-delay:${-i*0.6}s">${['💛','❤️','✨'][i%3]}</span>`).join('');
