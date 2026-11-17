@@ -1154,7 +1154,7 @@ async function photoorderStep(st, back){
 }
 
 async function compareStep(st, back){
-  const [l,r] = await Promise.all([media(st.left), media(st.right)]);
+  const [l,r] = await Promise.all((st.photos||[st.left,st.right]).map(p=>media(p)));
   $('stage').innerHTML = `<div class="game" style="padding-top:6px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
     <div class="cmp" id="cmp"><img src="${r}" alt=""><div class="cmp-top" id="ctop"><img src="${l}" alt=""></div><div class="cmp-bar" id="cbar"><span>⇆</span></div>
       <b class="cl">${st.lcap||''}</b><b class="cr">${st.rcap||''}</b></div>`;
