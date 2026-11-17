@@ -692,6 +692,22 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .sheetmusic.signed .smsign{opacity:1}
 .floatnotes i{position:absolute;bottom:-30px;font-style:normal;font-size:24px;color:rgba(217,138,149,.55);animation:rise 9s linear infinite}
 
+/* love letter (any theme) */
+.llwrap{position:relative;min-height:440px;transition:transform 1s cubic-bezier(.5,0,.7,.4),opacity 1s}
+.llpaper{position:relative;z-index:2;background:#fffdf8;color:#3a2a2d;border-radius:6px;padding:22px 18px 16px;box-shadow:0 18px 40px -18px rgba(0,0,0,.5);background-image:repeating-linear-gradient(0deg,transparent 0 31px,rgba(217,138,149,.25) 31px 32px);transition:transform .9s cubic-bezier(.6,0,.3,1),opacity .6s .5s;transform-origin:50% 100%}
+.llto,.llfrom{font-family:'Marck Script','Caveat',cursive;font-size:26px;color:#b0405a}
+.llfrom{text-align:right;margin-top:6px}
+.llta{width:100%;border:0;outline:none;background:transparent;resize:none;font-family:'Marck Script','Caveat',cursive;font-size:23px;line-height:32px;color:#3a2a2d;padding:0;margin-top:4px}
+.llenv{position:absolute;left:8%;right:8%;bottom:10px;height:170px;background:linear-gradient(160deg,#f3c9cf,#e8aab4);border-radius:6px;z-index:1;opacity:0;transition:opacity .4s}
+.llenv::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 49.5%,rgba(0,0,0,.08) 50%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49.5%,rgba(0,0,0,.08) 50%) right/50% 100% no-repeat}
+.llenv .flap{position:absolute;left:0;right:0;top:0;height:95px;background:linear-gradient(180deg,#eab3bc,#e19ca8);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transform:rotateX(180deg);transition:transform .7s;z-index:3}
+.llenv .seal{position:absolute;left:50%;top:70px;width:46px;height:46px;margin-left:-23px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#d9485f,#9c1f33);color:#ffd1d8;display:grid;place-items:center;font-size:22px;z-index:4;transform:scale(0);transition:transform .4s cubic-bezier(.3,1.6,.5,1) .5s;box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.llwrap.fold .llenv{opacity:1}
+.llwrap.fold .llpaper{transform:translateY(120px) scaleY(.25) scaleX(.8);opacity:0}
+.llwrap.sealed .flap{transform:rotateX(0)}
+.llwrap.sealed .seal{transform:scale(1)}
+.llwrap.fly{transform:translate(40px,-70vh) rotate(18deg) scale(.5);opacity:0}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -1037,6 +1053,7 @@ async function renderStep(){
   if (st.kind==='bloom') return bloomStep(st, back);
   if (st.kind==='piano') return pianoStep(st, back);
   if (st.kind==='sheetletter') return sheetletterStep(st, back);
+  if (st.kind==='loveletter') return loveletterStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -1766,6 +1783,35 @@ function sheetletterStep(st, back){
   const ps=[...$('sm').querySelectorAll('p')]; const melody=['C4','E4','G4','C5','G4'];
   ps.forEach((p,i)=>setTimeout(()=>{ p.classList.add('on'); }, 500+i*1700));
   setTimeout(()=>{ $('sm').classList.add('signed'); hearts(); nav(finalNav()); }, 500+ps.length*1700);
+}
+
+function loveletterStep(st, back){
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="llwrap" id="llw">
+      <div class="llpaper" id="llp"><div class="llto">${st.to||'Мой любимый,'}</div>
+        <textarea id="llt" class="llta" rows="9" placeholder="Пиши здесь…"></textarea>
+        <div class="llfrom">Твоя Анечка ♡</div></div>
+      <div class="llenv" id="lle"><div class="flap"></div><div class="seal">♥</div></div>
+    </div>
+    <div style="text-align:center;margin-top:14px"><button class="btn" id="llsend">Запечатать и отправить 💌</button></div>
+    <div class="stat" id="llst"></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  try { const draft=localStorage.getItem('lldraft_'+D.day.day_no); if(draft) $('llt').value=draft; } catch(e){}
+  $('llt').oninput = () => { try { localStorage.setItem('lldraft_'+D.day.day_no, $('llt').value); } catch(e){} };
+  $('llsend').onclick = async () => {
+    const t=$('llt').value.trim();
+    if (t.length<3){ $('llst').textContent='Напиши хотя бы пару слов 🙂'; return; }
+    $('llsend').disabled=true; $('llst').textContent='';
+    const r = await api('note',{day:D.day.day_no, q:st.q||'Любовное письмо', answer:t}).catch(()=>({}));
+    if (!r.ok){ $('llsend').disabled=false; $('llst').textContent='Не отправилось — проверь интернет и попробуй ещё раз'; return; }
+    try { localStorage.removeItem('lldraft_'+D.day.day_no); } catch(e){}
+    $('llw').classList.add('fold');
+    setTimeout(()=>$('llw').classList.add('sealed'), 900);
+    setTimeout(()=>$('llw').classList.add('fly'), 1900);
+    setTimeout(()=>{ $('llst').textContent='Письмо доставлено Кириллу 💛'; $('llsend').style.display='none'; hearts(); enableNext('gNext'); }, 2700);
+  };
+  $('gNext').onclick = next;
 }
 
 function letterStep(st, back){
