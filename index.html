@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1b1730">
+<meta name="robots" content="noindex,nofollow">
+<title>Тропа к твоему дню</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#1b1730; --dusk:#3b2c4f; --plum:#6b3f5f; --rose:#e48a7c; --amber:#f4b860; --gold:#ffd88a;
+  --cream:#fff6ea; --ink:#2a2233; --muted:#9a8fa8; --pine:#1f3a33;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Manrope',system-ui,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:var(--night);color:var(--cream);font-family:var(--sans);font-size:16px}
+body{overscroll-behavior:none}
+button{font:inherit;cursor:pointer;border:0}
+.app{max-width:480px;margin:0 auto;min-height:100%;position:relative}
+.screen{display:none;min-height:100vh;min-height:100dvh}
+.screen.on{display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;
+  background:linear-gradient(135deg,var(--amber),var(--rose));color:#2a1626;font-weight:700;letter-spacing:.2px;
+  box-shadow:0 8px 24px -8px rgba(244,184,96,.6);transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,246,234,.08);color:var(--cream);box-shadow:none;border:1px solid rgba(255,246,234,.18)}
+.btn.small{padding:9px 16px;font-size:14px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
+
+/* login */
+#login{background:linear-gradient(180deg,#221c3c 0%,#4a2f55 45%,#c9706a 78%,#f2b768 100%);position:relative;overflow:hidden}
+#login .ridge{position:absolute;left:0;right:0;bottom:0;width:100%}
+#login .inner{position:relative;z-index:2;padding:22vh 28px 0;text-align:center}
+#login h1{font-size:44px}
+#login p{color:rgba(255,246,234,.8);margin:12px 0 30px;line-height:1.5}
+.codebox{display:flex;flex-direction:column;gap:14px;align-items:center}
+.codebox input{width:100%;max-width:300px;padding:15px 18px;border-radius:16px;border:1px solid rgba(255,246,234,.3);
+  background:rgba(27,23,48,.45);color:var(--cream);font-size:18px;text-align:center;outline:none;backdrop-filter:blur(6px)}
+.codebox input::placeholder{color:rgba(255,246,234,.5)}
+.err{color:#ffd1c8;min-height:20px;font-size:14px}
+
+/* home */
+#home{background:var(--night)}
+.top{position:sticky;top:0;z-index:20;padding:14px 18px 12px;background:linear-gradient(180deg,#1b1730 85%,rgba(27,23,48,0));}
+.hello{display:flex;justify-content:space-between;align-items:center}
+.hello h2{font-size:28px}
+.iconbtn{width:40px;height:40px;border-radius:50%;background:rgba(255,246,234,.08);color:var(--cream);font-size:18px;display:grid;place-items:center}
+.count{margin-top:10px;display:flex;gap:8px;align-items:baseline;font-size:13px;color:var(--muted)}
+.count b{font-family:var(--serif);font-size:26px;color:var(--gold);font-weight:600}
+.cd{display:flex;gap:10px;margin-top:4px}
+.cd div{flex:1;text-align:center;background:rgba(255,246,234,.06);border-radius:12px;padding:8px 0}
+.cd b{display:block;font-family:var(--serif);font-size:26px;color:var(--gold);line-height:1}
+.cd span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.prog{margin-top:10px;height:6px;border-radius:6px;background:rgba(255,246,234,.1);overflow:hidden}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));border-radius:6px;transition:width .6s}
+.trailwrap{position:relative;padding-bottom:96px}
+#trail{display:block;width:100%}
+.node{cursor:pointer}
+.node text{font-family:var(--sans)}
+@keyframes pulse{0%{r:20;opacity:.7}100%{r:34;opacity:0}}
+.pulse{animation:pulse 1.6s ease-out infinite}
+.bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:30;display:flex;gap:10px;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(27,23,48,.98) 60%,rgba(27,23,48,0))}
+.bar .btn{flex:1}
+
+/* admin */
+.admin{margin:8px 0 0;padding:10px 12px;border-radius:12px;background:rgba(228,138,124,.14);border:1px dashed rgba(228,138,124,.5);font-size:13px}
+.admin .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.admin input{background:rgba(0,0,0,.25);color:var(--cream);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:6px 8px;font:inherit}
+.admin details{margin-top:6px}
+.admin table{width:100%;border-collapse:collapse;margin-top:6px;font-size:12px}
+.admin td{padding:3px 4px;border-bottom:1px solid rgba(255,255,255,.08)}
+
+/* day */
+#day{background:var(--night);padding-bottom:110px}
+.dayhead{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(27,23,48,.96)}
+.dayhead .t{flex:1}
+.dayhead small{color:var(--muted);font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.dayhead h3{font-size:22px}
+.dots{display:flex;gap:6px;justify-content:center;padding:4px 0 10px}
+.dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,246,234,.2)}
+.dots i.on{background:var(--gold)}
+.stage{padding:4px 18px}
+.card{background:rgba(255,246,234,.05);border:1px solid rgba(255,246,234,.08);border-radius:22px;overflow:hidden}
+.foghost{position:relative;border-radius:22px;overflow:hidden;touch-action:none;user-select:none;background:#2b2440}
+.foghost img{display:block;width:100%;height:auto}
+.foghost canvas{position:absolute;inset:0;width:100%;height:100%;transition:opacity .9s}
+.hinttext{text-align:center;color:var(--muted);font-size:14px;margin:14px 6px;line-height:1.5}
+.story{padding:26px 22px;min-height:52vh}
+.story p{font-family:var(--serif);font-size:24px;line-height:1.35;margin:0 0 18px;opacity:0;transform:translateY(8px);transition:all .8s}
+.story p.on{opacity:1;transform:none}
+.tapnote{text-align:center;color:var(--muted);font-size:13px}
+.q{padding:24px 20px}
+.q h3{font-size:30px;text-align:center}
+.q .note{text-align:center;color:var(--muted);font-size:14px;margin:8px 0 18px}
+.q .thumb{border-radius:16px;overflow:hidden;margin-bottom:18px}
+.q .thumb img{display:block;width:100%}
+.ans{display:flex;gap:8px}
+.ans input{flex:1;min-width:0;padding:14px 16px;border-radius:14px;border:1px solid rgba(255,246,234,.25);background:rgba(0,0,0,.25);
+  color:var(--cream);font-size:18px;outline:none;text-transform:none}
+.ans input:focus{border-color:var(--amber)}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.msg{text-align:center;min-height:22px;margin:12px 0 0;color:#ffd1c8;font-size:15px}
+.hints{margin-top:16px}
+.hint{background:rgba(244,184,96,.1);border-left:3px solid var(--amber);padding:10px 12px;border-radius:8px;margin-top:8px;font-size:15px;line-height:1.4;animation:fade .5s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.tiles{display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap}
+.tile{width:48px;height:56px;border-radius:12px;background:var(--cream);color:var(--ink);font-family:var(--serif);font-size:30px;font-weight:600;display:grid;place-items:center;box-shadow:0 4px 0 #d9c7ad}
+.tile.used{opacity:.25;pointer-events:none}
+.slots{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.slot{width:48px;height:56px;border-radius:12px;border:2px dashed rgba(255,246,234,.3);display:grid;place-items:center;font-family:var(--serif);font-size:30px;color:var(--gold)}
+.reward{padding:22px 18px;text-align:center}
+.reward h3{font-size:34px;color:var(--gold);margin:6px 0 12px}
+.reward p{font-family:var(--serif);font-size:22px;line-height:1.4;margin:16px 4px 0}
+.reward img{width:100%;border-radius:20px;display:block;box-shadow:0 20px 50px -20px rgba(0,0,0,.7)}
+.letter{display:inline-grid;place-items:center;width:90px;height:110px;border-radius:16px;background:var(--cream);color:var(--ink);font-family:var(--serif);font-size:70px;font-weight:600;margin:10px auto}
+.navbar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;display:flex;gap:10px;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:linear-gradient(0deg,rgba(27,23,48,1) 65%,rgba(27,23,48,0));z-index:15}
+.navbar .btn{flex:1}
+
+/* album & modal */
+#album{padding-bottom:40px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 14px}
+.grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;display:block}
+.grid figure{margin:0}
+.grid figcaption{font-size:12px;color:var(--muted);padding:4px 2px}
+.empty{color:var(--muted);text-align:center;padding:40px 20px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(10,8,20,.82);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(4px)}
+.modal.on{display:flex}
+.sheet{background:linear-gradient(180deg,#2c2444,#231d38);border-radius:24px;padding:26px 22px;max-width:420px;width:100%;max-height:86vh;overflow:auto;border:1px solid rgba(255,246,234,.1)}
+.sheet h2{font-size:30px;margin-bottom:10px}
+.sheet p,.sheet li{line-height:1.55;color:rgba(255,246,234,.88)}
+.sheet ul{padding-left:20px}
+.lightbox img{max-width:100%;max-height:86vh;border-radius:14px}
+.spinner{width:34px;height:34px;border-radius:50%;border:3px solid rgba(255,246,234,.15);border-top-color:var(--amber);animation:spin 1s linear infinite;margin:40px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.heart{position:fixed;z-index:200;pointer-events:none;font-size:24px;animation:fly 2.4s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--dx),-80vh) rotate(var(--r));opacity:0}}
+.soon{padding:60px 26px;text-align:center}
+.soon h3{font-size:30px;margin-bottom:12px}
+.soon p{color:var(--muted);line-height:1.5}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- LOGIN -->
+<section id="login" class="screen">
+  <div class="inner">
+    <h1>Тропа<br>к твоему дню</h1>
+    <p>Здесь тебя ждёт маленькое путешествие.<br>Введи свой код приглашения.</p>
+    <div class="codebox">
+      <input id="code" type="text" placeholder="Код приглашения" autocomplete="off" autocapitalize="off" spellcheck="false">
+      <button class="btn" id="enter">Войти</button>
+      <div class="err" id="loginErr"></div>
+    </div>
+  </div>
+  <svg class="ridge" viewBox="0 0 400 220" preserveAspectRatio="none">
+    <path d="M0 120 L60 70 L110 110 L170 40 L230 100 L290 55 L350 95 L400 70 L400 220 L0 220Z" fill="#4c3152" opacity=".55"/>
+    <path d="M0 160 L50 120 L100 150 L160 95 L220 145 L280 110 L340 150 L400 125 L400 220 L0 220Z" fill="#2c2340"/>
+    <path d="M0 195 L70 165 L140 190 L210 160 L290 192 L350 170 L400 185 L400 220 L0 220Z" fill="#1b1730"/>
+  </svg>
+</section>
+
+<!-- HOME -->
+<section id="home" class="screen">
+  <div class="top">
+    <div class="hello"><h2 id="helloName">Анечка, привет</h2>
+      <div style="display:flex;gap:8px"><button class="iconbtn" id="btnHelp" title="Инструкция">?</button></div></div>
+    <div class="count">До твоего дня рождения</div>
+    <div class="cd"><div><b id="cdD">–</b><span>дней</span></div><div><b id="cdH">–</b><span>часов</span></div><div><b id="cdM">–</b><span>минут</span></div><div><b id="cdS">–</b><span>секунд</span></div></div>
+    <div class="prog"><i id="progBar" style="width:0"></i></div>
+    <div id="adminPanel"></div>
+  </div>
+  <div class="trailwrap"><svg id="trail"></svg></div>
+  <div class="bar">
+    <button class="btn" id="btnToday">Задание дня</button>
+    <button class="btn ghost" id="btnAlbum">Альбом</button>
+  </div>
+</section>
+
+<!-- DAY -->
+<section id="day" class="screen">
+  <div class="dayhead">
+    <button class="iconbtn" id="dayBack">←</button>
+    <div class="t"><small id="dayLabel"></small><h3 id="dayTitle"></h3></div>
+  </div>
+  <div class="dots" id="dots"></div>
+  <div class="stage" id="stage"></div>
+  <div class="navbar" id="navbar"></div>
+</section>
+
+<!-- ALBUM -->
+<section id="album" class="screen">
+  <div class="dayhead">
+    <button class="iconbtn" id="albumBack">←</button>
+    <div class="t"><small>Наша история</small><h3>Альбом</h3></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+</div>
+
+<div class="modal" id="modal"><div class="sheet" id="sheet"></div></div>
+<div class="modal lightbox" id="lightbox"><img id="lbImg" alt=""></div>
+
+<script>
+const API = 'https://thwymykjcgrwetcohfrc.supabase.co/functions/v1/api';
+const ANON = 'sb_publishable_D506jRjcHkyNZ3nbK03WAQ_RTYT7OpW';
+const BIRTHDAY = new Date('2026-12-10T19:00:00Z'); // 11 дек 00:00 Ташкент
+const CHAPTERS = { memories:'Глава 1 · Воспоминания', detective:'Глава 2 · Детектив', mountains:'Глава 3 · Сюрприз' };
+const MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+
+let S = { code: localStorage.getItem('code') || '', data: null, simDate: sessionStorage.getItem('simDate') || '' };
+const $ = id => document.getElementById(id);
+const fmtDate = d => { const [y,m,dd] = d.split('-'); return `${+dd} ${MONTHS[+m-1]}`; };
+
+function show(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id===id)); window.scrollTo(0,0); }
+
+async function api(action, extra={}){
+  const r = await fetch(API, { method:'POST', headers:{'content-type':'application/json', apikey: ANON},
+    body: JSON.stringify({ code: S.code, action, simDate: S.simDate || undefined, ...extra }) });
+  const j = await r.json().catch(()=>({error:'net'}));
+  if (r.status === 401) throw new Error('code');
+  return j;
+}
+
+// ---- encrypted media ----
+const mediaCache = {};
+function hex2buf(h){ const a=new Uint8Array(h.length/2); for(let i=0;i<a.length;i++) a[i]=parseInt(h.substr(i*2,2),16); return a; }
+async function media(ref){
+  if (!ref) return '';
+  if (!ref.startsWith('enc:')) return ref;
+  if (mediaCache[ref]) return mediaCache[ref];
+  const [path, key, mime] = ref.slice(4).split('#');
+  mediaCache[ref] = (async ()=>{
+    const buf = new Uint8Array(await (await fetch(path)).arrayBuffer());
+    const k = await crypto.subtle.importKey('raw', hex2buf(key), 'AES-GCM', false, ['decrypt']);
+    const plain = await crypto.subtle.decrypt({name:'AES-GCM', iv: buf.slice(0,12)}, k, buf.slice(12));
+    return URL.createObjectURL(new Blob([plain], {type: mime || 'image/jpeg'}));
+  })();
+  return mediaCache[ref];
+}
+async function imgEl(ref, cls){ const i=new Image(); if(cls) i.className=cls; i.alt=''; i.src = await media(ref); await i.decode().catch(()=>{}); return i; }
+
+// ---- login ----
+async function login(){
+  $('loginErr').textContent = '';
+  S.code = $('code').value.trim();
+  if (!S.code) return;
+  $('enter').disabled = true;
+  try { await load(); localStorage.setItem('code', S.code);
+    if (S.data.role==='anna' && !localStorage.getItem('seenHelp')) { help(); localStorage.setItem('seenHelp','1'); }
+  } catch(e){ $('loginErr').textContent = e.message==='code' ? 'Такого кода нет. Попробуй ещё раз 💛' : 'Нет связи, попробуй ещё раз'; show('login'); }
+  $('enter').disabled = false;
+}
+$('enter').onclick = login;
+$('code').onkeydown = e => { if(e.key==='Enter') login(); };
+
+async function load(){
+  S.data = await api('state');
+  if (S.data.error) throw new Error(S.data.error);
+  renderHome(); show('home');
+}
+
+// ---- home ----
+function renderHome(){
+  const d = S.data, admin = d.role==='admin';
+  $('helloName').textContent = admin ? 'Режим автора' : 'Анечка, привет 💛';
+  const done = d.days.filter(x=>x.status==='done').length;
+  $('progBar').style.width = (done/d.days.length*100)+'%';
+  renderAdmin();
+  drawTrail();
+}
+
+function renderAdmin(){
+  const p = $('adminPanel'), d = S.data;
+  if (d.role!=='admin'){ p.innerHTML=''; return; }
+  const ap = (d.anna?.progress||[]).map(x=>`<tr><td>День ${x.day_no}</td><td>${x.answer||''}</td><td>${new Date(x.completed_at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent'})}</td></tr>`).join('') || '<tr><td>Пока ничего не пройдено</td></tr>';
+  const lg = (d.anna?.log||[]).map(x=>`<tr><td>День ${x.day_no}</td><td>${x.correct?'✅':'❌'} ${x.answer||''}</td><td>${new Date(x.at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent'})}</td></tr>`).join('') || '<tr><td>Пусто</td></tr>';
+  const notReady = d.days.filter(x=>!x.authored).map(x=>x.day_no);
+  p.innerHTML = `<div class="admin"><b>👀 Режим автора.</b> Твои ответы не влияют на прогресс Анечки.
+    <div class="row">Смотреть как в дату: <input type="date" id="sim" value="${S.simDate||d.today}" min="2026-11-17" max="2026-12-11">
+      <button class="btn small ghost" id="simReset">Сегодня</button><button class="btn small ghost" id="resetTest">Сбросить мой тест</button></div>
+    <div class="row">Не заполнены: ${notReady.length? 'дни '+notReady.join(', ') : 'всё готово ✅'}</div>
+    <details><summary>Прогресс Анечки</summary><table>${ap}</table></details>
+    <details><summary>Её попытки ответов</summary><table>${lg}</table></details></div>`;
+  $('sim').onchange = e => { S.simDate = e.target.value; sessionStorage.setItem('simDate', S.simDate); load(); };
+  $('simReset').onclick = () => { S.simDate=''; sessionStorage.removeItem('simDate'); load(); };
+  $('resetTest').onclick = async () => { await api('reset_test'); load(); };
+}
+
+function drawTrail(){
+  const days = S.data.days, n = days.length, W = 400, step = 96, top = 150, H = top + n*step + 90;
+  const pts = days.map((d,i)=>{ const y = H - 90 - i*step; const x = W/2 + Math.sin(i*1.05)*120; return {x,y,d}; });
+  let path = `M ${pts[0].x} ${pts[0].y+80}`;
+  pts.forEach((p,i)=>{ const prev = i? pts[i-1] : {x:pts[0].x,y:pts[0].y+80}; const my=(prev.y+p.y)/2; path += ` C ${prev.x} ${my}, ${p.x} ${my}, ${p.x} ${p.y}`; });
+  const doneIdx = days.map(d=>d.status).lastIndexOf('done');
+  const cur = days.findIndex(d=>d.status==='open');
+  let s = `<defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2b768"/><stop offset=".08" stop-color="#d77d6e"/><stop offset=".2" stop-color="#5a3758"/>
+      <stop offset=".55" stop-color="#2a2140"/><stop offset="1" stop-color="#1b1730"/></linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#ffd88a"/><stop offset="1" stop-color="#ffd88a" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="${W}" height="${H}" fill="url(#sky)"/>
+  <circle cx="${W/2}" cy="70" r="120" fill="url(#glow)" opacity=".35"/>
+  <path d="M0 210 L80 120 L140 170 L200 60 L260 160 L320 110 L400 190 L400 ${H} L0 ${H}Z" fill="#3a2a48" opacity=".9"/>
+  <path d="M200 60 L178 96 L192 90 L200 102 L210 88 L222 96Z" fill="#fff6ea" opacity=".85"/>
+  <path d="M0 300 L60 250 L130 290 L210 220 L290 280 L360 240 L400 270 L400 ${H} L0 ${H}Z" fill="#2b2240" opacity=".9"/>`;
+  // trees
+  for(let i=0;i<40;i++){ const x=(i*97)%W, y= 330 + (i*211)%(H-400); const h=14+ (i%4)*5; s+=`<path d="M${x} ${y} l${h/2.6} ${h} h${-h/1.3}z" fill="#1f3a33" opacity="${.25+(i%3)*.12}"/>`; }
+  s += `<path d="${path}" fill="none" stroke="rgba(255,246,234,.18)" stroke-width="10" stroke-linecap="round"/>
+        <path d="${path}" fill="none" stroke="rgba(255,246,234,.55)" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"/>`;
+  // chapter labels
+  let lastCh = null;
+  pts.forEach((p,i)=>{ if(p.d.chapter!==lastCh){ lastCh=p.d.chapter; s+=`<text x="${W/2}" y="${p.y+52}" text-anchor="middle" font-family="Cormorant Garamond" font-size="17" fill="rgba(255,216,138,.75)" font-style="italic">${CHAPTERS[p.d.chapter]}</text>`; }});
+  pts.forEach((p,i)=>{
+    const st = p.d.status, isCur = i===cur;
+    const fill = st==='done' ? '#ffd88a' : isCur ? '#f4b860' : (st==='soon'||st==='waiting') ? '#6b5a7e' : '#3d3352';
+    const stroke = st==='done' ? '#fff6ea' : isCur ? '#fff6ea' : 'rgba(255,246,234,.25)';
+    const lbl = st==='done' ? '✓' : (p.d.day_no===25 ? '🎂' : p.d.day_no);
+    const side = p.x > W/2 ? -1 : 1;
+    s += `<g class="node" data-i="${i}">
+      ${isCur? `<circle cx="${p.x}" cy="${p.y}" r="20" fill="#f4b860" class="pulse"/>`:''}
+      <circle cx="${p.x}" cy="${p.y}" r="22" fill="${fill}" stroke="${stroke}" stroke-width="2"/>
+      <text x="${p.x}" y="${p.y+6}" text-anchor="middle" font-size="${st==='done'?20:16}" font-weight="700" fill="${st==='done'||isCur?'#2a1626':'#cbbfd8'}">${lbl}</text>
+      <text x="${p.x + side*34}" y="${p.y+5}" text-anchor="${side>0?'start':'end'}" font-size="12" fill="rgba(255,246,234,.6)">${fmtDate(p.d.date)}${S.data.role==='admin'&&!p.d.authored?' · не заполнен':''}</text>
+    </g>`;
+  });
+  const me = pts[Math.max(doneIdx,0)];
+  if (doneIdx>=0) s += `<text x="${me.x}" y="${me.y-30}" text-anchor="middle" font-size="22">👣</text>`;
+  const svg = $('trail'); svg.setAttribute('viewBox',`0 0 ${W} ${H}`); svg.innerHTML = s;
+  svg.querySelectorAll('.node').forEach(g=> g.onclick = () => openDay(days[+g.dataset.i]));
+  const focus = pts[cur>=0?cur:Math.max(doneIdx,0)];
+  requestAnimationFrame(()=>{ const r = svg.getBoundingClientRect(); const scale = r.width/W; window.scrollTo({top: focus.y*scale - innerHeight*0.55, behavior:'instant'}); });
+}
+
+$('btnToday').onclick = () => {
+  const d = S.data.days.find(x=>x.status==='open') || S.data.days.find(x=>x.status==='soon'||x.status==='waiting') || [...S.data.days].reverse().find(x=>x.status==='done');
+  if (d) openDay(d);
+};
+
+// ---- countdown ----
+function tick(){
+  let ms = BIRTHDAY - Date.now(); if (ms<0) ms=0;
+  const d=Math.floor(ms/864e5), h=Math.floor(ms/36e5)%24, m=Math.floor(ms/6e4)%60, s=Math.floor(ms/1e3)%60;
+  $('cdD').textContent=d; $('cdH').textContent=h; $('cdM').textContent=String(m).padStart(2,'0'); $('cdS').textContent=String(s).padStart(2,'0');
+}
+setInterval(tick,1000); tick();
+
+// ---- help ----
+function help(){
+  openModal(`<h2>Привет, Анечка 💛</h2>
+  <p>Это твоя тропа к дню рождения. На ней 25 ступенек — по одной на каждый день до 11 декабря.</p>
+  <ul>
+    <li>Каждый день открывается новое задание. Выполнишь его — поднимешься на ступеньку выше.</li>
+    <li>Следующий день откроется в свою дату, когда пройден предыдущий. Не успела сегодня — задание подождёт тебя.</li>
+    <li>Любой пройденный день можно открыть снова: перечитать, пересмотреть фото, пройти ещё раз.</li>
+    <li>Все фото собираются в <b>Альбом</b>.</li>
+    <li>Если трудно — внутри заданий есть подсказки.</li>
+  </ul>
+  <p>А в конце тропы тебя ждёт сюрприз 🏔</p>
+  <div style="text-align:center;margin-top:18px"><button class="btn" onclick="closeModal()">Начнём!</button></div>`);
+}
+$('btnHelp').onclick = help;
+function openModal(html){ $('sheet').innerHTML = html; $('modal').classList.add('on'); }
+function closeModal(){ $('modal').classList.remove('on'); }
+$('modal').onclick = e => { if(e.target.id==='modal') closeModal(); };
+
+// ---- day ----
+let D = null;
+function openDay(day){
+  if (day.status==='locked'){ openModal(`<h2>Ещё рано 🌙</h2><p>Этот день откроется ${fmtDate(day.date)}.</p><div style="text-align:center;margin-top:16px"><button class="btn" onclick="closeModal()">Хорошо</button></div>`); return; }
+  if (day.status==='waiting'){ openModal(`<h2>Сначала предыдущий шаг</h2><p>Этот день уже наступил, но сначала пройди предыдущее задание 💛</p><div style="text-align:center;margin-top:16px"><button class="btn" onclick="closeModal()">Хорошо</button></div>`); return; }
+  $('dayLabel').textContent = `День ${day.day_no} · ${fmtDate(day.date)}`;
+  if (day.status==='soon'){ $('dayTitle').textContent = 'Скоро…'; $('dots').innerHTML=''; $('navbar').innerHTML = `<button class="btn ghost" onclick="backHome()">На тропу</button>`;
+    $('stage').innerHTML = `<div class="soon"><h3>Задание готовится ✨</h3><p>Загляни чуть позже — оно появится сегодня.</p></div>`; show('day'); return; }
+  $('dayTitle').textContent = day.title || '';
+  D = { day, i: 0, steps: [...(day.steps||[])], solved: day.status==='done', reward: day.reward };
+  D.steps.push({kind:'reward'});
+  show('day'); renderStep();
+}
+function backHome(){ show('home'); drawTrail(); }
+$('dayBack').onclick = () => { load(); };
+
+function dots(){ $('dots').innerHTML = D.steps.map((_,i)=>`<i class="${i<=D.i?'on':''}"></i>`).join(''); }
+function nav(html){ $('navbar').innerHTML = html; }
+function next(){ D.i++; renderStep(); window.scrollTo({top:0,behavior:'smooth'}); }
+function prev(){ if(D.i>0){ D.i--; renderStep(); } }
+window.next = next; window.prev = prev; window.backHome = backHome; window.closeModal = closeModal;
+
+async function renderStep(){
+  dots();
+  const st = D.steps[D.i], stage = $('stage');
+  stage.innerHTML = '<div class="spinner"></div>';
+  const back = D.i>0 ? `<button class="btn ghost" onclick="prev()">Назад</button>` : `<button class="btn ghost" onclick="load()">На тропу</button>`;
+  if (st.kind==='fog') return fogStep(st, back);
+  if (st.kind==='story') return storyStep(st, back);
+  if (st.kind==='question') return questionStep(st, back);
+  if (st.kind==='photo') { stage.innerHTML=''; const c=document.createElement('div'); c.className='card'; c.appendChild(await imgEl(st.photo)); stage.appendChild(c);
+    if(st.text) stage.insertAdjacentHTML('beforeend',`<p class="hinttext">${st.text}</p>`); nav(back+`<button class="btn" onclick="next()">Дальше</button>`); return; }
+  if (st.kind==='reward') return rewardStep(back);
+  stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
+}
+
+async function fogStep(st, back){
+  const stage = $('stage');
+  const img = await imgEl(st.photo);
+  stage.innerHTML = '';
+  const host = document.createElement('div'); host.className='foghost'; host.appendChild(img);
+  const cv = document.createElement('canvas'); host.appendChild(cv); stage.appendChild(host);
+  stage.insertAdjacentHTML('beforeend', `<p class="hinttext" id="fogHint">${st.text||'Проведи пальцем, чтобы разогнать облака'}</p>`);
+  nav(back + `<button class="btn" id="fogNext" style="opacity:.4" disabled>Дальше</button>`);
+  const r = host.getBoundingClientRect(), dpr = Math.min(devicePixelRatio||1, 2);
+  cv.width = r.width*dpr; cv.height = r.height*dpr;
+  const c = cv.getContext('2d'); c.scale(dpr,dpr);
+  // clouds
+  const g = c.createLinearGradient(0,0,0,r.height); g.addColorStop(0,'#cfc6d9'); g.addColorStop(1,'#9a8fae');
+  c.fillStyle=g; c.fillRect(0,0,r.width,r.height);
+  for(let i=0;i<70;i++){ const x=Math.random()*r.width, y=Math.random()*r.height, rad=30+Math.random()*60;
+    const rg=c.createRadialGradient(x,y,0,x,y,rad); rg.addColorStop(0,'rgba(255,255,255,.55)'); rg.addColorStop(1,'rgba(255,255,255,0)'); c.fillStyle=rg; c.beginPath(); c.arc(x,y,rad,0,7); c.fill(); }
+  c.fillStyle='rgba(60,45,80,.55)'; c.font='600 22px Cormorant Garamond'; c.textAlign='center'; c.fillText('☁  проведи пальцем  ☁', r.width/2, r.height/2);
+  c.globalCompositeOperation='destination-out';
+  let drawing=false, last=null, finished=false, moves=0;
+  const pos = e => { const b=cv.getBoundingClientRect(); const t=e.touches?e.touches[0]:e; return {x:t.clientX-b.left, y:t.clientY-b.top}; };
+  const brush = (p) => { const rg=c.createRadialGradient(p.x,p.y,0,p.x,p.y,42); rg.addColorStop(0,'rgba(0,0,0,1)'); rg.addColorStop(1,'rgba(0,0,0,0)');
+    c.fillStyle=rg; c.beginPath(); c.arc(p.x,p.y,42,0,7); c.fill(); };
+  const move = e => { if(!drawing||finished) return; e.preventDefault(); const p=pos(e);
+    if(last){ const dx=p.x-last.x, dy=p.y-last.y, dist=Math.hypot(dx,dy); for(let k=0;k<dist;k+=10) brush({x:last.x+dx*k/dist,y:last.y+dy*k/dist}); }
+    brush(p); last=p; if(++moves%15===0) check(); };
+  const check = () => { const data=c.getImageData(0,0,cv.width,cv.height).data; let clear=0, tot=0;
+    for(let i=3;i<data.length;i+=4*40){ tot++; if(data[i]<40) clear++; }
+    if (clear/tot > .45) finish(); };
+  const finish = () => { if(finished) return; finished=true; cv.style.opacity=0; setTimeout(()=>cv.remove(),900);
+    $('fogHint').textContent='✨'; const b=$('fogNext'); b.disabled=false; b.style.opacity=1; };
+  host.addEventListener('pointerdown', e=>{drawing=true; last=null; move(e);});
+  host.addEventListener('pointermove', move);
+  window.addEventListener('pointerup', ()=>{ if(drawing && !finished) check(); drawing=false; last=null;});
+  host.addEventListener('touchmove', e=>e.preventDefault(), {passive:false});
+  $('fogNext').onclick = next;
+  if (D.solved) { /* replay: allow skip */ setTimeout(()=>{ const b=$('fogNext'); if(b){b.disabled=false;b.style.opacity=1;} }, 1500); }
+}
+
+function storyStep(st, back){
+  const stage = $('stage');
+  stage.innerHTML = `<div class="card story" id="story">${st.lines.map(l=>`<p>${l}</p>`).join('')}<div class="tapnote" id="tapnote">нажми, чтобы продолжить</div></div>`;
+  const ps = [...stage.querySelectorAll('.story p')]; let k = 0;
+  nav(back + `<button class="btn" id="storyNext" style="opacity:.4" disabled>Дальше</button>`);
+  const reveal = () => { if(k<ps.length){ ps[k++].classList.add('on'); }
+    if(k>=ps.length){ $('tapnote').textContent=''; const b=$('storyNext'); b.disabled=false; b.style.opacity=1; } };
+  $('story').onclick = reveal; reveal();
+  const auto = setInterval(()=>{ if(k>=ps.length || !document.getElementById('story')) return clearInterval(auto); reveal(); }, 2600);
+  $('storyNext').onclick = () => { clearInterval(auto); next(); };
+}
+
+async function questionStep(st, back){
+  const stage = $('stage');
+  let hintsShown = 0, wrong = 0;
+  stage.innerHTML = `<div class="card q">
+    ${st.photo ? '<div class="thumb" id="qthumb"></div>':''}
+    <h3>${st.prompt}</h3><div class="note">${st.note||''}</div>
+    <div class="ans"><input id="ansIn" placeholder="Твой ответ" autocomplete="off" autocapitalize="off" spellcheck="false"><button class="btn" id="ansBtn">✓</button></div>
+    <div class="msg" id="qmsg"></div>
+    <div id="tilesBox"></div>
+    <div class="hints" id="hints"></div>
+    <div style="text-align:center;margin-top:14px">${(st.hints||[]).length?'<button class="btn small ghost" id="hintBtn">💡 Подсказка</button>':''}</div>
+  </div>`;
+  if (st.photo) $('qthumb').appendChild(await imgEl(st.photo));
+  nav(back + (D.solved ? `<button class="btn" onclick="next()">Дальше</button>` : ''));
+  const showTiles = () => {
+    if (!st.tiles || $('tilesBox').innerHTML) return;
+    const tiles = st.tiles; let picked = [];
+    $('tilesBox').innerHTML = `<div class="hinttext" style="margin-bottom:0">Или собери слово из букв:</div><div class="slots">${tiles.map(()=>'<div class="slot"></div>').join('')}</div>
+      <div class="tiles">${tiles.map((t,i)=>`<button class="tile" data-i="${i}">${t}</button>`).join('')}</div>
+      <div style="text-align:center;margin-top:10px"><button class="btn small ghost" id="tilesClear">Стереть</button></div>`;
+    const slots = [...$('tilesBox').querySelectorAll('.slot')], btns = [...$('tilesBox').querySelectorAll('.tile')];
+    const upd = () => { slots.forEach((s,i)=> s.textContent = picked[i]!=null ? tiles[picked[i]] : ''); btns.forEach((b,i)=>b.classList.toggle('used', picked.includes(i)));
+      if (picked.length===tiles.length){ const w = picked.map(i=>tiles[i]).join(''); $('ansIn').value = w.charAt(0)+w.slice(1).toLowerCase(); check(); } };
+    btns.forEach(b=> b.onclick = () => { picked.push(+b.dataset.i); upd(); });
+    $('tilesClear').onclick = () => { picked=[]; upd(); };
+  };
+  if (st.hints?.length) $('hintBtn').onclick = () => {
+    if (hintsShown < st.hints.length) { $('hints').insertAdjacentHTML('beforeend', `<div class="hint">${st.hints[hintsShown++]}</div>`); }
+    if (hintsShown >= st.hints.length) { $('hintBtn').style.display='none'; showTiles(); }
+  };
+  const check = async () => {
+    const a = $('ansIn').value.trim(); if(!a) return;
+    $('ansBtn').disabled = true; $('qmsg').textContent = '';
+    const r = await api('answer', { day: D.day.day_no, answer: a }).catch(()=>({}));
+    $('ansBtn').disabled = false;
+    if (r.correct) { D.solved = true; D.reward = r.reward; hearts(); setTimeout(next, 600); return; }
+    wrong++;
+    const box = stage.querySelector('.ans'); box.classList.remove('shake'); void box.offsetWidth; box.classList.add('shake');
+    const msgs = ['Не совсем… попробуй ещё 💛','Почти! Подумай ещё чуть-чуть','Возьми подсказку — она поможет 💡'];
+    $('qmsg').textContent = msgs[Math.min(wrong-1, msgs.length-1)];
+    if (wrong >= 2) showTiles();
+  };
+  $('ansBtn').onclick = check;
+  $('ansIn').onkeydown = e => { if(e.key==='Enter') check(); };
+}
+
+async function rewardStep(back){
+  const stage = $('stage'), r = D.reward;
+  if (!D.solved || !r) { stage.innerHTML = `<div class="soon"><p>Сначала ответь на вопрос 💛</p></div>`; nav(back); return; }
+  stage.innerHTML = `<div class="reward"><div style="font-size:40px">💛</div><h3>${r.title||'Ступенька пройдена!'}</h3><div id="rwImg"></div>${r.letter?`<div class="letter">${r.letter}</div>`:''}<p>${r.text||''}</p></div>`;
+  if (r.photo) $('rwImg').appendChild(await imgEl(r.photo));
+  nav(`<button class="btn ghost" onclick="D.i=0;renderStep()">Пройти ещё раз</button><button class="btn" onclick="load()">На тропу</button>`);
+}
+window.renderStep = renderStep;
+
+function hearts(){
+  for(let i=0;i<26;i++){ const h=document.createElement('div'); h.className='heart'; h.textContent=['💛','❤️','✨','🧡'][i%4];
+    h.style.left = (10+Math.random()*80)+'vw'; h.style.top='85vh'; h.style.setProperty('--dx',(Math.random()*120-60)+'px'); h.style.setProperty('--r',(Math.random()*90-45)+'deg');
+    h.style.animationDelay = (Math.random()*.6)+'s'; document.body.appendChild(h); setTimeout(()=>h.remove(),3200); }
+}
+
+// ---- album ----
+$('btnAlbum').onclick = async () => {
+  show('album'); const grid = $('grid'); grid.innerHTML = '<div class="spinner"></div>';
+  const items = [];
+  S.data.days.filter(d=>d.status==='done').forEach(d=>{
+    (d.steps||[]).forEach(s=>{ if(s.photo) items.push({ref:s.photo, cap:`День ${d.day_no} · ${fmtDate(d.date)}`}); });
+    if (d.reward?.photo) items.push({ref:d.reward.photo, cap:`День ${d.day_no} · ${fmtDate(d.date)}`});
+  });
+  if (!items.length) { grid.innerHTML = '<div class="empty" style="grid-column:1/-1">Здесь будут собираться фото с пройденных дней 📷</div>'; return; }
+  grid.innerHTML = '';
+  for (const it of items) { const f=document.createElement('figure'); const im = await imgEl(it.ref); im.onclick=()=>{ $('lbImg').src=im.src; $('lightbox').classList.add('on'); };
+    f.appendChild(im); f.insertAdjacentHTML('beforeend',`<figcaption>${it.cap}</figcaption>`); grid.appendChild(f); }
+};
+$('albumBack').onclick = () => { show('home'); drawTrail(); };
+$('lightbox').onclick = () => $('lightbox').classList.remove('on');
+
+// ---- start ----
+(async()=>{
+  if (S.code) { try { await load(); return; } catch(e){ localStorage.removeItem('code'); } }
+  show('login');
+})();
+</script>
+</body>
+</html>
