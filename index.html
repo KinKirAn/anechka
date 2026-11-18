@@ -1006,6 +1006,93 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .ksign{font-family:'Amatic SC',cursive;font-size:34px;font-weight:700;text-align:right;color:#8a3a1e;opacity:0;transition:opacity 1s}
 .kraft.signed .ksign{opacity:1}
 
+/* ===== THEME: CAR (day 11) ===== */
+#day.theme-car{--red:#e3242b;background:#0e0e11;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.025) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.025) 0 2px,transparent 2px 6px);color:#f2f2f4}
+#day.theme-car .dayhead{background:#0a0a0c;border-bottom:2px solid var(--red);box-shadow:0 4px 20px -6px rgba(227,36,43,.6)}
+#day.theme-car .dayhead small{color:#ff6b70;letter-spacing:3px}
+#day.theme-car .dayhead h3,#day.theme-car h3,#day.theme-car .game h3{font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+#day.theme-car .game h3{font-size:28px;text-align:center}
+#day.theme-car .iconbtn{background:#1c1c20;color:#fff;border:1px solid #333}
+#day.theme-car .dots i{background:#2a2a2e;width:16px;height:3px;border-radius:2px}#day.theme-car .dots i.on{background:var(--red);box-shadow:0 0 8px var(--red)}
+#day.theme-car .card{background:linear-gradient(180deg,#1a1a1e,#131316);border:1px solid #2a2a2e;border-radius:18px}
+#day.theme-car .sub,#day.theme-car .stat,#day.theme-car .hinttext,#day.theme-car .tapnote,#day.theme-car .q .note{color:#9a9aa3}
+#day.theme-car .sline .tx{font-family:'Manrope',sans-serif;font-size:18px;line-height:1.5}
+#day.theme-car .sline.last .tx{color:#ff5a60;font-weight:700}
+#day.theme-car .navbar{background:linear-gradient(0deg,#0e0e11 65%,rgba(14,14,17,0))}
+#day.theme-car .btn{background:linear-gradient(180deg,#ff3b42,#c2141b);color:#fff;border-radius:12px;box-shadow:0 6px 18px -6px rgba(227,36,43,.7);font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px}
+#day.theme-car .btn.ghost{background:#1c1c20;color:#eee;border:1px solid #333;box-shadow:none}
+#day.theme-car .oi{background:#1c1c20;border-color:#2e2e33;color:#eee}
+#day.theme-car .oi.ok{background:rgba(227,36,43,.18);border-color:var(--red)}#day.theme-car .oi.ok .n{background:var(--red);color:#fff}
+#day.theme-car .cnote{color:#ff8a8f}
+#day.theme-car .q h3{font-size:26px}
+#day.theme-car .ans input{background:#0a0a0c;border-color:#333;border-radius:12px}
+#day.theme-car .hint{background:rgba(227,36,43,.08);border-left-color:var(--red)}
+#day.theme-car .reward h3{color:#ff5a60;font-family:'Oswald',sans-serif;text-transform:uppercase}
+#day.theme-car .reward img{border-radius:16px;box-shadow:0 0 40px -10px rgba(227,36,43,.6)}
+#day.theme-car .spinner{border-color:#2a2a2e;border-top-color:var(--red)}
+/* road scene */
+.scene.roadsc{background:linear-gradient(180deg,#2b6fd6 0%,#8ec2f2 55%,#c7a77a 56%,#8c6b45 70%,#2c2c30 70%);animation:none}
+.scene.roadsc .mnt{position:absolute;left:0;right:0;top:40px;height:50px;background:linear-gradient(170deg,transparent 30%,#a8865a 31%),linear-gradient(190deg,transparent 40%,#b89466 41%);opacity:.9}
+.scene.roadsc .lane{position:absolute;left:0;right:0;bottom:22px;height:4px;background:repeating-linear-gradient(90deg,#fff 0 28px,transparent 28px 56px);animation:lane .5s linear infinite}
+@keyframes lane{to{background-position:-56px 0}}
+.scene.roadsc .rcar{position:absolute;left:38%;bottom:20px;width:110px;height:44px;animation:bounce .4s ease-in-out infinite alternate}
+@keyframes bounce{to{transform:translateY(-2px)}}
+/* gift bow */
+.giftbox{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4}
+.giftbox img{width:100%;height:100%;object-fit:cover;filter:blur(18px) brightness(.6);transform:scale(1.1);transition:all 1.2s}
+.giftbox.open img{filter:none;transform:none}
+.giftbox .wrapv,.giftbox .wraph{position:absolute;background:linear-gradient(90deg,#b5121a,#ff3b42,#b5121a);transition:all .8s}
+.giftbox .wrapv{left:50%;top:0;bottom:0;width:36px;margin-left:-18px}
+.giftbox .wraph{top:50%;left:0;right:0;height:36px;margin-top:-18px;background:linear-gradient(180deg,#b5121a,#ff3b42,#b5121a)}
+.giftbox.open .wrapv{transform:scaleY(0)}.giftbox.open .wraph{transform:scaleX(0)}
+.giftbox .loop{position:absolute;left:50%;top:50%;width:70px;height:46px;border-radius:50%;border:12px solid #e3242b;background:transparent;box-shadow:inset 0 0 0 2px #ff6b70,0 4px 10px rgba(0,0,0,.4);transition:all .6s cubic-bezier(.5,0,.7,.4)}
+.loop.l1{margin:-56px 0 0 -76px;transform:rotate(-25deg)}.loop.l2{margin:-56px 0 0 6px;transform:rotate(25deg)}.loop.l3{margin:10px 0 0 -72px;transform:rotate(25deg)}.loop.l4{margin:10px 0 0 2px;transform:rotate(-25deg)}
+.loop.gone.l1,.loop.gone.l3{transform:translate(-220px,-40px) rotate(-90deg);opacity:0}
+.loop.gone.l2,.loop.gone.l4{transform:translate(220px,-40px) rotate(90deg);opacity:0}
+.giftbox .knot{position:absolute;left:50%;top:50%;width:34px;height:34px;margin:-17px;border-radius:10px;background:#c2141b;box-shadow:inset 0 0 0 3px #ff3b42;transition:all .6s}
+.giftbox.open .knot{transform:scale(0)}
+/* odometer */
+.dash{background:radial-gradient(ellipse at 50% 0%,#1d1d22,#0a0a0c);border:1px solid #2a2a2e;border-radius:24px;padding:16px;box-shadow:inset 0 0 40px rgba(0,0,0,.8)}
+.gauge{position:relative;width:240px;margin:0 auto}
+.gauge svg{width:100%}
+.spd{position:absolute;left:0;right:0;bottom:4px;text-align:center}
+.spd b{font-family:'Oswald',sans-serif;font-size:48px;line-height:1;color:#fff;text-shadow:0 0 14px rgba(227,36,43,.6)}
+.spd small{display:block;color:#888;font-size:11px;letter-spacing:2px}
+.odo{display:flex;justify-content:center;gap:3px;margin:14px 0 8px;align-items:center}
+.odo i{font-style:normal;width:28px;height:40px;background:linear-gradient(180deg,#000,#222 50%,#000);color:#fff;font-family:'PT Mono',monospace;font-size:26px;display:grid;place-items:center;border-radius:4px;border:1px solid #333}
+.odo span{color:#888;margin-left:6px;font-size:12px}
+.odomark{text-align:center;min-height:44px;color:#ff8a8f;font-size:15px;line-height:1.4;padding:0 6px}
+.odomark.pop2{animation:pop .5s}
+.pedals{text-align:center;margin-top:10px}
+.gas{width:110px;height:110px;border-radius:24px;background:repeating-linear-gradient(0deg,#2a2a2e 0 6px,#1a1a1d 6px 12px);border:2px solid #444;color:#ff5a60;font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:3px;touch-action:none;user-select:none;-webkit-user-select:none;box-shadow:0 8px 0 #000}
+.gas.on{transform:translateY(6px) perspective(200px) rotateX(14deg);box-shadow:0 2px 0 #000;border-color:var(--red,#e3242b)}
+/* plate */
+.uzplate{display:flex;align-items:stretch;background:#fff;color:#111;border:3px solid #111;border-radius:8px;height:66px;margin:6px auto 18px;max-width:330px;font-family:'Oswald',sans-serif;box-shadow:0 8px 20px -8px #000}
+.uzplate .reg{width:56px;border-right:3px solid #111;display:grid;place-items:center;font-size:30px}
+.uzplate .pmain{flex:1;display:flex;align-items:center;justify-content:center;gap:10px;font-size:34px}
+.uzplate span:empty,.uzplate .reg:empty{min-width:30px;height:34px;border-bottom:2px dashed #bbb}
+.uzplate .in{animation:pop .35s}
+.flagz{width:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+.flagz i{width:24px;height:15px;background:linear-gradient(180deg,#1eb4e6 0 33%,#fff 33% 38%,#e3242b 38% 42%,#fff 42% 58%,#e3242b 58% 62%,#fff 62% 66%,#1fa34a 66%)}
+.flagz b{font-size:12px;color:#1eb4e6}
+.pchips{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.pchip{height:46px;border-radius:8px;background:#f2f2f4;color:#111;font-family:'Oswald',sans-serif;font-size:20px;box-shadow:0 3px 0 #888}
+.pchip.used{opacity:.2}.pchip.bad{animation:shake .4s;background:#ffc9cb}
+/* head unit */
+.hu{position:relative;background:#050507;border:10px solid #1a1a1e;border-radius:22px;min-height:440px;padding:12px 14px;box-shadow:0 0 0 1px #333,0 20px 40px -14px #000;overflow:hidden}
+.hubar{display:flex;justify-content:space-between;font-size:12px;color:#aaa;margin-bottom:10px}
+.notif{display:flex;gap:10px;align-items:center;background:#1c1c22;border-radius:14px;padding:12px;transform:translateY(-140%);transition:transform .6s cubic-bezier(.3,1.3,.5,1),opacity .4s}
+.notif.in{transform:none}.notif.out{opacity:0;transform:translateY(-140%)}
+.nicon{width:40px;height:40px;border-radius:10px;background:#e3242b;display:grid;place-items:center;font-size:20px}
+.notif div:nth-child(2){flex:1}.notif b{display:block}.notif small{color:#999}
+.humsg{position:absolute;inset:44px 14px 14px;opacity:0;transition:opacity .6s;pointer-events:none}
+.humsg.on{opacity:1;pointer-events:auto}
+.humsg p{background:#1f6feb;color:#fff;border-radius:18px 18px 18px 4px;padding:10px 14px;margin:0 30px 10px 0;font-size:15px;line-height:1.45;opacity:0;transform:translateY(10px) scale(.96);transition:all .5s;width:fit-content;max-width:85%}
+.humsg p.on{opacity:1;transform:none}
+.humsg p:first-child{font-weight:700}
+.husign{text-align:right;color:#ff6b70;font-family:'Marck Script',cursive;font-size:24px;opacity:0;transition:opacity 1s}
+.humsg.signed .husign{opacity:1}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -1372,6 +1459,10 @@ async function renderStep(){
   if (st.kind==='stamp') return stampStep(st, back);
   if (st.kind==='kiln') return kilnStep(st, back);
   if (st.kind==='stampletter') return stampletterStep(st, back);
+  if (st.kind==='bow') return bowStep(st, back);
+  if (st.kind==='odometer') return odometerStep(st, back);
+  if (st.kind==='plate') return plateStep(st, back);
+  if (st.kind==='headunit') return headunitStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -1426,6 +1517,7 @@ function storyStep(st, back){
      <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" class="rbow">${RB.map((c,i)=>`<path d="M ${200-(170-i*9)} 150 A ${170-i*9} ${170-i*9} 0 0 1 ${200+(170-i*9)} 150" fill="none" stroke="${c[1]}" stroke-width="9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:drawarc 2.4s ${7+i*0.15}s ease forwards" opacity=".85"/>`).join('')}
      <path d="M0 125 Q100 115 200 125 T400 122 V150 H0Z" fill="#2f7d6d" opacity=".9"/><path d="M0 135 Q100 128 200 136 T400 133 V150 H0Z" fill="#23604f"/></svg>
      ${Array.from({length:22},(_,i)=>`<i class="drop" style="left:${(i*47)%100}%;animation-delay:${-(i*0.23)}s"></i>`).join('')}</div>`
+   : st.scene==='road' ? `<div class="scene roadsc"><div class="mnt"></div><div class="lane"></div><svg class="rcar" viewBox="0 0 110 44"><path d="M8 32 Q6 22 18 20 L34 10 Q40 6 52 6 L74 6 Q84 6 92 16 L102 20 Q108 22 106 32 Z" fill="#e3242b"/><path d="M38 12 L50 9 L72 9 Q80 10 86 18 L36 18Z" fill="#1a1a1e"/><path d="M8 28 H106" stroke="#fff" stroke-width="1.5" opacity=".6"/><circle cx="28" cy="34" r="9" fill="#111"/><circle cx="28" cy="34" r="4" fill="#aaa"/><circle cx="86" cy="34" r="9" fill="#111"/><circle cx="86" cy="34" r="4" fill="#aaa"/><rect x="100" y="22" width="6" height="4" fill="#ffe08a"/></svg></div>`
    : st.scene==='pottery' ? `<div class="scene potterysc">${Array.from({length:9},(_,i)=>`<i class="hang" style="left:${6+i*11}%;height:${30+(i*17)%40}px"></i>`).join('')}<div class="pw"><div class="lump"></div><div class="disc"></div><div class="tub"></div><div class="base3"></div></div></div>`
    : st.scene==='snow' ? `<div class="scene snowsc">${Array.from({length:30},(_,i)=>`<span class="sf" style="left:${(i*37)%100}%;animation-duration:${3+(i%5)}s;animation-delay:${-(i*0.37)}s">❄</span>`).join('')}<svg class="mosque" viewBox="0 0 220 120"><g fill="#e9f3ff"><rect x="60" y="60" width="100" height="60"/><path d="M80 60 Q110 18 140 60Z" fill="#5fb3ff"/><rect x="40" y="20" width="10" height="100"/><path d="M40 20 L45 0 L50 20Z" fill="#5fb3ff"/><rect x="170" y="20" width="10" height="100"/><path d="M170 20 L175 0 L180 20Z" fill="#5fb3ff"/><rect x="18" y="40" width="8" height="80"/><path d="M18 40 L22 24 L26 40Z" fill="#5fb3ff"/><rect x="194" y="40" width="8" height="80"/><path d="M194 40 L198 24 L202 40Z" fill="#5fb3ff"/></g><g fill="#ffe9a8"><rect x="88" y="80" width="8" height="20" rx="4"/><rect x="106" y="76" width="8" height="24" rx="4"/><rect x="124" y="80" width="8" height="20" rx="4"/></g></svg></div>`
    : st.scene==='airport' ? `<div class="scene airportsc"><div class="moon2"></div><span class="jet">✈️</span><div class="runway"></div></div>`
@@ -2423,6 +2515,76 @@ function stampletterStep(st, back){
     const words=lines[li].split(' '); const w=document.createElement('span'); w.textContent=words[wi]+' '; cur.appendChild(w); wi++;
     if (wi>=words.length){ li++; wi=0; cur=null; setTimeout(step, 500); } else setTimeout(step, 110); };
   setTimeout(step, 400);
+}
+
+async function bowStep(st, back){
+  const url = await media(st.photo);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="giftbox" id="gb"><img src="${url}" alt="" id="gimg2"><div class="wrapv"></div><div class="wraph"></div>
+      <button class="loop l1" data-i="0"></button><button class="loop l2" data-i="1"></button><button class="loop l3" data-i="2"></button><button class="loop l4" data-i="3"></button><div class="knot"></div></div>
+    <div class="stat" id="bwStat">Осталось ленточек: 4</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let left=4;
+  document.querySelectorAll('.loop').forEach(b => b.onclick = () => { if(b.classList.contains('gone')) return; b.classList.add('gone'); left--;
+    $('bwStat').textContent = left ? `Осталось ленточек: ${left}` : (st.done||'');
+    if (!left){ $('gb').classList.add('open'); hearts(); enableNext('gNext'); } });
+  $('gNext').onclick = next;
+}
+
+function odometerStep(st, back){
+  const target=st.target||53000, marks=st.marks||[];
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="dash"><div class="gauge"><svg viewBox="0 0 200 120"><path d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#2a2a2e" stroke-width="12" stroke-linecap="round"/>
+      <path id="garc" d="M20 110 A80 80 0 0 1 180 110" fill="none" stroke="#e3242b" stroke-width="12" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+      <div class="spd"><b id="spd">0</b><small>км/ч</small></div></div>
+      <div class="odo" id="odo">${'000000'.split('').map(()=>'<i>0</i>').join('')}<span>км</span></div>
+      <div class="odomark" id="mk">Поехали! 🚗</div>
+      <div class="pedals"><button class="gas" id="gas">ГАЗ</button></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let km=0, v=0, hold=false, done=false, last=0, mi=0;
+  const digits=[...$('odo').querySelectorAll('i')];
+  const loop = t => { if(!document.getElementById('odo')) return; const dt=last?(t-last)/1000:0; last=t;
+    if (!done){ v = hold ? Math.min(180, v+dt*120) : Math.max(0, v-dt*90);
+      km = Math.min(target, km + v*dt*55);
+      $('spd').textContent=Math.round(v); $('garc').style.strokeDashoffset = 1 - v/180;
+      String(Math.floor(km)).padStart(6,'0').split('').forEach((d,i)=>{ digits[i].textContent=d; });
+      while (mi<marks.length && km>=marks[mi][0]){ const m=$('mk'); m.textContent=marks[mi][1]; m.classList.remove('pop2'); void m.offsetWidth; m.classList.add('pop2'); mi++; }
+      if (km>=target){ done=true; v=0; $('spd').textContent='0'; $('garc').style.strokeDashoffset=1; hearts(); setTimeout(hearts,700); enableNext('gNext'); } }
+    requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+  const b=$('gas'); const on=e=>{e.preventDefault(); hold=true; b.classList.add('on');}, off=()=>{hold=false; b.classList.remove('on');};
+  b.addEventListener('pointerdown',on); b.addEventListener('pointerup',off); b.addEventListener('pointerleave',off); b.addEventListener('pointercancel',off); b.addEventListener('contextmenu',e=>e.preventDefault());
+  $('gNext').onclick = next;
+}
+
+function plateStep(st, back){
+  const parts=st.plate, pool=shuffle([...parts, ...(st.extra||[])]);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="uzplate"><div class="reg" id="p0"></div><div class="pmain"><span id="p1"></span><span id="p2"></span><span id="p3"></span></div><div class="flagz"><i></i><b>UZ</b></div></div>
+    <div class="pchips">${pool.map(c=>`<button class="pchip" data-c="${c}">${c}</button>`).join('')}</div>
+    <div class="stat" id="plStat"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let k=0;
+  document.querySelectorAll('.pchip').forEach(b => b.onclick = () => { if(b.classList.contains('used')||k>=parts.length) return;
+    if (b.dataset.c===parts[k]){ b.classList.add('used'); const el=$('p'+k); el.textContent=parts[k]; el.classList.add('in'); k++;
+      if (k===parts.length){ $('plStat').textContent=st.done||''; hearts(); enableNext('gNext'); } }
+    else { b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); $('plStat').textContent=k===0?'Номер начинается с кода Ташкента 😉':'Не то… посмотри на фото машины спереди'; } });
+  $('gNext').onclick = next;
+}
+
+function headunitStep(st, back){
+  $('stage').innerHTML = `<div class="hu" id="hu"><div class="hubar"><span>📶 ✦ 🔵</span><span id="huc"></span></div>
+    <div class="notif" id="nf"><div class="nicon">💬</div><div><b>Новое сообщение</b><small>от: ${st.from||''}</small></div><button class="btn small" id="nopen">Открыть</button></div>
+    <div class="humsg" id="hm">${st.lines.map(l=>`<p>${l}</p>`).join('')}<div class="husign">— ${st.sign||''}</div></div></div>`;
+  nav(back);
+  const tk=()=>{ const el=$('huc'); if(el) el.textContent=new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'}); }; tk();
+  setTimeout(()=>{ const n=$('nf'); n && n.classList.add('in'); }, 600);
+  $('nopen').onclick = () => { $('nf').classList.add('out'); $('hm').classList.add('on');
+    const ps=[...$('hm').querySelectorAll('p')]; ps.forEach((p,i)=>setTimeout(()=>p.classList.add('on'),300+i*1500));
+    setTimeout(()=>{ $('hm').classList.add('signed'); hearts(); nav(finalNav()); }, 300+ps.length*1500); };
 }
 
 function writeLetter(){
