@@ -1093,6 +1093,83 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .husign{text-align:right;color:#ff6b70;font-family:'Marck Script',cursive;font-size:24px;opacity:0;transition:opacity 1s}
 .humsg.signed .husign{opacity:1}
 
+/* ===== THEME: ALPINE (day 12) ===== */
+#day.theme-alpine{--lime:#8ee03a;--sky:#1d6fe0;background:linear-gradient(180deg,#2f86f0 0%,#8ec6ff 35%,#f4f9ff 60%,#ffffff 100%);color:#10213d}
+#day.theme-alpine .dayhead{background:rgba(16,33,61,.92);color:#fff;border-bottom:4px solid var(--lime)}
+#day.theme-alpine .dayhead small{color:var(--lime)}
+#day.theme-alpine .dayhead h3,#day.theme-alpine h3,#day.theme-alpine .game h3{font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-style:italic;letter-spacing:.5px}
+#day.theme-alpine .game h3{font-size:30px;text-align:center;color:#10213d}
+#day.theme-alpine .iconbtn{background:rgba(255,255,255,.15);color:#fff}
+#day.theme-alpine .dots i{background:rgba(16,33,61,.2)}#day.theme-alpine .dots i.on{background:var(--lime)}
+#day.theme-alpine .card{background:rgba(255,255,255,.92);border:0;border-radius:20px;box-shadow:0 14px 30px -14px rgba(16,60,130,.5)}
+#day.theme-alpine .sub,#day.theme-alpine .stat,#day.theme-alpine .hinttext,#day.theme-alpine .tapnote,#day.theme-alpine .q .note{color:#4a6489}
+#day.theme-alpine .sline .tx{font-family:'Manrope',sans-serif;font-size:18px;font-weight:600;line-height:1.45}
+#day.theme-alpine .sline.last .tx{color:#3a9a10}
+#day.theme-alpine .navbar{background:linear-gradient(0deg,#fff 65%,rgba(255,255,255,0))}
+#day.theme-alpine .btn{background:var(--lime);color:#10213d;border-radius:12px;font-family:'Oswald',sans-serif;text-transform:uppercase;font-style:italic;box-shadow:0 4px 0 #4f8f12}
+#day.theme-alpine .btn.ghost{background:#fff;color:#10213d;border:2px solid #10213d;box-shadow:none}
+#day.theme-alpine .q h3{font-size:28px}
+#day.theme-alpine .ans input{background:#fff;color:#10213d;border:2px solid #c6d7ee}
+#day.theme-alpine .msg{color:#c0392b}
+#day.theme-alpine .hint{background:#eef5ff;border-left-color:var(--lime)}
+#day.theme-alpine .tile{background:#10213d;color:#fff;box-shadow:0 3px 0 #000}
+#day.theme-alpine .slot{border-color:#9fb6d6;color:#10213d}
+#day.theme-alpine .reward h3{color:#10213d;font-family:'Oswald',sans-serif;font-style:italic;text-transform:uppercase}
+#day.theme-alpine .reward img{border-radius:20px;border:4px solid #fff}
+#day.theme-alpine .spinner{border-color:#c6d7ee;border-top-color:var(--sky)}
+/* slope scene */
+.scene.slopesc{background:linear-gradient(180deg,#1d6fe0,#8ec6ff 70%);animation:none}
+.scene.slopesc .peaks{position:absolute;left:0;right:0;bottom:0;height:120px}
+.scene.slopesc .lift3{position:absolute;left:0;right:0;top:40px;height:2px;background:#333;transform:rotate(-8deg);transform-origin:0 0}
+.scene.slopesc .cab{position:absolute;top:26px;font-size:20px;animation:cab 9s linear infinite}
+@keyframes cab{from{left:-10%;transform:translateY(30px)}to{left:110%;transform:translateY(-20px)}}
+.scene.slopesc .boarder{position:absolute;font-size:30px;bottom:12px;animation:carve 4s ease-in-out infinite}
+@keyframes carve{0%{left:10%;transform:rotate(-10deg)}50%{left:60%;transform:rotate(10deg)}100%{left:10%;transform:rotate(-10deg)}}
+/* ski pass */
+.gate2{position:relative;height:260px;margin-top:10px}
+.reader{position:absolute;right:10%;top:20px;width:110px;height:150px;background:linear-gradient(180deg,#e8eef6,#b9c6d8);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:0 10px 20px -10px #000}
+.reader span{font-family:'Oswald',sans-serif;font-size:13px;letter-spacing:2px;color:#10213d}
+.led{width:46px;height:46px;border-radius:50%;background:#cc2b2b;box-shadow:0 0 18px currentColor;transition:background .2s}
+.pass{position:absolute;left:6%;top:50px;width:150px;height:96px;border-radius:12px;background:linear-gradient(135deg,#8ee03a,#2fb36a);color:#10213d;padding:10px;font-family:'Oswald',sans-serif;box-shadow:0 10px 20px -8px #000;touch-action:none;user-select:none;-webkit-user-select:none;cursor:pointer;transition:transform .3s}
+.pass b{display:block;font-size:20px}.pass small{font-size:11px}.pass i{position:absolute;right:10px;bottom:6px;font-style:normal;font-size:28px}
+.pass.tap{transform:translate(60px,-10px) rotate(-6deg)}
+.turn{position:absolute;left:20%;right:20%;bottom:10px;height:16px;border-radius:8px;background:#10213d;transform-origin:0 50%;transition:transform .6s}
+.gate2.open .turn{transform:rotate(-80deg)}
+/* slalom */
+.piste{position:relative;height:420px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#f4f9ff,#fff);box-shadow:inset 0 0 0 2px #d6e4f5;touch-action:none}
+.piste::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(160deg,transparent 0 40px,rgba(150,180,220,.12) 40px 42px)}
+.rider{position:absolute;bottom:50px;left:50%;font-size:40px;transition:transform .1s;z-index:3}
+.sgate{position:absolute;top:-40px;height:30px;display:flex;justify-content:space-between}
+.sgate i{width:6px;height:30px;background:#c33;border-radius:2px;position:relative}
+.sgate i.b{background:#1d6fe0}
+.sgate i::after{content:"";position:absolute;left:6px;top:0;border-left:16px solid currentColor;border-top:8px solid transparent;border-bottom:8px solid transparent;color:inherit}
+.sgate i.r::after{border-left-color:#e33}.sgate i.b::after{border-left-color:#3d8bff}
+.sgate.ok{filter:drop-shadow(0 0 8px #8ee03a)}.sgate.miss{opacity:.35}
+.score2{position:absolute;right:12px;top:10px;background:#10213d;color:#8ee03a;font-family:'Oswald',sans-serif;padding:4px 10px;border-radius:8px;z-index:4}
+/* ring hunt */
+.rmark{position:absolute;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px #8ee03a,0 0 30px #fff;opacity:0;transform:scale(2);transition:all .5s;pointer-events:none}
+.rmark.on{opacity:1;transform:scale(1)}
+/* chairlift */
+.cable{position:relative;height:440px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#1d6fe0,#bfe0ff 60%,#fff);cursor:pointer}
+.cable .wire{position:absolute;inset:0;width:100%;height:100%}
+.chair{position:absolute;left:4%;top:52%;width:44%;transition:left 1s ease-in-out,top 1s ease-in-out}
+.hanger{width:3px;height:40px;background:#333;margin:0 auto}
+.seatbox{border:6px solid #333;border-top-width:10px;border-radius:10px;background:#333;overflow:hidden;aspect-ratio:3/4}
+.seatbox img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.ccap{position:absolute;left:12px;right:12px;bottom:12px;text-align:right;font-family:'Oswald',sans-serif;font-style:italic;font-size:20px;color:#10213d}
+/* lifetime pass letter */
+.lpass{border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 20px 40px -18px rgba(16,60,130,.6)}
+.lp-h{display:flex;justify-content:space-between;align-items:center;padding:16px;background:linear-gradient(135deg,#8ee03a,#2fb36a);color:#10213d;font-family:'Oswald',sans-serif}
+.lp-h b{font-size:22px;text-transform:uppercase;font-style:italic}
+.lp-g{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px}
+.lp-g small{display:block;color:#7a8ca8;font-size:11px;text-transform:uppercase;letter-spacing:1px}.lp-g b{font-size:15px}
+.lp-bar{height:46px;margin:0 16px;background:repeating-linear-gradient(90deg,#10213d 0 2px,transparent 2px 4px,#10213d 4px 7px,transparent 7px 9px)}
+.lp-body{padding:16px}
+.lp-body p{font-size:16px;line-height:1.55;margin:0 0 10px;opacity:0;transform:translateY(8px);transition:all .9s}
+.lp-body p.on{opacity:1;transform:none}.lp-body p:first-child{font-family:'Oswald',sans-serif;font-size:24px;font-style:italic}
+.lp-sign{text-align:right;font-family:'Marck Script',cursive;font-size:26px;color:#2f8a12;opacity:0;transition:opacity 1s}
+.lpass.signed .lp-sign{opacity:1}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -1463,6 +1540,11 @@ async function renderStep(){
   if (st.kind==='odometer') return odometerStep(st, back);
   if (st.kind==='plate') return plateStep(st, back);
   if (st.kind==='headunit') return headunitStep(st, back);
+  if (st.kind==='skipass') return skipassStep(st, back);
+  if (st.kind==='slalom') return slalomStep(st, back);
+  if (st.kind==='ringhunt') return ringhuntStep(st, back);
+  if (st.kind==='chairlift') return chairliftStep(st, back);
+  if (st.kind==='passletter') return passletterStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
 
@@ -1517,6 +1599,7 @@ function storyStep(st, back){
      <svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" class="rbow">${RB.map((c,i)=>`<path d="M ${200-(170-i*9)} 150 A ${170-i*9} ${170-i*9} 0 0 1 ${200+(170-i*9)} 150" fill="none" stroke="${c[1]}" stroke-width="9" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="animation:drawarc 2.4s ${7+i*0.15}s ease forwards" opacity=".85"/>`).join('')}
      <path d="M0 125 Q100 115 200 125 T400 122 V150 H0Z" fill="#2f7d6d" opacity=".9"/><path d="M0 135 Q100 128 200 136 T400 133 V150 H0Z" fill="#23604f"/></svg>
      ${Array.from({length:22},(_,i)=>`<i class="drop" style="left:${(i*47)%100}%;animation-delay:${-(i*0.23)}s"></i>`).join('')}</div>`
+   : st.scene==='slope' ? `<div class="scene slopesc"><svg class="peaks" viewBox="0 0 400 120" preserveAspectRatio="none"><path d="M0 120 L0 70 L60 20 L110 60 L170 10 L230 55 L300 15 L360 50 L400 30 L400 120Z" fill="#fff"/><path d="M60 20 L75 34 L50 34Z M170 10 L188 28 L152 28Z M300 15 L318 32 L284 32Z" fill="#dce9f8"/><path d="M0 120 L0 95 Q200 70 400 100 L400 120Z" fill="#f4f9ff"/></svg><div class="lift3"></div><span class="cab">🚡</span><span class="cab" style="animation-delay:-4.5s">🚡</span><span class="boarder">🏂</span></div>`
    : st.scene==='road' ? `<div class="scene roadsc"><div class="mnt"></div><div class="lane"></div><svg class="rcar" viewBox="0 0 110 44"><path d="M8 32 Q6 22 18 20 L34 10 Q40 6 52 6 L74 6 Q84 6 92 16 L102 20 Q108 22 106 32 Z" fill="#e3242b"/><path d="M38 12 L50 9 L72 9 Q80 10 86 18 L36 18Z" fill="#1a1a1e"/><path d="M8 28 H106" stroke="#fff" stroke-width="1.5" opacity=".6"/><circle cx="28" cy="34" r="9" fill="#111"/><circle cx="28" cy="34" r="4" fill="#aaa"/><circle cx="86" cy="34" r="9" fill="#111"/><circle cx="86" cy="34" r="4" fill="#aaa"/><rect x="100" y="22" width="6" height="4" fill="#ffe08a"/></svg></div>`
    : st.scene==='pottery' ? `<div class="scene potterysc">${Array.from({length:9},(_,i)=>`<i class="hang" style="left:${6+i*11}%;height:${30+(i*17)%40}px"></i>`).join('')}<div class="pw"><div class="lump"></div><div class="disc"></div><div class="tub"></div><div class="base3"></div></div></div>`
    : st.scene==='snow' ? `<div class="scene snowsc">${Array.from({length:30},(_,i)=>`<span class="sf" style="left:${(i*37)%100}%;animation-duration:${3+(i%5)}s;animation-delay:${-(i*0.37)}s">❄</span>`).join('')}<svg class="mosque" viewBox="0 0 220 120"><g fill="#e9f3ff"><rect x="60" y="60" width="100" height="60"/><path d="M80 60 Q110 18 140 60Z" fill="#5fb3ff"/><rect x="40" y="20" width="10" height="100"/><path d="M40 20 L45 0 L50 20Z" fill="#5fb3ff"/><rect x="170" y="20" width="10" height="100"/><path d="M170 20 L175 0 L180 20Z" fill="#5fb3ff"/><rect x="18" y="40" width="8" height="80"/><path d="M18 40 L22 24 L26 40Z" fill="#5fb3ff"/><rect x="194" y="40" width="8" height="80"/><path d="M194 40 L198 24 L202 40Z" fill="#5fb3ff"/></g><g fill="#ffe9a8"><rect x="88" y="80" width="8" height="20" rx="4"/><rect x="106" y="76" width="8" height="24" rx="4"/><rect x="124" y="80" width="8" height="20" rx="4"/></g></svg></div>`
@@ -2585,6 +2668,92 @@ function headunitStep(st, back){
   $('nopen').onclick = () => { $('nf').classList.add('out'); $('hm').classList.add('on');
     const ps=[...$('hm').querySelectorAll('p')]; ps.forEach((p,i)=>setTimeout(()=>p.classList.add('on'),300+i*1500));
     setTimeout(()=>{ $('hm').classList.add('signed'); hearts(); nav(finalNav()); }, 300+ps.length*1500); };
+}
+
+function skipassStep(st, back){
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="gate2" id="gt"><div class="reader" id="rd"><div class="led" id="led"></div><span>AMIRSOY</span></div>
+      <div class="pass" id="ps2"><b>SKI PASS</b><small>Анна · 1 день</small><i>🏂</i></div><div class="turn" id="tn"></div></div>
+    <div class="stat" id="spStat">Держи ски-пасс у считывателя</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let t0=null, done=false, raf;
+  const tick=()=>{ if(done||t0===null) return; const p=(performance.now()-t0)/1200; $('led').style.background=`hsl(${45-p*45},100%,55%)`;
+    if (p>=1){ done=true; $('led').style.background='#3ee07a'; $('gt').classList.add('open'); $('spStat').textContent=st.done||''; try{playNote(1318);setTimeout(()=>playNote(1760),120);}catch(e){} hearts(); enableNext('gNext'); return; }
+    raf=requestAnimationFrame(tick); };
+  const ps=$('ps2');
+  ps.addEventListener('pointerdown',e=>{e.preventDefault(); if(done) return; ps.classList.add('tap'); t0=performance.now(); tick();});
+  const off=()=>{ if(done) return; ps.classList.remove('tap'); t0=null; cancelAnimationFrame(raf); $('led').style.background=''; };
+  ps.addEventListener('pointerup',off); ps.addEventListener('pointerleave',off); ps.addEventListener('pointercancel',off); ps.addEventListener('contextmenu',e=>e.preventDefault());
+  $('gNext').onclick = next;
+}
+
+function slalomStep(st, back){
+  const need=st.gates||10;
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="piste" id="pi"><div class="rider" id="rider">🏂</div><div class="score2"><span id="gc">0</span> / ${need} 🚩</div></div><div class="stat" id="slStat"></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const pi=$('pi'), rider=$('rider'); let W=pi.clientWidth, H=pi.clientHeight, x=W/2, tx=W/2, gates=[], passed=0, done=false, last=0, spawn=0, n=0;
+  const mk=()=>{ const gw=Math.max(90, 150-n*5), gx=30+Math.random()*(W-60-gw); const el=document.createElement('div'); el.className='sgate'; el.style.width=gw+'px'; el.style.left=gx+'px'; el.innerHTML=`<i class="${n%2?'b':'r'}"></i><i class="${n%2?'b':'r'}"></i>`; pi.appendChild(el); gates.push({el,y:-40,gx,gw,done:false}); n++; };
+  const loop=t=>{ if(!document.getElementById('pi')) return; const dt=last?Math.min(.05,(t-last)/1000):0; last=t;
+    if(!done){ x+=(tx-x)*Math.min(1,dt*10); rider.style.left=(x-20)+'px'; rider.style.transform=`rotate(${(tx-x)*0.25}deg)`;
+      spawn-=dt; if(spawn<=0){ mk(); spawn=1.25; }
+      const ry=H-70;
+      gates.forEach(g=>{ g.y+=dt*170; g.el.style.top=g.y+'px';
+        if(!g.done && g.y>=ry){ g.done=true; if(x>g.gx && x<g.gx+g.gw){ passed++; g.el.classList.add('ok'); $('gc').textContent=passed; $('slStat').textContent='Есть! ❄️'; }
+          else { g.el.classList.add('miss'); $('slStat').textContent='Мимо — следующий флажок!'; } } });
+      gates=gates.filter(g=>{ if(g.y>H+20){ g.el.remove(); return false;} return true; });
+      if(passed>=need){ done=true; $('slStat').textContent=st.done||''; hearts(); enableNext('gNext'); } }
+    requestAnimationFrame(loop); };
+  requestAnimationFrame(loop);
+  const set=e=>{ const r=pi.getBoundingClientRect(); tx=Math.max(20,Math.min(W-20,e.clientX-r.left)); };
+  pi.addEventListener('pointerdown',e=>{ pi.setPointerCapture(e.pointerId); set(e); }); pi.addEventListener('pointermove',e=>{ if(e.buttons||e.pointerType==='touch') set(e); });
+  pi.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+  $('gNext').onclick = next;
+}
+
+async function ringhuntStep(st, back){
+  const urls=await Promise.all(st.rounds.map(r=>media(r.photo)));
+  let r=0, miss=0;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const draw=()=>{ const rd=st.rounds[r];
+    $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''} · ${r+1} из ${st.rounds.length}</div>
+      <div class="spot" id="rh"><img src="${urls[r]}" alt=""><div class="rmark" id="rm"></div></div><div class="stat" id="rhStat"></div></div>`;
+    $('gNext').onclick=next; miss=0;
+    $('rh').onclick=e=>{ const b=$('rh').getBoundingClientRect(); const px=(e.clientX-b.left)/b.width*100, py=(e.clientY-b.top)/b.height*100;
+      if (Math.hypot(px-rd.x,(py-rd.y)*b.height/b.width)<=rd.r){ const m=$('rm'); m.style.left=rd.x+'%'; m.style.top=rd.y+'%'; m.classList.add('on'); $('rh').onclick=null;
+        r++; if(r<st.rounds.length){ $('rhStat').innerHTML='💍 Нашла! <button class="btn small" id="rhn">Следующее фото →</button>'; $('rhn').onclick=draw; }
+        else { $('rhStat').textContent=st.done||''; hearts(); enableNext('gNext'); } }
+      else { miss++; $('rhStat').textContent = miss>=2?'Подсказка: смотри на её пальцы 😉':'Не здесь… ищи блеск ✨'; } };
+  };
+  draw();
+}
+
+async function chairliftStep(st, back){
+  const urls=await Promise.all(st.photos.map(p=>media(p)));
+  $('stage').innerHTML = `<div class="game" style="padding-top:4px"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div></div>
+    <div class="cable" id="cb"><svg class="wire" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="0" y1="95" x2="100" y2="5" stroke="#333" stroke-width=".6"/></svg>
+      <div class="chair" id="ch"><div class="hanger"></div><div class="seatbox"><img id="chimg" src="${urls[0]}" alt=""></div></div><div class="ccap" id="cc">${st.caps[0]||''}</div></div>
+    <div class="stat" id="chStat">1 / ${urls.length}</div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let k=0;
+  $('cb').onclick=()=>{ if(k>=urls.length-1) return; k++; const ch=$('ch'); const p=k/(urls.length-1);
+    ch.style.left=(4+p*52)+'%'; ch.style.top=(52-p*42)+'%';
+    const im=$('chimg'); im.style.opacity=0; setTimeout(()=>{ im.src=urls[k]; im.style.opacity=1; $('cc').textContent=st.caps[k]||''; },300);
+    $('chStat').textContent=`${k+1} / ${urls.length}`; if(k===urls.length-1){ $('chStat').textContent='Мы на вершине! 🏔'; hearts(); enableNext('gNext'); } };
+  $('gNext').onclick = next;
+}
+
+function passletterStep(st, back){
+  $('stage').innerHTML = `<div class="lpass" id="lp"><div class="lp-h"><b>${st.title||''}</b><span>⛷ VIP</span></div>
+    <div class="lp-g"><div><small>Владелец</small><b>${st.holder||''}</b></div><div><small>Срок</small><b>${st.valid||''}</b></div><div style="grid-column:1/-1"><small>Зона</small><b>${st.zone||''}</b></div></div>
+    <div class="lp-bar"></div><div class="lp-body">${st.lines.map(l=>`<p>${l}</p>`).join('')}<div class="lp-sign">${st.sign||''} 💚</div></div></div>`;
+  nav(back);
+  const ps=[...$('lp').querySelectorAll('.lp-body p')]; ps.forEach((p,i)=>setTimeout(()=>p.classList.add('on'),600+i*1600));
+  setTimeout(()=>{ $('lp').classList.add('signed'); hearts(); nav(finalNav()); },600+ps.length*1600);
 }
 
 function writeLetter(){
