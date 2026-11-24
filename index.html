@@ -1358,7 +1358,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .grow{flex:1;display:flex;gap:6px;opacity:.55;transition:opacity .3s}
 .grow.cur{opacity:1}.grow.cur .gpane:not(.crack){animation:gglow 1.6s infinite}
 @keyframes gglow{50%{box-shadow:0 0 0 3px rgba(63,193,201,.8)}}
-.gpane{flex:1;border:2px solid rgba(255,255,255,.9);border-radius:4px;background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(170,215,240,.35) 50%,rgba(255,255,255,.5));cursor:pointer;font-size:22px;padding:0}
+.gpane{touch-action:manipulation;-webkit-tap-highlight-color:transparent;flex:1;border:2px solid rgba(255,255,255,.9);border-radius:4px;background:linear-gradient(135deg,rgba(255,255,255,.55),rgba(170,215,240,.35) 50%,rgba(255,255,255,.5));cursor:pointer;font-size:22px;padding:0}
 .gpane.step{background:rgba(220,245,250,.85)}
 .gpane.crack{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M50 30L20 5M50 30L85 8M50 30L10 50M50 30L90 55M50 30L60 2M50 30L45 58M30 18L15 25M70 20L80 30' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/100% 100%,rgba(120,140,160,.45);animation:gcr .4s}
 @keyframes gcr{20%{transform:translateX(-4px)}60%{transform:translateX(4px)}}
@@ -3283,17 +3283,18 @@ async function glassbridgeStep(st, back){
   $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
     <div class="gbr" id="gbr"><div class="gmts"></div><div class="grows">${[...Array(N)].map((_,r)=>`<div class="grow" data-r="${N-1-r}">${[0,1].map(s=>`<button class="gpane" data-s="${s}"></button>`).join('')}</div>`).join('')}</div>
       <div class="gstart">🧍‍♀️🧍‍♂️</div><div class="gphoto" id="gph" style="background-image:url(${url})"></div></div>
-    <div class="stat" id="gStat">Шаг 1 из ${N}: какое стекло выдержит?</div></div>`;
+    <div class="stat" id="gStat">Шаг 1 из ${N}: нажми на левое или правое стекло</div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
   if (D.replay) enableNext('gNext');
   let cur=0;
   const mark = () => document.querySelectorAll('.grow').forEach(g=>g.classList.toggle('cur', +g.dataset.r===cur));
   mark();
-  document.querySelectorAll('.gpane').forEach(b => b.onclick = () => { const row=+b.parentElement.dataset.r; if (row!==cur || b.disabled) return;
+  document.querySelectorAll('.gpane').forEach(b0 => b0.onclick = () => { if (cur>=N) return; const row=cur, b=document.querySelector(`.grow[data-r="${cur}"] .gpane[data-s="${b0.dataset.s}"]`);
+    if (b.classList.contains('crack')){ $('gStat').textContent='Это стекло уже треснуло — нажми на соседнее 👉'; return; }
     if (+b.dataset.s===safe[row]){ b.classList.add('step'); b.textContent='👣'; playNote(NOTE_F(['E5','G5','A5','C6','E6','G6'][row%6])); cur++;
       if (cur===N){ $('gStat').innerHTML = st.crossed||'Перешли!'; setTimeout(()=>{ $('gbr').classList.add('show'); $('gStat').innerHTML = st.done||''; hearts(); enableNext('gNext'); }, 1100); }
       else { $('gStat').textContent = `Шаг ${cur+1} из ${N}: какое стекло выдержит?`; mark(); }
-    } else { b.classList.add('crack'); b.disabled=true; $('gStat').textContent = (st.oops||['Ой! Треснуло 😱 Держу тебя — выбирай другое'])[Math.floor(Math.random()*(st.oops||[1]).length)]; }
+    } else { b.classList.add('crack'); $('gStat').textContent = (st.oops||['Ой! Треснуло 😱 Держу тебя — выбирай другое'])[Math.floor(Math.random()*(st.oops||[1]).length)]; }
   });
   $('gNext').onclick = next;
 }
