@@ -1297,6 +1297,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 #day.theme-silk .game .sub{color:#c9d4ec}
 #day.theme-silk .card .sub{color:#5b6a86}
 #day.theme-silk .btitle small{color:var(--tq)}
+#day.theme-silk .reward h3{font-family:'Playfair Display',serif;font-style:italic;color:var(--sk);font-size:36px}
+#day.theme-silk .reward p{color:#f4ecd8}
+#day.theme-silk .reward img{border-radius:10px;border:4px solid #fbf5e7;box-shadow:0 0 0 2px var(--sk)}
+#day.theme-silk .q h3{font-size:28px}
 #day.theme-silk .btitle h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:var(--sk);font-size:46px}
 #day.theme-silk .btitle .bsub{color:#c9d4ec;letter-spacing:2px}
 #day.theme-silk .btitle p{color:#f4ecd8}
@@ -1323,14 +1327,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .dray{stroke:#e6c06a;stroke-width:0;transition:stroke-width .5s;opacity:.8}.dray.on{stroke-width:2}
 .lamp{cursor:pointer}.lamp .lh{fill:#0b2150;stroke:#3fc1c9;stroke-width:2;transition:all .4s}
 .lamp.on .lh{fill:#e6c06a;stroke:#fff3c4;filter:drop-shadow(0 0 8px #ffd77a)}
-.dphoto{position:absolute;inset:0;border-radius:50%;background-size:cover;background-position:center 30%;clip-path:circle(0% at 50% 50%);transition:clip-path 1.6s ease;box-shadow:0 0 0 6px #e6c06a}
+.dphoto{position:absolute;inset:0;pointer-events:none;border-radius:50%;background-size:cover;background-position:center 30%;clip-path:circle(0% at 50% 50%);transition:clip-path 1.6s ease;box-shadow:0 0 0 6px #e6c06a}
 .dome.open .dphoto{clip-path:circle(50% at 50% 50%)}
 /* flashlight */
 .flsh{position:relative;border-radius:12px;overflow:hidden;touch-action:none;cursor:crosshair}
 .flsh img{width:100%;display:block}
 .flsh .dark{position:absolute;inset:0;--x:50%;--y:90%;background:radial-gradient(circle at var(--x) var(--y),transparent 0,transparent 13%,rgba(4,6,14,.93) 22%,rgba(4,6,14,.985) 40%);transition:opacity 1.2s}
 .flsh .dark.off{opacity:0}
-.fring{position:absolute;width:22%;aspect-ratio:1;transform:translate(-50%,-50%) scale(.3);border:3px solid #e6c06a;border-radius:50%;opacity:0;transition:all .8s}
+.fring{pointer-events:none;position:absolute;width:22%;aspect-ratio:1;transform:translate(-50%,-50%) scale(.3);border:3px solid #e6c06a;border-radius:50%;opacity:0;transition:all .8s}
 .fring.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
 /* minaret */
 .msky{position:relative;height:380px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#050b22,#13245a 75%,#2a2f4a);transition:background 1.5s}
@@ -1344,13 +1348,13 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .msky.lit .mtop i{background:#ffd98a}
 .msky.lit{background:linear-gradient(180deg,#050b22,#1a2b66 70%,#4a3a3a)}
 .msky.lit .mtier,.msky.lit .mtop,.msky.lit .mcap{filter:brightness(1.5) sepia(.5) drop-shadow(0 0 10px rgba(255,210,120,.8));transition:filter 1.5s}
-.mphoto{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s}
+.mphoto{position:absolute;inset:0;pointer-events:none;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s}
 .msky.show .mphoto{opacity:1}
 #mdrop{margin-top:12px}
 /* glass bridge */
 .gbr{position:relative;height:400px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#8fc6ef,#dcecf5 55%,#c9b28d)}
-.gmts{position:absolute;left:0;right:0;bottom:0;height:75%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' preserveAspectRatio='none'%3E%3Cpath d='M0 120L40 70L70 95L110 40L150 90L190 55L230 100L270 60L300 85V300H0z' fill='%23a9b7c6'/%3E%3Cpath d='M0 170L50 120L90 150L130 110L170 160L220 120L260 150L300 125V300H0z' fill='%23937e62'/%3E%3Cpath d='M0 230L60 190L110 220L160 185L210 225L260 195L300 215V300H0z' fill='%236f5e47'/%3E%3C/svg%3E") center/100% 100% no-repeat}
-.grows{position:absolute;left:50%;transform:translateX(-50%);top:6%;bottom:16%;width:62%;display:flex;flex-direction:column;gap:6px;background:linear-gradient(90deg,#d7dde3 0 4px,transparent 4px calc(100% - 4px),#d7dde3 0);padding:0 8px}
+.gmts{pointer-events:none;position:absolute;left:0;right:0;bottom:0;height:75%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' preserveAspectRatio='none'%3E%3Cpath d='M0 120L40 70L70 95L110 40L150 90L190 55L230 100L270 60L300 85V300H0z' fill='%23a9b7c6'/%3E%3Cpath d='M0 170L50 120L90 150L130 110L170 160L220 120L260 150L300 125V300H0z' fill='%23937e62'/%3E%3Cpath d='M0 230L60 190L110 220L160 185L210 225L260 195L300 215V300H0z' fill='%236f5e47'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.grows{z-index:2;position:absolute;left:50%;transform:translateX(-50%);top:6%;bottom:16%;width:62%;display:flex;flex-direction:column;gap:6px;background:linear-gradient(90deg,#d7dde3 0 4px,transparent 4px calc(100% - 4px),#d7dde3 0);padding:0 8px}
 .grow{flex:1;display:flex;gap:6px;opacity:.55;transition:opacity .3s}
 .grow.cur{opacity:1}.grow.cur .gpane:not(.crack){animation:gglow 1.6s infinite}
 @keyframes gglow{50%{box-shadow:0 0 0 3px rgba(63,193,201,.8)}}
@@ -1358,9 +1362,107 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .gpane.step{background:rgba(220,245,250,.85)}
 .gpane.crack{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 60'%3E%3Cpath d='M50 30L20 5M50 30L85 8M50 30L10 50M50 30L90 55M50 30L60 2M50 30L45 58M30 18L15 25M70 20L80 30' stroke='%23fff' stroke-width='2' fill='none'/%3E%3C/svg%3E") center/100% 100%,rgba(120,140,160,.45);animation:gcr .4s}
 @keyframes gcr{20%{transform:translateX(-4px)}60%{transform:translateX(4px)}}
-.gstart{position:absolute;bottom:5%;left:0;right:0;text-align:center;font-size:26px}
-.gphoto{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:all 1.4s}
+.gstart{pointer-events:none;position:absolute;bottom:5%;left:0;right:0;text-align:center;font-size:26px}
+.gphoto{position:absolute;inset:0;pointer-events:none;background-size:cover;background-position:center;opacity:0;transform:scale(1.08);transition:all 1.4s}
 .gbr.show .gphoto{opacity:1;transform:none}
+
+
+/* ocean skin */
+#day.theme-ocean{--oc:#0fa3b1;--co:#ff7a6b;color:#0d3b46;background:linear-gradient(180deg,#5fd0df 0%,#a9ecef 38%,#e8f9f6 62%,#f6ead2 100%);transition:background 1s}
+#day.theme-ocean .dayhead{background:rgba(95,208,223,.93);border-bottom:none}
+#day.theme-ocean .dayhead small{color:#fff;letter-spacing:3px}
+#day.theme-ocean .dayhead h3{font-family:'Lobster',cursive;font-weight:400;color:#fff;text-shadow:0 2px 0 rgba(13,59,70,.25);font-size:28px}
+#day.theme-ocean .iconbtn{background:rgba(255,255,255,.35);color:#fff}
+#day.theme-ocean .dots i{background:rgba(255,255,255,.5)}#day.theme-ocean .dots i.on{background:var(--co)}
+#day.theme-ocean .card{background:rgba(255,255,255,.88);border-radius:30px;border:none;box-shadow:0 18px 40px -20px rgba(13,90,110,.55)}
+#day.theme-ocean h3,#day.theme-ocean .game h3{font-family:'Lobster',cursive;font-weight:400;color:#0b7f8c;text-align:center;font-size:34px}
+#day.theme-ocean .sub,#day.theme-ocean .hinttext,#day.theme-ocean .q .note{color:#4b7c86}
+#day.theme-ocean .stat{color:#e2574a;font-weight:700}
+#day.theme-ocean .sline .tx{font-family:'Comfortaa',sans-serif;font-size:19px}
+#day.theme-ocean .navbar{background:linear-gradient(0deg,#f6ead2 65%,rgba(246,234,210,0))}
+#day.theme-ocean .btn{background:linear-gradient(135deg,#ff9a76,#ff6b6b);color:#fff;border-radius:999px;box-shadow:0 10px 22px -10px rgba(255,107,107,.8)}
+#day.theme-ocean .btn.ghost{background:rgba(255,255,255,.75);color:#0b7f8c;border:1px solid rgba(15,163,177,.35);box-shadow:none}
+#day.theme-ocean .oi{background:#fff;color:#0d3b46;border-color:rgba(15,163,177,.25);border-radius:18px}
+#day.theme-ocean .oi.ok{background:#dcf7f4;border-color:var(--oc)}#day.theme-ocean .oi.ok .n{background:var(--oc);color:#fff}
+#day.theme-ocean .cq{font-family:'Comfortaa',sans-serif;font-weight:700}
+#day.theme-ocean .cnote{color:#0b7f8c}
+#day.theme-ocean .ans input{background:#fff;color:#0d3b46;border-color:rgba(15,163,177,.4);border-radius:16px}
+#day.theme-ocean .hint{background:#e3f8f6;border-left-color:var(--oc)}
+#day.theme-ocean .reward h3{font-family:'Lobster',cursive;font-weight:400;color:#0b7f8c;font-size:40px}
+#day.theme-ocean .reward img{border-radius:24px;border:6px solid #fff;box-shadow:0 20px 40px -20px rgba(0,60,80,.5)}
+#day.theme-ocean .slides{border-radius:26px}
+#day.theme-ocean .slides .cap{font-family:'Comfortaa',sans-serif;font-weight:700}
+#day.theme-ocean .game h3[style]{color:#fff;text-shadow:0 2px 0 rgba(13,59,70,.2)}
+#day.theme-ocean .btitle small{color:#fff}
+#day.theme-ocean .btitle h2{font-family:'Lobster',cursive;color:#fff;font-size:56px;text-shadow:0 3px 0 rgba(13,59,70,.25)}
+#day.theme-ocean .btitle .bsub{color:#0b7f8c;font-weight:700}
+#day.theme-ocean .btitle p{font-family:'Comfortaa',sans-serif;font-size:18px;color:#0d3b46}
+#day.theme-ocean .btitle .orn{font-size:0}#day.theme-ocean .btitle .orn::before{content:'🌴 🐚 🌊';font-size:22px;letter-spacing:6px}
+/* part end */
+.pend{text-align:center;padding:46px 18px;opacity:0;transform:scale(.95);transition:all 1s}
+.pend.on{opacity:1;transform:none}
+.pe-ico{font-size:64px;animation:floaty 3s ease-in-out infinite}
+@keyframes floaty{50%{transform:translateY(-8px)}}
+.pend small{display:block;letter-spacing:3px;text-transform:uppercase;font-size:12px;opacity:.75;margin-top:10px}
+.pend h2{font-size:34px;margin:8px 0}
+.pend p{font-size:18px;line-height:1.5}
+.pe-next{margin-top:22px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.12);border:1px dashed currentColor;font-size:15px}
+.pe-next b{font-size:22px}
+#day.theme-silk .pend h2{font-family:'Playfair Display',serif;font-style:italic;color:var(--sk)}
+#day.theme-ocean .pend h2{font-family:'Lobster',cursive;font-weight:400;color:#0b7f8c}
+#day.theme-ocean .pe-next{background:rgba(255,255,255,.6)}
+/* porthole */
+.porthole{width:min(250px,70vw);aspect-ratio:3/4;margin:6px auto;border-radius:46%/38%;padding:14px;background:linear-gradient(145deg,#f3f5f7,#c9d1d8);box-shadow:inset 0 0 0 2px #aab4bd,0 14px 28px -14px rgba(0,0,0,.45)}
+.ph-in{position:relative;width:100%;height:100%;border-radius:46%/38%;overflow:hidden;touch-action:none;box-shadow:inset 0 0 0 4px rgba(0,0,0,.12)}
+.ph-in img{width:100%;height:100%;object-fit:cover;display:block}
+.ph-shade{position:absolute;inset:0;background:repeating-linear-gradient(180deg,#eef1f4 0 9px,#dfe4e9 9px 10px);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12%;font-size:28px;color:#8a96a3;cursor:grab}
+.ph-shade span{width:44px;height:10px;border-radius:5px;background:#aab4bd;font-size:0}
+/* shell game */
+.shg{position:relative;height:150px;margin:10px 0;background:linear-gradient(180deg,#f7e8c8,#efd9ac);border-radius:20px;overflow:hidden}
+.shl2{position:absolute;top:38px;width:30%;height:90px;transition:left .45s ease;cursor:pointer;z-index:2}
+.sh-top{font-size:72px;text-align:center;line-height:90px;transition:transform .45s;filter:drop-shadow(0 6px 6px rgba(120,80,30,.35))}
+.shl2.up .sh-top{transform:translateY(-38px) rotate(-12deg)}
+.pearl{position:absolute;top:96px;width:22px;height:22px;margin-left:-11px;margin-left:0;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#e8e2f0 50%,#bfb3d0);box-shadow:0 0 12px rgba(255,255,255,.9);transition:opacity .3s,left .45s;z-index:1}
+.shphoto{max-height:0;overflow:hidden;transition:max-height 1.2s ease;border-radius:20px}
+.shphoto.on{max-height:600px}
+.shphoto img{width:100%;display:block;border-radius:20px}
+/* sand heart */
+.sand{position:relative;aspect-ratio:1;border-radius:24px;overflow:hidden;touch-action:none;background:radial-gradient(circle at 30% 30%,#f8ecd2,#ead5ab);background-image:radial-gradient(rgba(150,110,60,.18) 1px,transparent 1.5px),radial-gradient(circle at 30% 30%,#f8ecd2,#ead5ab);background-size:7px 7px,100% 100%}
+.sand svg,.sand canvas{position:absolute;inset:0;width:100%;height:100%}
+.wave{position:absolute;left:-10%;right:-10%;top:-120%;height:120%;background:linear-gradient(180deg,#2bb5c4,#7fdde6 85%,rgba(255,255,255,.9));border-radius:0 0 50% 50%/0 0 18% 18%;pointer-events:none}
+.sand.washed .wave{animation:wavein 1.6s ease-in-out forwards}
+@keyframes wavein{50%{top:-5%}100%{top:-130%}}
+.sphoto{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .8s .8s;pointer-events:none}
+.sand.washed .sphoto{opacity:1}
+/* sunset */
+.ssky{--t:0;position:relative;height:360px;border-radius:24px;overflow:hidden;touch-action:none;cursor:grab;background:linear-gradient(180deg,#3f9fe0,#bfe7f7)}
+.ssky::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#3b2a6b 0%,#c2507a 40%,#ff9a5a 70%,#ffd08a 100%);opacity:var(--t);pointer-events:none}
+.ssun{position:absolute;left:50%;width:64px;height:64px;margin-left:-32px;border-radius:50%;background:radial-gradient(circle,#fff7d1,#ffd166 55%,#ff9f45);box-shadow:0 0 40px 12px rgba(255,200,90,.6);z-index:1}
+.ssea{position:absolute;left:0;right:0;bottom:0;height:24%;background:linear-gradient(180deg,#1c7f99,#0b4f66);z-index:2}
+.sphoto2{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.4s;z-index:3;pointer-events:none}
+.ssky.set .sphoto2{opacity:1}
+/* cloche */
+.dish{position:relative;width:min(270px,76vw);aspect-ratio:1;margin:10px auto 20px}
+.dplate{position:absolute;inset:8%;border-radius:50%;background-size:cover;background-position:center;box-shadow:0 0 0 10px #fff,0 0 0 12px #e7e2da,0 16px 30px -10px rgba(0,0,0,.4)}
+.cloche{position:absolute;left:2%;right:2%;bottom:6%;height:78%;border-radius:50% 50% 8px 8px/70% 70% 8px 8px;background:linear-gradient(115deg,#f4f6f8 0%,#c2c9d0 35%,#eef1f3 55%,#9aa3ad 100%);box-shadow:inset -10px -8px 20px rgba(0,0,0,.18),0 10px 20px -8px rgba(0,0,0,.4);cursor:pointer;transition:transform 1s ease,opacity 1s}
+.cloche i{position:absolute;left:50%;top:-6%;width:16%;height:10%;margin-left:-8%;border-radius:50%;background:linear-gradient(135deg,#eef1f3,#9aa3ad)}
+.cloche.knock{animation:knock .3s}
+@keyframes knock{30%{transform:rotate(-4deg)}70%{transform:rotate(3deg)}}
+.dish.open .cloche{transform:translateY(-120%) rotate(-14deg);opacity:0;pointer-events:none}
+/* bottle */
+.btl{position:relative;height:500px;border-radius:26px;overflow:hidden;background:linear-gradient(180deg,#ffd6a5,#ffb4a2 45%,#6fc7d3 46%,#2b8fa6)}
+.bsea{position:absolute;left:-20%;right:-20%;top:44%;height:30px;background:radial-gradient(ellipse at 50% 100%,transparent 60%,rgba(255,255,255,.35) 62%) 0 0/60px 30px repeat-x;animation:bsea 4s linear infinite}
+@keyframes bsea{to{transform:translateX(60px)}}
+.bottle{position:absolute;left:50%;top:44%;margin-left:-34px;font-size:60px;background:none;border:none;cursor:pointer;animation:bob2 2.6s ease-in-out infinite;transform-origin:50% 80%}
+@keyframes bob2{50%{transform:translateY(10px) rotate(14deg)}}
+.btl.open .bottle{animation:none;transition:all .8s;top:80%;opacity:0}
+.scroll{position:absolute;left:7%;right:7%;top:6%;bottom:6%;background:linear-gradient(90deg,#e9d6a8,#fbf0d4 8%,#fbf0d4 92%,#e9d6a8);border-radius:10px;transform:scaleY(0);transform-origin:50% 0;transition:transform 1s .3s;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);overflow:auto}
+.btl.open .scroll{transform:scaleY(1)}
+.sc-body{padding:22px 20px;font-family:'Caveat',cursive;font-size:22px;line-height:1.25;color:#4a3420}
+.sc-body p{opacity:0;transform:translateY(6px);transition:all .8s;margin:0 0 10px}
+.sc-body p.on{opacity:1;transform:none}
+.sc-sign{text-align:right;opacity:0;transition:opacity 1s;font-size:28px}
+.btl.signed .sc-sign{opacity:1}
 
 /* games */
 .game{padding:22px 16px}
@@ -1477,6 +1579,9 @@ const BIRTHDAY = new Date('2026-12-10T19:00:00Z'); // 11 дек 00:00 Ташке
 const CHAPTERS = { memories:'Глава 1 · Воспоминания', detective:'Глава 2 · Детектив', mountains:'Глава 3 · Сюрприз' };
 const MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
 
+function dno(d){ if(!d||!S.data) return ''; const ds=[...new Set(S.data.days.map(x=>x.date))].sort(); return ds.indexOf(d.date)+1; }
+function dpart(d){ if(!d||!S.data) return 0; const same=S.data.days.filter(x=>x.date===d.date); return same.length>1 ? same.findIndex(x=>x.day_no===d.day_no)+1 : 0; }
+function dlabel(d){ if(typeof d==='number') d=S.data&&S.data.days.find(x=>x.day_no===d); if(!d) return '✉️'; const p=dpart(d); return 'День '+dno(d)+(p?' · часть '+p:''); }
 let S = { code: localStorage.getItem('code') || '', data: null, simDate: sessionStorage.getItem('simDate') || '' };
 const $ = id => document.getElementById(id);
 const fmtDate = d => { const [y,m,dd] = d.split('-'); return `${+dd} ${MONTHS[+m-1]}`; };
@@ -1542,16 +1647,16 @@ function renderHome(){
 function renderAdmin(){
   const p = $('adminPanel'), d = S.data;
   if (d.role!=='admin'){ p.innerHTML=''; return; }
-  const ap = (d.anna?.progress||[]).map(x=>`<tr><td>День ${x.day_no}</td><td>${x.answer||''}</td><td>${new Date(x.completed_at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent'})}</td></tr>`).join('') || '<tr><td>Пока ничего не пройдено</td></tr>';
-  const lg = (d.anna?.log||[]).map(x=>`<tr><td>День ${x.day_no}</td><td>${x.correct?'✅':'❌'} ${x.answer||''}</td><td>${new Date(x.at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent'})}</td></tr>`).join('') || '<tr><td>Пусто</td></tr>';
-  const notReady = d.days.filter(x=>!x.authored).map(x=>x.day_no);
+  const ap = (d.anna?.progress||[]).map(x=>`<tr><td>${dlabel(x.day_no)}</td><td>${x.answer||''}</td><td>${new Date(x.completed_at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent'})}</td></tr>`).join('') || '<tr><td>Пока ничего не пройдено</td></tr>';
+  const lg = (d.anna?.log||[]).map(x=>`<tr><td>${dlabel(x.day_no)}</td><td>${x.correct?'✅':'❌'} ${x.answer||''}</td><td>${new Date(x.at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent'})}</td></tr>`).join('') || '<tr><td>Пусто</td></tr>';
+  const notReady = [...new Set(d.days.filter(x=>!x.authored).map(x=>dno(x)))];
   p.innerHTML = `<div class="admin"><b>👀 Режим автора.</b> Твои ответы не влияют на прогресс Анечки.
     <div class="row">Смотреть как в дату: <input type="date" id="sim" value="${S.simDate||d.today}" min="2026-11-17" max="2026-12-11">
       <button class="btn small ghost" id="simReset">Сегодня</button><button class="btn small ghost" id="resetTest">Сбросить мой тест</button></div>
     <div class="row">Не заполнены: ${notReady.length? 'дни '+notReady.join(', ') : 'всё готово ✅'}</div>
     <details><summary>Прогресс Анечки</summary><table>${ap}</table></details>
     <details><summary>Её попытки ответов</summary><table>${lg}</table></details>
-    <details open><summary>💌 Её письма тебе</summary><table>${(d.anna?.notes||[]).map(x=>`<tr><td>${x.day_no?('День '+x.day_no):'✉️'}<br><small>${new Date(x.at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</small></td><td><b>${x.q}</b><br>${x.answer.replace(/</g,'&lt;')}</td></tr>`).join('') || '<tr><td>Пока нет</td></tr>'}</table></details></div>`;
+    <details open><summary>💌 Её письма тебе</summary><table>${(d.anna?.notes||[]).map(x=>`<tr><td>${x.day_no?dlabel(x.day_no):'✉️'}<br><small>${new Date(x.at).toLocaleString('ru-RU',{timeZone:'Asia/Tashkent',day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'})}</small></td><td><b>${x.q}</b><br>${x.answer.replace(/</g,'&lt;')}</td></tr>`).join('') || '<tr><td>Пока нет</td></tr>'}</table></details></div>`;
   $('sim').onchange = e => { S.simDate = e.target.value; sessionStorage.setItem('simDate', S.simDate); load(); };
   $('simReset').onclick = () => { S.simDate=''; sessionStorage.removeItem('simDate'); load(); };
   $('resetTest').onclick = async () => { await api('reset_test'); load(); };
@@ -1586,7 +1691,7 @@ function drawTrail(){
     const st = p.d.status, isCur = i===cur;
     const fill = st==='done' ? '#ffd88a' : isCur ? '#f4b860' : (st==='soon'||st==='waiting') ? '#6b5a7e' : '#3d3352';
     const stroke = st==='done' ? '#fff6ea' : isCur ? '#fff6ea' : 'rgba(255,246,234,.25)';
-    const lbl = st==='done' ? '✓' : (p.d.day_no===25 ? '🎂' : p.d.day_no);
+    const lbl = st==='done' ? '✓' : (i===pts.length-1 ? '🎂' : (p.d.icon || dno(p.d)));
     const side = p.x > W/2 ? -1 : 1;
     s += `<g class="node" data-i="${i}">
       ${isCur? `<circle cx="${p.x}" cy="${p.y}" r="20" fill="#f4b860" class="pulse"/>`:''}
@@ -1642,7 +1747,7 @@ let D = null;
 function openDay(day){
   if (day.status==='locked'){ openModal(`<h2>Ещё рано 🌙</h2><p>Этот день откроется ${fmtDate(day.date)}.</p><div style="text-align:center;margin-top:16px"><button class="btn" onclick="closeModal()">Хорошо</button></div>`); return; }
   if (day.status==='waiting'){ openModal(`<h2>Сначала предыдущий шаг</h2><p>Этот день уже наступил, но сначала пройди предыдущее задание 💛</p><div style="text-align:center;margin-top:16px"><button class="btn" onclick="closeModal()">Хорошо</button></div>`); return; }
-  $('dayLabel').textContent = `День ${day.day_no} · ${fmtDate(day.date)}`;
+  $('dayLabel').textContent = `${dlabel(day)} · ${fmtDate(day.date)}`;
   if (day.status==='soon'){ $('dayTitle').textContent = 'Скоро…'; $('dots').innerHTML=''; $('navbar').innerHTML = `<button class="btn ghost" onclick="backHome()">На тропу</button>`;
     $('stage').innerHTML = `<div class="soon"><h3>Задание готовится ✨</h3><p>Загляни чуть позже — оно появится сегодня.</p></div>`; show('day'); return; }
   $('dayTitle').textContent = day.title || '';
@@ -1750,6 +1855,13 @@ async function renderStep(){
   if (st.kind==='flashlight') return flashlightStep(st, back);
   if (st.kind==='minaret') return minaretStep(st, back);
   if (st.kind==='glassbridge') return glassbridgeStep(st, back);
+  if (st.kind==='partend') return partendStep(st, back);
+  if (st.kind==='shade') return shadeStep(st, back);
+  if (st.kind==='shellgame') return shellgameStep(st, back);
+  if (st.kind==='sandheart') return sandheartStep(st, back);
+  if (st.kind==='sunset') return sunsetStep(st, back);
+  if (st.kind==='cloche') return clocheStep(st, back);
+  if (st.kind==='bottle') return bottleStep(st, back);
   if (st.kind==='certificate') return certificateStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
@@ -3186,6 +3298,117 @@ async function glassbridgeStep(st, back){
   $('gNext').onclick = next;
 }
 
+
+/* ===== day 13 part 3: Maldives ===== */
+function partendStep(st, back){
+  $('stage').innerHTML = `<div class="pend" id="pend"><div class="pe-ico">${st.icon||'✨'}</div><small>${st.part||''}</small><h2>${st.title||''}</h2><p>${st.text||''}</p>${st.nextIcon?`<div class="pe-next">Следующий кружочек на тропе уже открыт: <b>${st.nextIcon}</b></div>`:''}</div>`;
+  setTimeout(()=>{ const e=$('pend'); e&&e.classList.add('on'); hearts(); }, 100);
+  nav(`<button class="btn ghost" onclick="prev()">Назад</button><button class="btn" onclick="load()">${st.btn||'На тропу'}</button>`);
+}
+
+async function shadeStep(st, back){
+  const url=await media(st.photo);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="porthole"><div class="ph-in" id="phin"><img src="${url}" alt=""><div class="ph-shade" id="phs"><span>⇡</span></div></div></div>
+    <div class="stat" id="shStat">Потяни шторку вверх</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const box=$('phin'), sh=$('phs'); let up=0, y0=null, u0=0, done=false;
+  const set = v => { up=Math.max(0,Math.min(100,v)); sh.style.transform=`translateY(${-up}%)`;
+    if (up>55 && !done){ done=true; sh.style.transition='transform .5s'; sh.style.transform='translateY(-100%)'; $('shStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); } };
+  box.addEventListener('pointerdown', e=>{ y0=e.clientY; u0=up; sh.style.transition='none'; box.setPointerCapture(e.pointerId); });
+  box.addEventListener('pointermove', e=>{ if(y0===null||done) return; set(u0 + (y0-e.clientY)/box.getBoundingClientRect().height*100); });
+  box.addEventListener('pointerup', e=>{ if(y0!==null && Math.abs(e.clientY-y0)<6 && !done){ sh.style.transition='transform .4s'; set(up+30); } y0=null; });
+  $('gNext').onclick = next;
+}
+
+async function shellgameStep(st, back){
+  const url=await media(st.photo);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="shg" id="shg">${[0,1,2].map(i=>`<div class="shl2" data-i="${i}"><div class="sh-top">🐚</div></div>`).join('')}<div class="pearl" id="prl"></div></div>
+    <div class="shphoto" id="shp"><img src="${url}" alt=""></div>
+    <div class="stat" id="sgStat">Смотри внимательно, где жемчужина…</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const sh=[...document.querySelectorAll('.shl2')], slot=[0,1,2], P=1, prl=$('prl'); let ready=false, done=false;
+  const place = () => sh.forEach((s,i)=>s.style.left=(6+slot[i]*32)+'%');
+  place(); prl.style.left=(6+slot[P]*32+11)+'%';
+  sh[P].classList.add('up');
+  setTimeout(()=>{ sh[P].classList.remove('up'); prl.style.opacity=0; let n=0;
+    const sw=setInterval(()=>{ if(!document.getElementById('shg')) return clearInterval(sw);
+      const a=Math.floor(Math.random()*3), b=(a+1+Math.floor(Math.random()*2))%3; [slot[a],slot[b]]=[slot[b],slot[a]]; place();
+      if(++n>=(st.swaps||7)){ clearInterval(sw); setTimeout(()=>{ ready=true; $('sgStat').textContent='Где жемчужина? Нажми на ракушку'; },500); } }, 520);
+  }, 1500);
+  sh.forEach((s,i)=>s.onclick=()=>{ if(!ready||done) return; s.classList.add('up');
+    if (i===P){ done=true; prl.style.left=(6+slot[P]*32+11)+'%'; prl.style.opacity=1; playNote(NOTE_F('E6'));
+      setTimeout(()=>{ $('shp').classList.add('on'); $('sgStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); }, 700); }
+    else { $('sgStat').textContent='Пусто 🙈 Попробуй другую'; setTimeout(()=>s.classList.remove('up'),900); } });
+  $('gNext').onclick = next;
+}
+
+async function sandheartStep(st, back){
+  const url=await media(st.photo);
+  const H=[...Array(48)].map((_,i)=>{ const t=i/48*Math.PI*2; return [0.5+0.022*16*Math.pow(Math.sin(t),3), 0.46-0.022*(13*Math.cos(t)-5*Math.cos(2*t)-2*Math.cos(3*t)-Math.cos(4*t))]; });
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="sand" id="sand"><svg viewBox="0 0 1 1" preserveAspectRatio="none"><polyline points="${H.map(p=>p.join(',')).join(' ')} ${H[0].join(',')}" fill="none" stroke="rgba(150,110,60,.35)" stroke-width=".012" stroke-dasharray=".02 .025"/></svg>
+      <canvas id="scv"></canvas><div class="wave" id="wave"></div><div class="sphoto" id="sph" style="background-image:url(${url})"></div></div>
+    <div class="stat" id="sdStat">Обведи сердце пальцем 👆</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const box=$('sand'), cv=$('scv'), r=box.getBoundingClientRect(); cv.width=r.width*2; cv.height=r.height*2; const g=cv.getContext('2d');
+  g.lineCap='round'; g.lineJoin='round'; g.strokeStyle='rgba(120,85,45,.55)'; g.lineWidth=r.width*0.05;
+  const hit=new Set(); let last=null, done=false;
+  const at = e => { const b=box.getBoundingClientRect(); return [(e.clientX-b.left)/b.width,(e.clientY-b.top)/b.height]; };
+  const draw = p => { if(last){ g.beginPath(); g.moveTo(last[0]*cv.width,last[1]*cv.height); g.lineTo(p[0]*cv.width,p[1]*cv.height); g.stroke(); } last=p;
+    H.forEach((h,i)=>{ if(Math.hypot(h[0]-p[0],(h[1]-p[1])*r.height/r.width)<0.08) hit.add(i); });
+    if (!done){ const k=hit.size/H.length; $('sdStat').textContent = k<.85 ? `Сердце нарисовано на ${Math.round(k*100)}%` : '';
+      if (k>=.85){ done=true; setTimeout(()=>{ box.classList.add('washed'); $('sdStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); }, 300); } } };
+  box.addEventListener('pointerdown', e=>{ box.setPointerCapture(e.pointerId); last=null; draw(at(e)); });
+  box.addEventListener('pointermove', e=>{ if(e.buttons||e.pointerType==='touch') { if(last) draw(at(e)); } });
+  box.addEventListener('pointerup', ()=>{ last=null; });
+  $('gNext').onclick = next;
+}
+
+async function sunsetStep(st, back){
+  const url=await media(st.photo);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="ssky" id="ssky"><div class="ssun" id="ssun"></div><div class="ssea"></div><div class="sphoto2" id="sp2" style="background-image:url(${url})"></div></div>
+    <div class="stat" id="ssStat">Опусти солнце к океану ☀️↓</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const sky=$('ssky'), sun=$('ssun'); let drag=false, done=false;
+  const set = v => { v=Math.max(10,Math.min(70,v)); sun.style.top=v+'%'; sky.style.setProperty('--t',(v-10)/60);
+    if (v>=68 && !done){ done=true; sky.classList.add('set'); setTimeout(()=>{ $('ssStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); },1400); } };
+  set(10);
+  sky.addEventListener('pointerdown', e=>{ drag=true; sky.setPointerCapture(e.pointerId); });
+  sky.addEventListener('pointermove', e=>{ if(!drag||done) return; const b=sky.getBoundingClientRect(); set((e.clientY-b.top)/b.height*100); });
+  sky.addEventListener('pointerup', ()=>{ drag=false; });
+  $('gNext').onclick = next;
+}
+
+async function clocheStep(st, back){
+  const url=await media(st.photo);
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="dish" id="dish"><div class="dplate" style="background-image:url(${url})"></div><div class="cloche" id="clo"><i></i></div></div>
+    <div class="stat" id="clStat">Постучи по крышке 3 раза 🔔</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let k=0; const c=$('clo');
+  c.onclick=()=>{ if(k>=3) return; k++; playNote(NOTE_F(['A5','C6','E6'][k-1])); c.classList.remove('knock'); void c.offsetWidth; c.classList.add('knock');
+    if(k===3){ setTimeout(()=>{ $('dish').classList.add('open'); $('clStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); },350); } else $('clStat').textContent=`Тук-тук… ещё ${3-k}`; };
+  $('gNext').onclick = next;
+}
+
+function bottleStep(st, back){
+  $('stage').innerHTML = `<div class="btl" id="btl"><div class="bsea"></div><button class="bottle" id="bt3">🍾</button>
+    <div class="scroll" id="scr"><div class="sc-body">${(st.lines||[]).map(l=>`<p>${l}</p>`).join('')}<div class="sc-sign">${st.sign||''}</div></div></div></div>
+    <p class="hinttext" id="bth">${st.text||'Нажми на бутылку'}</p>`;
+  nav(back);
+  $('bt3').onclick=()=>{ const b=$('btl'); if(b.classList.contains('open')) return; b.classList.add('open'); $('bth').textContent='';
+    const ps=[...b.querySelectorAll('.sc-body p')]; ps.forEach((p,i)=>setTimeout(()=>p.classList.add('on'),900+i*1500));
+    setTimeout(()=>{ b.classList.add('signed'); hearts(); nav(D.i>=D.steps.length-1 ? finalNav() : back+`<button class="btn" onclick="next()">Дальше</button>`); }, 900+ps.length*1500); };
+}
+
 function writeLetter(){
   openModal(`<h2>Письмо Кириллу 💌</h2><p style="margin-top:0">Напиши мне в любой момент — я прочитаю каждое слово.</p>
     <div class="llwrap" id="mlw"><div class="llpaper"><div class="llto">Мой любимый Кирилл,</div><textarea id="mlt" class="llta" rows="8" placeholder="Пиши здесь…"></textarea><div class="llfrom">Твоя Анечка ♡</div></div>
@@ -3264,7 +3487,7 @@ async function rewardStep(back){
   const more = D.i < D.steps.length-1;
   nav(more ? back + `<button class="btn" onclick="next()">Дальше</button>` : finalNav());
 }
-function finalNav(){ return `<button class="btn ghost" onclick="D.i=0;renderStep()">Ещё раз</button><button class="btn" onclick="load()">На тропу</button>`; }
+function finalNav(){ if (typeof D!=='undefined' && D && D.steps && D.i < D.steps.length-1) return `<button class="btn ghost" onclick="prev()">Назад</button><button class="btn" onclick="next()">Дальше</button>`; return `<button class="btn ghost" onclick="D.i=0;renderStep()">Ещё раз</button><button class="btn" onclick="load()">На тропу</button>`; }
 window.renderStep = renderStep;
 
 function hearts(){
@@ -3278,7 +3501,7 @@ $('btnAlbum').onclick = async () => {
   show('album'); const grid = $('grid'); grid.innerHTML = '<div class="spinner"></div>';
   const items = [], seen = new Set();
   const walk = (o, d) => { if (Array.isArray(o)) o.forEach(x=>walk(x,d)); else if (o && typeof o==='object') for (const [k,v] of Object.entries(o)) {
-      if (k==='photo' && typeof v==='string') { const key=v.split('#')[0]; if(!seen.has(key)){ seen.add(key); items.push({ref:v, cap:`День ${d.day_no} · ${fmtDate(d.date)}`}); } } else walk(v,d); } };
+      if (k==='photo' && typeof v==='string') { const key=v.split('#')[0]; if(!seen.has(key)){ seen.add(key); items.push({ref:v, cap:`${dlabel(d)} · ${fmtDate(d.date)}`}); } } else walk(v,d); } };
   S.data.days.filter(d=>d.status==='done').forEach(d=>{ walk(d.steps,d); walk(d.reward,d); });
   if (!items.length) { grid.innerHTML = '<div class="empty" style="grid-column:1/-1">Здесь будут собираться фото с пройденных дней 📷</div>'; return; }
   grid.innerHTML = '';
