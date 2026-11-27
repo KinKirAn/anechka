@@ -1590,6 +1590,135 @@ h1,h2,h3{font-family:var(--serif);font-weight:600;margin:0;line-height:1.1}
 .nb-rank{margin-top:16px;text-align:center;font-family:'PT Mono',monospace;color:#fff6e0;font-size:13px}
 .nb-rank b{color:#ffe3b0}
 
+
+/* noir: question + misc */
+#day.theme-noir .card.q h3{font-family:'Playfair Display',serif;font-weight:900;color:#1d1712;font-size:24px}
+#day.theme-noir .card.q .note{color:#6b5a44;font-family:'PT Mono',monospace}
+#day.theme-noir .ans input{background:#fff8ea;color:#2a2219;border:2px solid #8a6d45;border-radius:4px;font-family:'PT Mono',monospace}
+#day.theme-noir .thumb img{filter:sepia(.25)}
+#day.theme-noir .lettercard,#day.theme-noir .lt{font-family:'Caveat',cursive}
+/* cipher wheel */
+.cw-enc{font-family:'PT Mono',monospace;font-size:17px;letter-spacing:2px;text-align:center;background:#2a2219;color:#f2b25c;padding:12px;border-radius:4px;margin:8px 0;word-break:break-word}
+.cw-row{display:flex;align-items:center;justify-content:center;gap:6px}.cw-a{min-width:0!important;padding:14px 12px!important}
+.cw{width:min(230px,56vw);margin:4px 0}.cw svg{width:100%;display:block}
+.cw-o{fill:#2a2219}.cw-l{fill:#f2b25c;font-family:'PT Mono',monospace;font-size:13px;font-weight:700}
+.cw-in{transform-origin:150px 150px;transition:transform .35s ease}
+.cw-i{fill:#efe3c8;stroke:#8a6d45;stroke-width:2}.cw-l2{fill:#2a2219;font-family:'PT Mono',monospace;font-size:12px;font-weight:700}
+.cw-c{fill:#c0392b}.cw-k{fill:#fff;font-family:'PT Mono',monospace;font-size:22px;font-weight:700}
+.cw-btns{display:flex;gap:14px;justify-content:center;margin:4px 0 8px}.cw-btns .btn{min-width:80px}
+.cw-dec{font-family:'PT Mono',monospace;font-size:17px;letter-spacing:2px;text-align:center;padding:12px;border:2px dashed #8a6d45;border-radius:4px;color:#8a7a62;transition:all .5s;word-break:break-word}
+.cw-dec.ok{border-style:solid;border-color:#c0392b;color:#1d1712;background:#fff8ea;font-weight:700}
+/* fingerprints */
+.fpr{width:100%;height:auto;fill:none;stroke:#2a2219;stroke-width:2.2;stroke-linecap:round}
+.fp-ev{display:flex;align-items:center;gap:12px;margin:8px 0 12px}
+.fp-glass{width:120px;flex:none;background:radial-gradient(circle,#fff,#e7eef2);border-radius:50%;padding:12px;box-shadow:0 0 0 6px #8a6d45,0 8px 18px rgba(0,0,0,.4);position:relative;text-align:center}
+.fp-glass span{position:absolute;left:0;right:0;bottom:-30px;font-family:'PT Mono',monospace;font-size:11px;color:#6b5a44}
+.fp-e{stroke:#3b4b8a;opacity:.85;filter:blur(.3px)}
+.fp-match{flex:1;font-family:'PT Mono',monospace;font-size:16px;font-weight:700;color:#6b5a44;padding:10px;border:2px dashed #8a6d45;border-radius:4px;text-align:center}
+.fp-match.ok{color:#fff;background:#2f7d4a;border-color:#2f7d4a}
+.fp-sus{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.fp-card{background:#fff8ea;border:2px solid #c9b48c;border-radius:6px;padding:8px;cursor:pointer;font-family:'PT Mono',monospace;color:#2a2219}
+.fp-card .fpr{width:70%;margin:0 auto;display:block}.fp-card b{display:block;font-size:12px;margin-top:4px}
+.fp-card.sel{border-color:#c0392b}.fp-card.ok{background:#e3f3e6;border-color:#2f7d4a}
+/* padlock */
+.lk{position:relative;width:220px;margin:30px auto 16px}
+.lk-shackle{position:absolute;left:50%;top:-46px;width:120px;height:90px;margin-left:-60px;border:16px solid #9aa0a8;border-bottom:none;border-radius:60px 60px 0 0;transition:transform .6s;transform-origin:85% 100%}
+.lk.open .lk-shackle{transform:translateY(-22px) rotate(-18deg)}
+.lk.bad{animation:ndno .4s}
+.lk-body{position:relative;background:linear-gradient(135deg,#d6b25c,#9c7a2e);border-radius:14px;padding:18px 12px;box-shadow:inset 0 0 0 3px rgba(255,255,255,.25),0 14px 26px -10px rgba(0,0,0,.6)}
+.lk-wheels{display:flex;gap:8px;justify-content:center}
+.lk-w{display:flex;flex-direction:column;align-items:center;background:#2a2219;border-radius:8px;padding:2px}
+.lk-w button{background:none;border:none;color:#f2b25c;font-size:16px;padding:6px 12px;cursor:pointer}
+.lk-w span{font-family:'PT Mono',monospace;font-size:30px;font-weight:700;color:#fff;background:linear-gradient(180deg,#555,#eee 30%,#fff 50%,#eee 70%,#555);-webkit-background-clip:text;background-clip:text;color:transparent;width:38px;text-align:center;line-height:42px;filter:drop-shadow(0 0 0 #000)}
+.lk-w span{color:#1d1712;background:#efe3c8;-webkit-background-clip:border-box;background-clip:border-box;border-radius:4px}
+/* morse */
+.mo-lamp{width:70px;height:70px;margin:8px auto;border-radius:50%;background:radial-gradient(circle at 40% 35%,#6b5a44,#2a2219);box-shadow:0 0 0 6px #8a6d45;transition:all .05s}
+.mo-lamp.on{background:radial-gradient(circle at 40% 35%,#fff7c8,#ffc94a 60%,#e08a00);box-shadow:0 0 0 6px #8a6d45,0 0 40px 14px rgba(255,200,80,.8)}
+.mo-tape{min-height:44px;font-family:'PT Mono',monospace;font-size:24px;letter-spacing:3px;text-align:center;background:#fff8ea;border:2px dashed #8a6d45;border-radius:4px;padding:8px;margin:10px 0;color:#1d1712;word-break:break-word}
+.mo-tape i{color:#c0392b;font-style:normal;margin:0 6px}
+.mo-tbl{margin-top:12px;font-family:'PT Mono',monospace;font-size:12px}
+.mo-tbl summary{cursor:pointer;font-weight:700;color:#6b4a22;text-align:center}
+.mo-tbl div{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 8px;margin-top:8px}
+.mo-tbl span{white-space:nowrap}.mo-tbl b{display:inline-block;width:18px;color:#c0392b}
+/* jigsaw */
+.jg-board{display:grid;gap:2px;background:#2a2219;padding:2px;border-radius:4px;width:min(190px,50vw);margin:4px auto 10px;transition:gap .5s,padding .5s}
+.jg-slot{background:rgba(239,227,200,.12);border:1px dashed rgba(242,178,92,.5);cursor:pointer;min-height:40px}
+.jg-slot.full{border:none;cursor:default}.jg-slot.bad{animation:ndno .35s}
+.jg-board.done{gap:0;padding:0}
+.jg-tray{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.jg-p{width:54px;aspect-ratio:3/4;border:3px solid #fff8ea;border-radius:2px;box-shadow:0 4px 8px rgba(0,0,0,.35);cursor:pointer;padding:0}
+.jg-p.sel{border-color:#c0392b;box-shadow:0 0 0 3px rgba(192,57,43,.4)}
+/* spot the difference */
+.sd-wrap{display:flex;flex-direction:column;gap:8px}
+.sd-img{position:relative;border-radius:4px;overflow:hidden;touch-action:manipulation;cursor:crosshair}
+.sd-img img{width:100%;display:block}
+.sd-add{position:absolute;transform:translate(-50%,-50%);pointer-events:none;line-height:1}
+.sd-ring{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border:3px solid #c0392b;border-radius:50%;opacity:0;transform:scale(.3);transition:all .4s;pointer-events:none}
+.sd-ring.on{opacity:1;transform:none}
+/* city map */
+.cm svg{width:100%;display:block;border-radius:4px}
+.cm-pin{cursor:pointer}.cm-p{fill:#fff8ea;stroke:#2a2219;stroke-width:2}
+.cm-pin.on .cm-p{fill:#c0392b;stroke:#fff}.cm-pin.bad{opacity:.4;transition:opacity .3s}
+.cm-l{stroke:#c0392b;stroke-width:3;stroke-dasharray:6 4}
+.cm-q{font-family:'PT Mono',monospace;font-size:16px;text-align:center;margin:12px 0 4px;min-height:44px;color:#1d1712}
+.cm-q small{display:block;font-size:11px;letter-spacing:2px;color:#8a6d45;text-transform:uppercase}
+/* chat */
+.ch{margin-top:10px;background:#efe3c8;border-radius:6px;overflow:hidden;box-shadow:0 20px 40px -16px rgba(0,0,0,.8)}
+.ch-head{background:#2a2219;color:#f2b25c;font-family:'PT Mono',monospace;padding:10px 14px;font-weight:700}
+.ch-body{height:min(52vh,420px);overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background-image:linear-gradient(rgba(120,90,40,.06) 1px,transparent 1px);background-size:100% 26px}
+.ch-m{max-width:82%;padding:8px 12px;border-radius:12px;font-family:'Manrope',sans-serif;font-size:15px;line-height:1.35;animation:chin .3s}
+@keyframes chin{from{opacity:0;transform:translateY(6px)}}
+.ch-m small{display:block;font-family:'PT Mono',monospace;font-size:11px;color:#c0392b;margin-bottom:2px}
+.ch-m.them{background:#fff;color:#2a2219;align-self:flex-start;border-bottom-left-radius:2px}
+.ch-m.me{background:#2a2219;color:#f2b25c;align-self:flex-end;border-bottom-right-radius:2px}
+.ch-m.sys{align-self:center;background:none;color:#8a6d45;font-family:'PT Mono',monospace;font-size:12px;text-align:center}
+.ch-m.typing{background:#fff;align-self:flex-start;display:flex;gap:4px}
+.ch-m.typing span{width:7px;height:7px;border-radius:50%;background:#8a6d45;animation:nblink 1s infinite}
+.ch-m.typing span:nth-child(2){animation-delay:.2s}.ch-m.typing span:nth-child(3){animation-delay:.4s}
+.ch-reply{display:flex;flex-wrap:wrap;gap:6px;padding:8px;justify-content:center}
+.ch-c{border:2px solid #2a2219;background:#fff8ea;border-radius:16px;padding:8px 12px;font-family:'Manrope',sans-serif;font-size:14px;cursor:pointer;color:#2a2219}
+/* string board */
+.sb{position:relative;height:360px;border-radius:6px;background:#a8743f;background-image:radial-gradient(rgba(0,0,0,.12) 1px,transparent 1.5px);background-size:9px 9px;border:6px solid #5a3a1c}
+.sb-s{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+.sb-l{stroke:#c0392b;stroke-width:.8;vector-effect:non-scaling-stroke;stroke-width:3}
+.sb-c{position:absolute;width:17%;padding:8px 0 4px;background:#efe3c8;border:none;border-radius:2px;transform:rotate(var(--r));box-shadow:0 5px 8px rgba(0,0,0,.4);cursor:pointer;z-index:1}
+.sb-c b{display:block;font-family:'Playfair Display',serif;font-weight:900;font-size:28px;color:#1d1712;line-height:1}
+.sb-c small{font-family:'PT Mono',monospace;font-size:9px;color:#8a6d45}
+.sb-c.on{box-shadow:0 0 0 3px #c0392b,0 5px 8px rgba(0,0,0,.4)}.sb-c.bad{animation:ndno .35s}
+.sb-q{position:absolute;width:17%;padding:8px 0;text-align:center;font-family:'Playfair Display',serif;font-weight:900;font-size:30px;color:#fff6e0;border:2px dashed #fff6e0;border-radius:2px;opacity:0;transition:opacity 1s}
+.sb.done .sb-q{opacity:1;animation:nseal 1.4s infinite}
+/* anagram */
+.ag{position:relative;min-height:calc(100vh - 220px);padding:8px 0 20px;text-align:center}
+.ag-t{font-family:'Playfair Display',serif;font-weight:900;font-size:28px;color:#f2b25c;text-transform:uppercase;letter-spacing:1px}
+.ag-s{font-family:'PT Mono',monospace;color:#d9cdb5;font-size:14px;margin:6px 10px 0}
+.ag-fly{position:relative;height:300px;margin:6px 0}
+.ag-l{position:absolute;left:var(--x);top:var(--y);width:50px;height:58px;border:none;border-radius:4px;background:#efe3c8;color:#1d1712;font-family:'Playfair Display',serif;font-weight:900;font-size:34px;box-shadow:0 8px 16px rgba(0,0,0,.6);cursor:pointer;animation:agfly var(--d) ease-in-out infinite alternate;transition:opacity .3s,transform .3s}
+@keyframes agfly{0%{transform:translate(0,0) rotate(var(--r))}100%{transform:translate(var(--dx),var(--dy)) rotate(calc(var(--r)*-1))}}
+.ag-l.used{opacity:0;pointer-events:none;transform:scale(.3)}
+.ag-boxes{display:flex;gap:4px;justify-content:center;flex-wrap:nowrap;padding:0 4px}
+.ag-b{flex:1;max-width:40px;aspect-ratio:3/4;border:2px dashed #f2b25c;border-radius:4px;background:rgba(242,178,92,.06);color:#1d1712;font-family:'Playfair Display',serif;font-weight:900;font-size:24px;padding:0;cursor:pointer}
+.ag-b.full{background:#efe3c8;border-style:solid;animation:agin .25s}
+@keyframes agin{from{transform:scale(1.4)}}
+.ag.bad .ag-boxes{animation:ndno .4s}
+.ag.win .ag-b{background:#f2b25c;border-color:#fff;box-shadow:0 0 18px rgba(242,178,92,.9);animation:agwin 1s ease-in-out infinite alternate}
+@keyframes agwin{to{transform:translateY(-6px)}}
+.ag-msg{font-family:'PT Mono',monospace;color:#e57368;margin-top:14px;min-height:20px}
+/* reveal */
+.rv{position:relative;margin:4px -6px 0;min-height:calc(100vh - 200px);border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#0e1b3a,#3b5b8f 55%,#9fb7d6);opacity:0;transition:opacity 1.2s}
+.rv.on{opacity:1}
+.rv-snow{position:absolute;inset:0;background-image:radial-gradient(2px 2px at 20% 30%,#fff,transparent),radial-gradient(2px 2px at 60% 10%,#fff,transparent),radial-gradient(1.5px 1.5px at 80% 50%,#fff,transparent),radial-gradient(2.5px 2.5px at 35% 70%,#fff,transparent),radial-gradient(1.5px 1.5px at 90% 85%,#fff,transparent),radial-gradient(2px 2px at 10% 90%,#fff,transparent);background-size:200px 200px;animation:rvsnow 6s linear infinite;opacity:.9}
+@keyframes rvsnow{to{background-position:30px 200px,-20px 200px,10px 200px,-30px 200px,20px 200px,0 200px}}
+.rv-mt{position:absolute;left:0;right:0;bottom:0;width:100%;height:32%}
+.rv-c{position:relative;z-index:1;text-align:center;padding:28px 16px 140px;color:#fff}
+.rv-c small{font-family:'PT Mono',monospace;letter-spacing:4px;text-transform:uppercase;font-size:12px;color:#cfe0ff}
+.rv-c h1{font-family:'Playfair Display',serif;font-weight:900;font-size:44px;line-height:1;margin:12px 0 4px;letter-spacing:2px;text-shadow:0 0 30px rgba(180,210,255,.8);transform:scale(.6);opacity:0;transition:all 1.2s .3s}
+.rv.on .rv-c h1{transform:none;opacity:1}
+.rv-c h2{font-family:'PT Mono',monospace;font-weight:400;font-size:15px;letter-spacing:6px;color:#cfe0ff;margin:0 0 18px}
+.rv-ph{display:flex;gap:8px;overflow-x:auto;margin:0 -6px 16px;padding:0 6px}.rv-ph img{height:180px;border-radius:10px;border:3px solid #fff}
+.rv-lines p{font-family:'Manrope',sans-serif;font-size:18px;margin:6px 0;opacity:0;animation:rvp .8s forwards}
+.rv-lines p:first-child{font-weight:800;font-size:22px}
+@keyframes rvp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
 /* games */
 .game{padding:22px 16px}
 .game h3{font-size:28px;text-align:center}
@@ -2008,6 +2137,17 @@ async function renderStep(){
   if (st.kind==='uvpaper') return uvpaperStep(st, back);
   if (st.kind==='safe') return safeStep(st, back);
   if (st.kind==='warrant') return warrantStep(st, back);
+  if (st.kind==='cipherwheel') return cipherwheelStep(st, back);
+  if (st.kind==='fprint') return fprintStep(st, back);
+  if (st.kind==='lockwheels') return lockwheelsStep(st, back);
+  if (st.kind==='morse') return morseStep(st, back);
+  if (st.kind==='jigsaw') return jigsawStep(st, back);
+  if (st.kind==='spotdiff') return spotdiffStep(st, back);
+  if (st.kind==='citymap') return citymapStep(st, back);
+  if (st.kind==='chat') return chatStep(st, back);
+  if (st.kind==='stringboard') return stringboardStep(st, back);
+  if (st.kind==='anagram') return anagramStep(st, back);
+  if (st.kind==='reveal') return revealStep(st, back);
   if (st.kind==='certificate') return certificateStep(st, back);
   stage.innerHTML=''; nav(back+`<button class="btn" onclick="next()">Дальше</button>`);
 }
@@ -3569,12 +3709,12 @@ function typeLines(el, lines, speed, done){
 }
 
 function callStep(st, back){
-  $('stage').innerHTML = `<div class="nr-call" id="ncall"><div class="nr-phone" id="nph">☎️</div><div class="nr-ring" id="nring">Входящий звонок… <b>К.</b></div>
-    <button class="btn" id="npick">Ответить</button><div class="nr-type" id="ntype"></div></div>`;
+  $('stage').innerHTML = `<div class="nr-call" id="ncall"><div class="nr-phone" id="nph">${st.icon||'☎️'}</div><div class="nr-ring" id="nring">${st.ring||'Входящий звонок… <b>К.</b>'}</div>
+    <button class="btn" id="npick">${st.btn||'Ответить'}</button><div class="nr-type" id="ntype"></div></div>`;
   nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
   if (D.replay) enableNext('gNext');
   let ring = setInterval(()=>{ if(!$('nph')) return clearInterval(ring); playNote(1318); setTimeout(()=>playNote(1318),120); }, 1600);
-  $('npick').onclick = () => { clearInterval(ring); $('ncall').classList.add('on'); $('npick').remove(); $('nring').innerHTML = 'На линии: <b>информатор К.</b> 🕶️';
+  $('npick').onclick = () => { clearInterval(ring); $('ncall').classList.add('on'); $('npick').remove(); $('nring').innerHTML = st.on||'На линии: <b>информатор К.</b> 🕶️';
     typeLines($('ntype'), st.lines, 32, ()=>enableNext('gNext')); };
   $('gNext').onclick = () => { clearInterval(ring); next(); };
 }
@@ -3676,6 +3816,216 @@ function openBoard(){
     <div style="text-align:center;margin-top:12px"><button class="btn" onclick="closeModal()">Закрыть</button></div></div>`);
 }
 window.openBoard = openBoard;
+
+
+/* ===== detective cases 2-9 ===== */
+async function gateTry(ans){
+  const r = await api('answer', { day: D.day.day_no, answer: ans }).catch(()=>({}));
+  if (r.correct){ D.solved=true; D.reward=r.reward; buildSteps(); }
+  return !!r.correct;
+}
+function beep(freq, dur){
+  try { AC = AC || new (window.AudioContext||window.webkitAudioContext)(); if (AC.state==='suspended') AC.resume();
+    const t=AC.currentTime, o=AC.createOscillator(), g=AC.createGain(); o.type='sine'; o.frequency.value=freq; o.connect(g); g.connect(AC.destination);
+    g.gain.setValueAtTime(0.0001,t); g.gain.exponentialRampToValueAtTime(0.3,t+0.01); g.gain.setValueAtTime(0.3,t+dur-0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+dur); o.start(t); o.stop(t+dur+0.02);
+  } catch(e){}
+}
+const RU_AB = 'АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
+
+function cipherwheelStep(st, back){
+  const N=RU_AB.length, k=st.shift, enc=[...st.plain].map(c=>{ const i=RU_AB.indexOf(c); return i<0?c:RU_AB[(i+k)%N]; }).join('');
+  let g=0;
+  const ring = (r,off,cls) => [...RU_AB].map((c,i)=>{ const a=(i/N)*2*Math.PI-Math.PI/2; return `<text x="${150+r*Math.cos(a)}" y="${150+r*Math.sin(a)+5}" text-anchor="middle" class="${cls}" transform="rotate(${i*360/N} ${150+r*Math.cos(a)} ${150+r*Math.sin(a)})">${c}</text>`; }).join('');
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="cw-enc">${enc}</div>
+    <div class="cw-row"><button class="btn ghost cw-a" id="cwL">◀</button><div class="cw"><svg viewBox="0 0 300 300"><circle cx="150" cy="150" r="146" class="cw-o"/>${ring(128,0,'cw-l')}<g id="cwin" class="cw-in"><circle cx="150" cy="150" r="108" class="cw-i"/>${ring(92,0,'cw-l2')}<circle cx="150" cy="150" r="34" class="cw-c"/><text x="150" y="157" text-anchor="middle" class="cw-k" id="cwk">0</text></g><path d="M150 4 l-8 -0 l8 14 l8 -14z" fill="#c0392b"/></svg></div><button class="btn ghost cw-a" id="cwR">▶</button></div>
+    <div class="cw-dec" id="cwd"></div><div class="stat" id="cwStat">Поворачивай внутреннее колесо, пока текст не станет понятным</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let done=false;
+  const draw = () => { $('cwin').style.transform=`rotate(${-g*360/N}deg)`; $('cwk').textContent=g;
+    $('cwd').textContent=[...enc].map(c=>{ const i=RU_AB.indexOf(c); return i<0?c:RU_AB[(i-g+N*10)%N]; }).join('');
+    if (!done && g===k){ done=true; $('cwd').classList.add('ok'); $('cwStat').innerHTML=st.done||''; playNote(NOTE_F('E5')); hearts(); enableNext('gNext'); } };
+  $('cwL').onclick=()=>{ if(done) return; g=(g-1+N)%N; playNote(NOTE_F('A5')); draw(); };
+  $('cwR').onclick=()=>{ if(done) return; g=(g+1)%N; playNote(NOTE_F('A5')); draw(); };
+  draw();
+  $('gNext').onclick = next;
+}
+
+function fpSVG(type, cls){
+  let p='';
+  if (type==='heart'){ for(let s=1;s<=9;s++){ const k=s*5.2; p+=`<path d="M60 ${48+k*.55} C ${60-k*1.6} ${48-k*.6}, ${60-k*.5} ${48-k*1.35}, 60 ${48-k*.35} C ${60+k*.5} ${48-k*1.35}, ${60+k*1.6} ${48-k*.6}, 60 ${48+k*.55}z" stroke-dasharray="${s%3?'':'14 4'}"/>`; } }
+  else if (type==='whorl'){ for(let s=1;s<=9;s++) p+=`<ellipse cx="60" cy="58" rx="${s*5.5}" ry="${s*6.5}" stroke-dasharray="${s%2?'22 5':''}"/>`; }
+  else if (type==='loop'){ for(let s=1;s<=9;s++) p+=`<path d="M${30-s*2} 110 C ${30-s*2} ${40-s*3}, ${70+s*4} ${40-s*3}, ${75+s*3} 110" stroke-dasharray="${s%3?'':'16 5'}"/>`; }
+  else if (type==='arch'){ for(let s=1;s<=11;s++) p+=`<path d="M8 ${30+s*7} Q 60 ${12+s*6} 112 ${30+s*7}" stroke-dasharray="${s%4?'':'20 4'}"/>`; }
+  else if (type==='paw') p=`<ellipse cx="60" cy="72" rx="24" ry="20"/><ellipse cx="32" cy="42" rx="9" ry="12"/><ellipse cx="50" cy="30" rx="9" ry="12"/><ellipse cx="70" cy="30" rx="9" ry="12"/><ellipse cx="88" cy="42" rx="9" ry="12"/>`;
+  return `<svg viewBox="0 0 120 120" class="${cls}">${p}</svg>`;
+}
+function fprintStep(st, back){
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="fp-ev"><div class="fp-glass">${fpSVG(st.evidence,'fpr fp-e')}<span>${st.evLabel||'Улика'}</span></div><div class="fp-match" id="fpm">Сравни с картотекой ↓</div></div>
+    <div class="fp-sus">${st.suspects.map((s,i)=>`<button class="fp-card" data-i="${i}">${fpSVG(s.type,'fpr')}<b>${s.e} ${s.n}</b></button>`).join('')}</div>
+    <div class="stat" id="fpStat">Чей это отпечаток?</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let done=false;
+  document.querySelectorAll('.fp-card').forEach(b => b.onclick = () => { if(done) return; const s=st.suspects[+b.dataset.i];
+    document.querySelectorAll('.fp-card').forEach(x=>x.classList.remove('sel')); b.classList.add('sel');
+    const ok = s.type===st.evidence; let pct=0; const tgt = ok?100:(s.pct||Math.floor(12+Math.random()*30)); $('fpm').textContent='Сравниваю… 0%';
+    const iv=setInterval(()=>{ pct=Math.min(tgt,pct+4); $('fpm').textContent=`Совпадение: ${pct}%`; if(pct>=tgt){ clearInterval(iv);
+      if(ok){ done=true; b.classList.add('ok'); $('fpm').classList.add('ok'); $('fpStat').innerHTML=st.done||''; playNote(NOTE_F('C6')); hearts(); enableNext('gNext'); }
+      else { $('fpStat').textContent = s.no || 'Не совпадает. Этот подозреваемый ни при чём'; } } }, 40); });
+  $('gNext').onclick = next;
+}
+
+function lockwheelsStep(st, back){
+  const L=st.len, ch=st.chars||'0123456789', v=Array(L).fill(0); let hintsShown=0;
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.prompt||''}</div>
+    <div class="lk" id="lk"><div class="lk-shackle"></div><div class="lk-body"><div class="lk-wheels">${v.map((_,i)=>`<div class="lk-w"><button data-i="${i}" data-d="-1">▲</button><span id="lkv${i}">${ch[0]}</span><button data-i="${i}" data-d="1">▼</button></div>`).join('')}</div></div></div>
+    <div style="text-align:center"><button class="btn" id="lkGo">Открыть замок</button></div>
+    <div class="msg" id="lkMsg"></div><div class="hints" id="hints"></div>
+    <div style="text-align:center;margin-top:10px">${(st.hints||[]).length?'<button class="btn small ghost" id="hintBtn">💡 Подсказка</button>':''}</div></div>`;
+  nav(back + (D.solved ? `<button class="btn" onclick="next()">Дальше</button>` : ''));
+  document.querySelectorAll('.lk-w button').forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; v[i]=(v[i]+(+b.dataset.d)+ch.length)%ch.length; $('lkv'+i).textContent=ch[v[i]]; playNote(NOTE_F('A5')); });
+  $('lkGo').onclick = async () => { const a=v.map(i=>ch[i]).join('');
+    if (await gateTry(a)){ $('lk').classList.add('open'); $('lkMsg').textContent=''; playNote(NOTE_F('C5')); setTimeout(()=>playNote(NOTE_F('G5')),150); hearts(); setTimeout(next,1500); }
+    else { $('lk').classList.remove('bad'); void $('lk').offsetWidth; $('lk').classList.add('bad'); $('lkMsg').textContent='Замок не поддался 🔒 Попробуй ещё'; } };
+  if ((st.hints||[]).length) $('hintBtn').onclick = () => { if (hintsShown<st.hints.length) $('hints').insertAdjacentHTML('beforeend', `<div class="hint">${st.hints[hintsShown++]}</div>`); if (hintsShown>=st.hints.length) $('hintBtn').style.display='none'; };
+}
+
+const MORSE = {'А':'.-','Б':'-...','В':'.--','Г':'--.','Д':'-..','Е':'.','Ж':'...-','З':'--..','И':'..','Й':'.---','К':'-.-','Л':'.-..','М':'--','Н':'-.','О':'---','П':'.--.','Р':'.-.','С':'...','Т':'-','У':'..-','Ф':'..-.','Х':'....','Ц':'-.-.','Ч':'---.','Ш':'----','Щ':'--.-','Ъ':'--.--','Ы':'-.--','Ь':'-..-','Э':'..-..','Ю':'..--','Я':'.-.-'};
+function morseStep(st, back){
+  const groups=[...st.word].map(c=>MORSE[c]);
+  const table = Object.entries(MORSE).filter(([c])=>!'ЪЬЭЩ'.includes(c)).map(([c,m])=>`<span><b>${c}</b>${m.replace(/\./g,'•').replace(/-/g,'—')}</span>`).join('');
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="mo-lamp" id="mol"></div><div class="mo-tape" id="mot">${groups.map((g,i)=>`<span class="mo-g" id="mog${i}"></span>`).join('<i>/</i>')}</div>
+    <div style="text-align:center"><button class="btn" id="moPlay">▶ Принять сигнал</button></div>
+    <details class="mo-tbl"><summary>📖 Азбука Морзе</summary><div>${table}</div></details>
+    <div class="stat" id="moStat"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let busy=false;
+  $('moPlay').onclick = async () => { if(busy) return; busy=true; const U=170, sleep=ms=>new Promise(r=>setTimeout(r,ms));
+    groups.forEach((_,i)=>$('mog'+i).textContent='');
+    for (let i=0;i<groups.length;i++){ for (const s of groups[i]){ if(!$('mol')) return; const d=s==='.'?U:U*3; $('mol').classList.add('on'); beep(720,d/1000); await sleep(d); $('mol').classList.remove('on'); $('mog'+i).textContent += s==='.'?'•':'—'; await sleep(U); } await sleep(U*3); }
+    busy=false; $('moPlay').textContent='↻ Повторить сигнал'; $('moStat').innerHTML = st.done||''; enableNext('gNext'); };
+  $('gNext').onclick = next;
+}
+
+async function jigsawStep(st, back){
+  const url=await media(st.photo), C=st.cols||2, R=st.rows||3, n=C*R, order=shuffle([...Array(n).keys()]);
+  const bg = i => `background-image:url(${url});background-size:${C*100}% ${R*100}%;background-position:${(i%C)*100/(C-1)}% ${Math.floor(i/C)*100/(R-1)}%`;
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="jg-board" id="jgb" style="grid-template-columns:repeat(${C},1fr);aspect-ratio:${st.ratio||'3/4'}">${[...Array(n).keys()].map(i=>`<div class="jg-slot" data-i="${i}"></div>`).join('')}</div>
+    <div class="jg-tray">${order.map(i=>`<button class="jg-p" data-i="${i}" style="${bg(i)};aspect-ratio:${st.ratio?'':'3/4'};transform:rotate(${(Math.random()*16-8).toFixed(1)}deg)"></button>`).join('')}</div>
+    <div class="stat" id="jgStat">Нажми на кусочек, потом — на место, куда его положить</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let sel=null, placed=0;
+  document.querySelectorAll('.jg-p').forEach(p=>p.onclick=()=>{ document.querySelectorAll('.jg-p').forEach(x=>x.classList.remove('sel')); sel=p; p.classList.add('sel'); });
+  document.querySelectorAll('.jg-slot').forEach(s=>s.onclick=()=>{ if(!sel||s.classList.contains('full')) return;
+    if (sel.dataset.i===s.dataset.i){ s.classList.add('full'); s.setAttribute('style', bg(+s.dataset.i)); sel.remove(); sel=null; placed++; playNote(NOTE_F(['C5','D5','E5','G5','A5','C6','D6','E6','G6'][placed-1]||'C6'));
+      if (placed===n){ $('jgb').classList.add('done'); $('jgStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); } else $('jgStat').textContent=`Собрано ${placed} из ${n}`; }
+    else { s.classList.remove('bad'); void s.offsetWidth; s.classList.add('bad'); $('jgStat').textContent='Не подходит — попробуй другое место'; } });
+  $('gNext').onclick = next;
+}
+
+async function spotdiffStep(st, back){
+  const url=await media(st.photo), D2=st.diffs;
+  const img = b => `<div class="sd-img" data-b="${b}"><img src="${url}" alt="">${b? D2.map(d=>`<span class="sd-add" style="left:${d.x}%;top:${d.y}%;font-size:${d.s||26}px">${d.e}</span>`).join(''):''}${D2.map((d,i)=>`<i class="sd-ring" data-i="${i}" style="left:${d.x}%;top:${d.y}%"></i>`).join('')}</div>`;
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="sd-wrap">${img(0)}${img(1)}</div><div class="stat" id="sdStat">Найдено 0 из ${D2.length}</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const got=new Set();
+  document.querySelectorAll('.sd-img').forEach(el=>el.addEventListener('pointerdown', e=>{ const b=el.getBoundingClientRect(), x=(e.clientX-b.left)/b.width*100, y=(e.clientY-b.top)/b.height*100;
+    const i=D2.findIndex(d=>Math.hypot((d.x-x)*b.width/100,(d.y-y)*b.height/100) < Math.max(22,b.width*.08));
+    if (i>=0 && !got.has(i)){ got.add(i); document.querySelectorAll(`.sd-ring[data-i="${i}"]`).forEach(r=>r.classList.add('on')); playNote(NOTE_F(['C5','E5','G5','B5','D6','F6'][got.size-1]||'C6'));
+      $('sdStat').textContent = got.size<D2.length ? `Найдено ${got.size} из ${D2.length}` : (st.done||'Все отличия найдены!'); if (got.size===D2.length){ hearts(); enableNext('gNext'); } } }));
+  $('gNext').onclick = next;
+}
+
+function citymapStep(st, back){
+  let k=0; const P=st.pins;
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="cm"><svg viewBox="0 0 340 300" id="cmsvg">
+      <rect width="340" height="300" fill="#e8dcc0"/>
+      <path d="M-10 80 C 80 60, 120 140, 200 120 S 300 60, 350 90" stroke="#9fc3d1" stroke-width="10" fill="none"/>
+      <path d="M40 -10 L 60 310 M150 -10 L 140 310 M260 -10 L 280 310 M-10 200 L 350 210 M-10 40 L 350 30" stroke="#d6c7a4" stroke-width="7"/>
+      <ellipse cx="90" cy="250" rx="45" ry="25" fill="#b9cf9c"/><ellipse cx="300" cy="150" rx="30" ry="40" fill="#b9cf9c"/>
+      <g id="cmlines"></g>
+      ${P.map((p,i)=>`<g class="cm-pin" data-i="${i}" transform="translate(${p.x},${p.y})"><path d="M0 0 C -14 -16, -14 -34, 0 -34 C 14 -34, 14 -16, 0 0z" class="cm-p"/><text y="-17" text-anchor="middle" font-size="15">${p.e}</text></g>`).join('')}
+    </svg></div><div class="cm-q" id="cmq"></div><div class="stat" id="cmStat"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const ask = () => { $('cmq').innerHTML = k<st.riddles.length ? `<small>Загадка ${k+1} из ${st.riddles.length}</small>${st.riddles[k].q}` : ''; };
+  ask(); let prev=null;
+  document.querySelectorAll('.cm-pin').forEach(g=>g.onclick=()=>{ if (k>=st.riddles.length) return; const i=+g.dataset.i;
+    if (i===st.riddles[k].pin){ g.classList.add('on'); const p=P[i]; if(prev) $('cmlines').insertAdjacentHTML('beforeend',`<line x1="${prev.x}" y1="${prev.y-17}" x2="${p.x}" y2="${p.y-17}" class="cm-l"/>`); prev=p;
+      $('cmStat').textContent = st.riddles[k].ok||'Верно!'; playNote(NOTE_F(['C5','E5','G5','C6','E6'][k%5])); k++; ask();
+      if (k===st.riddles.length){ $('cmStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); } }
+    else { g.classList.remove('bad'); void g.getBBox(); g.classList.add('bad'); $('cmStat').textContent='Нет, это не здесь 🙂'; } });
+  $('gNext').onclick = next;
+}
+
+function chatStep(st, back){
+  $('stage').innerHTML = `<div class="ch"><div class="ch-head">🗂 ${st.title||'Допрос свидетелей'}</div><div class="ch-body" id="chb"></div><div class="ch-reply" id="chr"></div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  const body=$('chb'); let i=0;
+  const add = (cls, html) => { body.insertAdjacentHTML('beforeend', `<div class="ch-m ${cls}">${html}</div>`); body.scrollTop=body.scrollHeight; };
+  const step = () => { if(!document.body.contains(body)) return; if (i>=st.script.length){ enableNext('gNext'); hearts(); return; }
+    const m=st.script[i++];
+    if (m.choices){ $('chr').innerHTML = m.choices.map(c=>`<button class="ch-c">${c}</button>`).join('');
+      document.querySelectorAll('.ch-c').forEach(b=>b.onclick=()=>{ $('chr').innerHTML=''; add('me', b.textContent); setTimeout(step,500); }); return; }
+    add('typing', '<span></span><span></span><span></span>');
+    setTimeout(()=>{ const t=body.querySelector('.typing'); t&&t.remove(); add(m.sys?'sys':'them', (m.from?`<small>${m.from}</small>`:'')+m.t); playNote(NOTE_F('E6')); setTimeout(step, 600); }, Math.min(2200, 500+m.t.length*18)); };
+  step();
+  $('gNext').onclick = next;
+}
+
+function stringboardStep(st, back){
+  const C=st.cards, pos=C.map((_,i)=>({x:16+(i%3)*34+(i%2?3:-3), y:14+Math.floor(i/3)*30+(i%3===1?5:0)}));
+  $('stage').innerHTML = `<div class="card game"><h3>${st.title||''}</h3><div class="sub">${st.text||''}</div>
+    <div class="sb" id="sb"><svg class="sb-s" viewBox="0 0 100 100" preserveAspectRatio="none" id="sbs"></svg>${C.map((c,i)=>`<button class="sb-c" data-i="${i}" style="left:${pos[i].x}%;top:${pos[i].y}%;--r:${[-5,4,-3,6,-4,3,-6,5,-2][i]}deg"><b>${c.l}</b><small>${c.d}</small></button>`).join('')}
+      <div class="sb-q" style="left:${16+2*34+3}%;top:${14+2*30}%">?</div></div><div class="stat" id="sbStat">Соедини улики по порядку дат</div></div>`;
+  nav(back + `<button class="btn" id="gNext" style="opacity:.4" disabled>Дальше</button>`);
+  if (D.replay) enableNext('gNext');
+  let k=0, prev=null;
+  document.querySelectorAll('.sb-c').forEach(b=>b.onclick=()=>{ const i=+b.dataset.i; if (b.classList.contains('on')) return;
+    if (i===k){ b.classList.add('on'); const p={x:pos[i].x+8,y:pos[i].y+6};
+      if(prev) $('sbs').insertAdjacentHTML('beforeend',`<line x1="${prev.x}" y1="${prev.y}" x2="${p.x}" y2="${p.y}" class="sb-l"/>`); prev=p; k++; playNote(NOTE_F(['C5','D5','E5','F5','G5','A5','B5','C6'][k-1]));
+      if (k===C.length){ $('sb').classList.add('done'); $('sbStat').innerHTML=st.done||''; hearts(); enableNext('gNext'); } else $('sbStat').textContent=`Соединено ${k} из ${C.length}`; }
+    else { b.classList.remove('bad'); void b.offsetWidth; b.classList.add('bad'); $('sbStat').textContent='Не та дата — начни с самой ранней'; } });
+  $('gNext').onclick = next;
+}
+
+function anagramStep(st, back){
+  const L=shuffle([...st.letters]), N=L.length, box=Array(N).fill(null);
+  $('stage').innerHTML = `<div class="ag" id="ag"><div class="ag-t">${st.title||''}</div><div class="ag-s">${st.text||''}</div>
+    <div class="ag-fly" id="agf">${L.map((c,i)=>`<button class="ag-l" data-i="${i}" style="--x:${6+(i%3)*31+Math.random()*12}%;--y:${4+Math.floor(i/3)*28+Math.random()*10}%;--dx:${(Math.random()*44-22).toFixed(0)}px;--dy:${(Math.random()*36-18).toFixed(0)}px;--d:${(3+Math.random()*3).toFixed(1)}s;--r:${(Math.random()*40-20).toFixed(0)}deg">${c}</button>`).join('')}</div>
+    <div class="ag-boxes">${box.map((_,i)=>`<button class="ag-b" data-i="${i}"></button>`).join('')}</div><div class="ag-msg" id="agm"></div></div>`;
+  nav(back);
+  const ls=[...document.querySelectorAll('.ag-l')], bs=[...document.querySelectorAll('.ag-b')]; let busy=false;
+  const draw = () => bs.forEach((b,i)=>{ b.textContent = box[i]!=null ? L[box[i]] : ''; b.classList.toggle('full', box[i]!=null); });
+  ls.forEach(l=>l.onclick=async()=>{ if(busy||D.solved) return; const j=box.indexOf(null); if(j<0) return; box[j]=+l.dataset.i; l.classList.add('used'); playNote(NOTE_F(['C5','D5','E5','F5','G5','A5','B5','C6','D6'][j])); draw();
+    if (!box.includes(null)){ busy=true; const w=box.map(i=>L[i]).join('');
+      if (await gateTry(w)){ $('ag').classList.add('win'); $('agm').textContent=''; [0,150,300,450].forEach((t,k)=>setTimeout(()=>playNote(NOTE_F(['C5','E5','G5','C6'][k])),t)); hearts(); setTimeout(next, 2600); }
+      else { $('ag').classList.remove('bad'); void $('ag').offsetWidth; $('ag').classList.add('bad'); $('agm').textContent=st.wrong||'Хм… слово не сложилось. Попробуй по-другому';
+        setTimeout(()=>{ box.fill(null); ls.forEach(x=>x.classList.remove('used')); draw(); busy=false; }, 900); } } });
+  bs.forEach(b=>b.onclick=()=>{ if(busy||D.solved) return; const i=+b.dataset.i; if(box[i]==null) return; ls[box[i]].classList.remove('used'); box[i]=null; draw(); });
+  if (D.solved){ L.forEach((_,i)=>box[i]=i); }
+}
+
+async function revealStep(st, back){
+  const photos = await Promise.all((st.photos||[]).map(p=>media(p)));
+  $('stage').innerHTML = `<div class="rv" id="rv"><div class="rv-snow"></div><svg class="rv-mt" viewBox="0 0 400 160" preserveAspectRatio="none"><path d="M0 160 L0 110 L60 60 L95 90 L150 20 L200 85 L240 50 L300 100 L345 40 L400 90 L400 160z" fill="#dfe8f3"/><path d="M150 20 L130 48 L150 42 L168 52z M345 40 L330 62 L346 58 L360 66z M60 60 L48 78 L62 74 L74 80z" fill="#fff"/><path d="M0 160 L0 130 L80 95 L130 120 L210 80 L280 125 L350 90 L400 115 L400 160z" fill="#b9cbe0"/></svg>
+    <div class="rv-c"><small>${st.kicker||''}</small><h1>${st.title||''}</h1><h2>${st.sub||''}</h2>
+    ${photos.length?`<div class="rv-ph">${photos.map(u=>`<img src="${u}" alt="">`).join('')}</div>`:''}
+    <div class="rv-lines">${(st.lines||[]).map((l,i)=>`<p style="animation-delay:${1+i*.5}s">${l}</p>`).join('')}</div></div></div>`;
+  setTimeout(()=>{ const r=$('rv'); r&&r.classList.add('on'); [0,200,400,600,800].forEach((t,k)=>setTimeout(()=>playNote(NOTE_F(['G4','C5','E5','G5','C6'][k])),t)); hearts(); }, 100);
+  nav(D.i>=D.steps.length-1 ? finalNav() : back+`<button class="btn" onclick="next()">Дальше</button>`);
+}
 
 function writeLetter(){
   openModal(`<h2>Письмо Кириллу 💌</h2><p style="margin-top:0">Напиши мне в любой момент — я прочитаю каждое слово.</p>
